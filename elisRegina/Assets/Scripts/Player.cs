@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
 
         if(Input.GetButtonDown("Jump")&&  groundCheck)
         {
-            body.AddForce(new Vector2(0, jumpStrenght * 100));
+            body.AddForce(new Vector2(0, jumpStrenght * 75));
 
         }
         if(horizontal != 0)
