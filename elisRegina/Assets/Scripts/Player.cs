@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D body;
     public bool groundCheck;
     public Transform foot;
-
+    public GameObject Peso;
     public int direction = 1;
     void Start()
     {
@@ -35,5 +35,8 @@ public class Player : MonoBehaviour
 
             direction = (int)horizontal;
         }
+        
+
+        
     }   
 }
