@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 303544900}
   - component: {fileID: 303544901}
   m_Layer: 0
-  m_Name: spawnDePeso
+  m_Name: spawnDePesoDire
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -167,6 +167,51 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 303544899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1fe2622fc6a05a478ed6e52b9efaada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Peso: {fileID: 1876401703316653585, guid: 0532b3e3155e40d4ebaea41b6f863459, type: 3}
+--- !u!1 &800404733
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 800404734}
+  - component: {fileID: 800404735}
+  m_Layer: 0
+  m_Name: SpawnDePesoEsq
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &800404734
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800404733}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.89, y: 2.05, z: -0.011190407}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 126599510}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &800404735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800404733}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1fe2622fc6a05a478ed6e52b9efaada, type: 3}
@@ -439,5 +484,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6971691580122138725, guid: 5f74f3d120cba6b429794a81c58a8875, type: 3}
+      propertyPath: Peso
+      value: 
+      objectReference: {fileID: 1876401703316653585, guid: 0532b3e3155e40d4ebaea41b6f863459, type: 3}
+    - target: {fileID: 6971691580122138725, guid: 5f74f3d120cba6b429794a81c58a8875, type: 3}
+      propertyPath: Direita
+      value: 
+      objectReference: {fileID: 303544900}
+    - target: {fileID: 6971691580122138725, guid: 5f74f3d120cba6b429794a81c58a8875, type: 3}
+      propertyPath: Esquerda
+      value: 
+      objectReference: {fileID: 800404734}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f74f3d120cba6b429794a81c58a8875, type: 3}

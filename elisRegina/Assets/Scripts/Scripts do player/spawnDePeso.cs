@@ -13,11 +13,11 @@ public class spawnDePeso : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {/*
         if (Input.GetButtonDown("Weight"))
         {
             Instantiate(Peso, transform.position, transform.rotation);
 
-        }
+        }*/
     }
 }

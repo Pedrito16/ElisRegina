@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public Transform foot;
     public GameObject Peso;
     public int direction = 1;
+    public Transform Direita, Esquerda;
     void Start()
     {
         
@@ -36,7 +37,18 @@ public class Player : MonoBehaviour
             direction = (int)horizontal;
         }
         
+        if (Input.GetButtonDown("Weight") && direction == 1)
+        {
+         Instantiate(Peso, Direita.position, transform.rotation);
 
-        
+        }
+        else if (Input.GetButtonDown("Weight")&& direction == -1)
+        {
+            Instantiate(Peso, Esquerda.position, transform.rotation);
+
+        }
+
+
+
     }   
 }
