@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build;
 using UnityEngine;
 
 public class Peso : MonoBehaviour
 {
+    public int damage = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +29,7 @@ public class Peso : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
 
-            Destroy(gameObject, 2f);
+            Destroy(gameObject, 1f);
 
         }
     }
