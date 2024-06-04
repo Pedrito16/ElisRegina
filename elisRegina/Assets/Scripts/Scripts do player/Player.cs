@@ -14,6 +14,9 @@ public class Player : MonoBehaviour
     public GameObject Peso;
     public int direction = 1;
     public Transform Direita, Esquerda;
+    public float fireRate = 0.5f;
+    public float nextFire = 0.5f;
+
     void Start()
     {
         
@@ -37,7 +40,7 @@ public class Player : MonoBehaviour
             direction = (int)horizontal;
         }
         
-        if (Input.GetButtonDown("Weight") && direction == 1)
+        if (Input.GetButtonDown("Weight") && direction == 1 && Time.time > nextFire)
         {
          Instantiate(Peso, Direita.position, transform.rotation);
 
