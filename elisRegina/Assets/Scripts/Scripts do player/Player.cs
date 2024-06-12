@@ -18,10 +18,15 @@ public class Player : MonoBehaviour
     public float nextFire = 0.5f;
     public Animator animator;
     public Transform playerTransform;
+
+
+    private Vector3 esquerda;
+    private Vector3 direita;
     void Start()
     {
         //playerTransform.localScale = new Vector2(direction, 1);
-        
+        esquerda = Esquerda.position - transform.position;
+        direita = Direita.position - transform.position;
     }
 
     void Update()
@@ -29,6 +34,11 @@ public class Player : MonoBehaviour
         Vector2 scale = playerTransform.localScale;
         scale.x = direction;
         playerTransform.localScale = scale;
+
+
+        Esquerda.position = transform.position + esquerda;
+        Direita.position =transform.position + direita; 
+
 
         horizontal = Input.GetAxisRaw("Horizontal");
         body.velocity = new Vector2( horizontal * moveSpeed, body.velocity.y );
