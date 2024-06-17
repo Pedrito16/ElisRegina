@@ -8,6 +8,8 @@ TagManager:
   - Foot
   - Tijolo
   - Peso
+  - Mudador
+  - Tiro
   layers:
   - Default
   - TransparentFX

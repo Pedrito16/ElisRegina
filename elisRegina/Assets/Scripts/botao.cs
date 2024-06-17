@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class botao : MonoBehaviour
 {
+    public string sceneName = "Cena 3(Pedro)";
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync(3);
+        SceneManager.LoadScene(1);
     }
 }

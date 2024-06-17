@@ -18,8 +18,8 @@ public class Player : MonoBehaviour
     public float nextFire = 0.5f;
     public Animator animator;
     public Transform playerTransform;
-
-
+    public int life = 3;
+    public Tiro tiro;
     private Vector3 esquerda;
     private Vector3 direita;
     void Start()
@@ -72,5 +72,15 @@ public class Player : MonoBehaviour
 
 
 
-    }   
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Tiro"))
+        {
+            Destroy(collision.gameObject);
+            
+            
+
+        }
+    }
 }
