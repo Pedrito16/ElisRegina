@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Authentication.ExtendedProtection;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-public class botao : MonoBehaviour
+public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync(3);
+        SceneManager.LoadSceneAsync(3); 
     }
 }
