@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a06f356f4a6634d46a49a227b0b5d397
+guid: e0bb3fa1928830f4ab495b6d944a3114
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: robot enemy walk 2_0
+      name: robot enemy walk 3_0
       rect:
         serializedVersion: 2
         x: 9
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1251846acb3dd0247ba3a517276341e3
-      internalID: 59905808
+      spriteID: 8aee0abbd6abd904fbbbefa2bf9e14ed
+      internalID: 1634739453
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot enemy walk 2_1
+      name: robot enemy walk 3_1
       rect:
         serializedVersion: 2
         x: 43
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7db8c6e9407cff549a12748f43b6a42e
-      internalID: 1304695606
+      spriteID: 601bd8d4547254a489a89c71184b17b8
+      internalID: -2044839254
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot enemy walk 2_2
+      name: robot enemy walk 3_2
       rect:
         serializedVersion: 2
         x: 77
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74e157ad9e4c55a45b4164ff9d8a147d
-      internalID: -502740310
+      spriteID: 38570e943b2df064ea7d796a310d8258
+      internalID: -1344688847
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot enemy walk 2_3
+      name: robot enemy walk 3_3
       rect:
         serializedVersion: 2
         x: 111
@@ -182,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01e30803048ceeb4f82a6e9029b2e609
-      internalID: -61282495
+      spriteID: 16dbbe58b205b0741bba14b51d88b683
+      internalID: -1972581022
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot enemy walk 2_4
+      name: robot enemy walk 3_4
       rect:
         serializedVersion: 2
         x: 145
@@ -203,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0568635dc05a6045a69357970453b50
-      internalID: -736588203
+      spriteID: 5788ad1891d329743beee1db52f926fb
+      internalID: 1889662746
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot enemy walk 2_5
+      name: robot enemy walk 3_5
       rect:
         serializedVersion: 2
         x: 179
@@ -224,14 +224,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 573853a902eaad54a8a295cbd885125b
-      internalID: -2104069082
+      spriteID: e95bc58cdc35cb1488e2a53e775565cd
+      internalID: 1853258348
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot enemy walk 2_6
+      name: robot enemy walk 3_6
       rect:
         serializedVersion: 2
         x: 213
@@ -245,14 +245,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e82a599882b9a5448c87bcaa6f573c2
-      internalID: 75753483
+      spriteID: 6451d07da562b5a45af344923a1d354f
+      internalID: -1915592754
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot enemy walk 2_7
+      name: robot enemy walk 3_7
       rect:
         serializedVersion: 2
         x: 247
@@ -266,8 +266,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a62a6ce2a2ebd4743929b7659558df10
-      internalID: 1927057702
+      spriteID: 849056d30728f45438b525cb844b6a0c
+      internalID: 461901303
       vertices: []
       indices: 
       edges: []
@@ -283,14 +283,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      robot enemy walk 2_1: 1304695606
-      robot enemy walk 2_2: -502740310
-      robot enemy walk 2_7: 1927057702
-      robot enemy walk 2_6: 75753483
-      robot enemy walk 2_0: 59905808
-      robot enemy walk 2_4: -736588203
-      robot enemy walk 2_5: -2104069082
-      robot enemy walk 2_3: -61282495
+      robot enemy walk 3_0: 1634739453
+      robot enemy walk 3_1: -2044839254
+      robot enemy walk 3_7: 461901303
+      robot enemy walk 3_4: 1889662746
+      robot enemy walk 3_3: -1972581022
+      robot enemy walk 3_6: -1915592754
+      robot enemy walk 3_2: -1344688847
+      robot enemy walk 3_5: 1853258348
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
