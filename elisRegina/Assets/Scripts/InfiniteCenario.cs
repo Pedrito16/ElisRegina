@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InfiniteCenario : MonoBehaviour
 {
-    /*public float velociadeDoCenario;
+    public float velociadeDoCenario;
 
     void Update()
     {
@@ -13,7 +13,7 @@ public class InfiniteCenario : MonoBehaviour
     void MovimentarCenario()
     {
         Vector2 deslocamento = new Vector2(Time.time * velociadeDoCenario, 0);
-        GetComponent<>().material.mainTextureOffset = deslocamento;
-    }*/
+        GetComponent<Renderer>().material.mainTextureOffset = deslocamento;
+    }
 }
 
