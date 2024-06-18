@@ -8,6 +8,11 @@ public class NewBehaviourScript : MonoBehaviour
 
     void Update()
     {
-       MovimentarCenario(); 
+        MovimentarCenario();
+    }
+    void MovimentarCenario()
+    {
+        Vector2 deslocamento = new Vector2(Time.time * velociadeDoCenario, 0);
+      
     }
 }
