@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     public Rigidbody2D body;
     public GameObject tiro;
     public float tiroSpeed;
+    public Transform enemyTransform;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,9 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         body.velocity = new Vector2(speed * direction, body.velocity.y);
+        Vector2 scale = enemyTransform.localScale;
+        scale.x = direction;
+        enemyTransform.localScale = scale;
 
 
     }
