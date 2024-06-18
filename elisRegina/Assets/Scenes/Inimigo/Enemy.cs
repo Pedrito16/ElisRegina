@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     public Rigidbody2D body;
     public GameObject tiro;
     public float tiroSpeed;
+    public Animator animator;
     public Transform enemyTransform;
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,7 @@ public class Enemy : MonoBehaviour
         Vector2 scale = enemyTransform.localScale;
         scale.x = direction;
         enemyTransform.localScale = scale;
+        animator.SetFloat("Speed", speed);
 
 
     }
