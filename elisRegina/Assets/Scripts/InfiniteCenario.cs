@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class InfiniteCenario : MonoBehaviour
 {
-    public float velociadeDoCenario;
+    /*public float velociadeDoCenario;
 
     void Update()
     {
@@ -13,6 +13,7 @@ public class NewBehaviourScript : MonoBehaviour
     void MovimentarCenario()
     {
         Vector2 deslocamento = new Vector2(Time.time * velociadeDoCenario, 0);
-      
-    }
+        GetComponent<>().material.mainTextureOffset = deslocamento;
+    }*/
 }
+
