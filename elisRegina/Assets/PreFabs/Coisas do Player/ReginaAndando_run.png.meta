@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 08149a78e2f309348a93843d8e4e3b81
+guid: d6f2610fd8ba7274e85cd9d523f3d046
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ReginaAndando  final_0
+      name: ReginaAndando_run_0
       rect:
         serializedVersion: 2
         x: 3
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c89110fe7251cbe46b4677f9e9f23925
-      internalID: 1914061355
+      spriteID: fde8be004d7b70f4eae44159f15cc498
+      internalID: -1681607570
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ReginaAndando  final_1
+      name: ReginaAndando_run_1
       rect:
         serializedVersion: 2
         x: 27
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee09933519885f44cabedb8129bab129
-      internalID: 1449108377
+      spriteID: 2be61ea28f7e97e4d9d3fe6eb662a289
+      internalID: -76537856
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ReginaAndando  final_2
+      name: ReginaAndando_run_2
       rect:
         serializedVersion: 2
         x: 51
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b62a08c11edbf740adb3214592d6ef1
-      internalID: -991229820
+      spriteID: 4fa90df6a0dce454f98a2cd4cea61c27
+      internalID: -1170388455
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ReginaAndando  final_3
+      name: ReginaAndando_run_3
       rect:
         serializedVersion: 2
         x: 75
@@ -182,8 +182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36e4237656006184da446dd205fc4bd3
-      internalID: 1421812027
+      spriteID: 56fa79b41204f344082c04eafb34ab1c
+      internalID: 130694335
       vertices: []
       indices: 
       edges: []
@@ -199,10 +199,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ReginaAndando  final_1: 1449108377
-      ReginaAndando  final_0: 1914061355
-      ReginaAndando  final_3: 1421812027
-      ReginaAndando  final_2: -991229820
+      ReginaAndando_run_2: -1170388455
+      ReginaAndando_run_0: -1681607570
+      ReginaAndando_run_1: -76537856
+      ReginaAndando_run_3: 130694335
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
