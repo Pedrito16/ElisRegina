@@ -5,10 +5,16 @@ using UnityEngine;
 public class InfiniteCenario : MonoBehaviour
 {
     public float velociadeDoCenario;
+    public float posicaoZ;
+    public Transform cameraTransform;
 
     void Update()
     {
         MovimentarCenario();
+        /*Vector3 newposition = transform.position;
+        newposition.z = posicaoZ;
+        transform.position = newposition;*/
+        transform.position = new Vector3(cameraTransform.position.x, cameraTransform.position.y, transform.position.z);
     }
     void MovimentarCenario()
     {

@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
 
 
         Esquerda.position = transform.position + esquerda;
-        Direita.position =transform.position + direita; 
+        Direita.position = transform.position + direita; 
 
 
         horizontal = Input.GetAxisRaw("Horizontal");
