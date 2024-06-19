@@ -13,14 +13,14 @@ public class Enemy : MonoBehaviour
     public float tiroSpeed;
     public Animator animator;
     public Transform enemyTransform;
-    public GameObject enemy;
+
     public bool isEnemyActive = false;
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
         InvokeRepeating("UmSegundo", 1f, 1f);
-        enemy.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -31,19 +31,19 @@ public class Enemy : MonoBehaviour
         scale.x = direction;
         enemyTransform.localScale = scale;
         animator.SetFloat("Speed", speed);
-        
+
 
 
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
 
 
-            
+
         }
-        
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -62,16 +62,16 @@ public class Enemy : MonoBehaviour
         Debug.Log("funcionou!");
         GameObject temp = Instantiate(tiro, transform.position, transform.rotation);
         temp.GetComponent<Rigidbody2D>().velocity = new Vector2(tiroSpeed * direction, 0);
-       
+
     }
     private void OnBecameVisible()
     {
-        enemy.SetActive(true);
+
     }
     private void OnBecameInvisible()
     {
-        
-        enemy.SetActive(false);
-        isEnemyActive = false;
+
+
+
     }
 }

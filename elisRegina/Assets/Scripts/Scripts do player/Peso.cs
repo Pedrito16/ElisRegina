@@ -29,8 +29,12 @@ public class Peso : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
 
-            Destroy(gameObject, 1f);
+            Destroy(gameObject, 0.5f);
 
+        }
+        if (collision.gameObject.CompareTag("Peso"))
+        {
+            Destroy(gameObject, 0.5f);
         }
     }
     private void OnBecameInvisible()
