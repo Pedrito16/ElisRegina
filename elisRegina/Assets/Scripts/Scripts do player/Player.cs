@@ -69,6 +69,13 @@ public class Player : MonoBehaviour
             Instantiate(Peso, Esquerda.position, transform.rotation);
 
         }
+        if(life <=  0)
+        {
+            gameObject.SetActive(false);
+
+
+
+        }
 
 
 
@@ -77,10 +84,16 @@ public class Player : MonoBehaviour
     {
         if (collision.CompareTag("Tiro"))
         {
+            Debug.Log("Colidiu");
+            life -= collision.gameObject.GetComponent<Tiro>().dano;
             Destroy(collision.gameObject);
             
             
 
         }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
     }
 }
