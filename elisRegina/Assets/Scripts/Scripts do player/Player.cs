@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
         }
         if(life <=  0)
         {
-            gameObject.SetActive(false);
+            
 
 
 

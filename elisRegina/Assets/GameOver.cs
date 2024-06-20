@@ -5,30 +5,31 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
-    public GameObject player;
+    public Player player;
     public GameObject gameOverText;
 
 
     void Start()
     {
-        gameOverText.SetActive(false);
+        gameObject.SetActive(false);
     }
     void Update()
     {
-        if(player.GetComponent<Player>().life = 0)
+        if(player != null && player.life <= 0 ) 
         {
+            Debug.Log("morreu??");
             gameOver();
 
         }
         if (Input.GetButtonDown("Respawn"))
         {
-
+            
 
         }
     }
     void gameOver()
     {
-        gameOverText.SetActive(true);
+        gameObject.SetActive(true);
 
     }
 }
