@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     public Tiro tiro;
     private Vector3 esquerda;
     private Vector3 direita;
+    public GameObject GameOver;
     void Start()
     {
         //playerTransform.localScale = new Vector2(direction, 1);
@@ -71,9 +72,10 @@ public class Player : MonoBehaviour
         }
         if(life <=  0)
         {
-            
 
-
+            gameOver();
+            Destroy(gameObject)
+;
 
         }
 
@@ -94,6 +96,11 @@ public class Player : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
+    }
+    void gameOver()
+    {
+       GameOver.SetActive(true);
 
     }
 }
