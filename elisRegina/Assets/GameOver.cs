@@ -15,12 +15,12 @@ public class GameOver : MonoBehaviour
     }
     void Update()
     {
-        if(player.life <= 0 ) 
+        /*if(player.life <= 0 ) 
         {
             Debug.Log("morreu??");
             
 
-        }
+        }*/
         if (Input.GetButtonDown("Respawn"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);

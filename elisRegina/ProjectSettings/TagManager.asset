@@ -11,6 +11,7 @@ TagManager:
   - Mudador
   - Tiro
   - Enemy
+  - Espinho
   layers:
   - Default
   - TransparentFX
