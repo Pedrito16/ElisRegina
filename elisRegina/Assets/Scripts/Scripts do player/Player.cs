@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     public Animator animator;
     public Transform playerTransform;
     public int life = 3;
-    public Tiro tiro;
+    
     private Vector3 esquerda;
     private Vector3 direita;
     public GameObject GameOver;

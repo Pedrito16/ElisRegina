@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int life;
+    public int life = 4;
     public float speed;
     int direction = -1;
     public int damage = 2;
@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Peso"))
         {
 
-
+            life -= collision.gameObject.GetComponent<Peso>().damage;
 
         }
 
