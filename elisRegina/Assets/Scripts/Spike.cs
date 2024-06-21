@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spike : MonoBehaviour
 {
-    public float dano = 1f;
+    public int dano = 1;
   
     // Start is called before the first frame update
     void Start()

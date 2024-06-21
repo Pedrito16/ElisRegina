@@ -97,7 +97,12 @@ public class Player : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.CompareTag("Espinho"))
+        {
 
+            life -= collision.gameObject.GetComponent<Spike>().dano;
+
+        }
     }
     void gameOver()
     {
