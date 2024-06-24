@@ -109,5 +109,10 @@ public class Player : MonoBehaviour
             
 
         }
+        if (collision.gameObject.CompareTag("Peso"))
+        {
+            Destroy(collision.gameObject);
+
+        }
     }
 }
