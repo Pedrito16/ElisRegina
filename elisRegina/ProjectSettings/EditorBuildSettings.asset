@@ -11,7 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Scenes/Bot\xF5es tela inicial.unity"
     guid: e7d08cd9d856d05449f4dd99cb0fc50e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Cena 3 (Pedro).unity
     guid: 65587c70afb7f304497de10d77595594
+  - enabled: 1
+    path: Assets/Scenes/cena 2(Bernardo).unity
+    guid: edb4d918989392046ac6e9ff5b34c067
+  - enabled: 1
+    path: Assets/Scenes/Cena 4 (fernando).unity
+    guid: df62b718c8f169843ab9350e68b9d2bc
   m_configObjects: {}

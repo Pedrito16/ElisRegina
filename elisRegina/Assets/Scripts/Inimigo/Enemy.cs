@@ -14,12 +14,12 @@ public class Enemy : MonoBehaviour
     public Animator animator;
     public Transform enemyTransform;
 
-    public bool isEnemyActive = false;
+   
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
-        InvokeRepeating("UmSegundo", 1f, 1f);
+        InvokeRepeating("UmSegundo", 1.5f, 1.5f);
 
     }
 
@@ -31,7 +31,11 @@ public class Enemy : MonoBehaviour
         scale.x = direction;
         enemyTransform.localScale = scale;
         animator.SetFloat("Speed", speed);
-
+        if(life <= 0) 
+        { 
+        
+         Destroy(gameObject);
+        }
 
 
     }
@@ -41,6 +45,13 @@ public class Enemy : MonoBehaviour
         {
 
             life -= collision.gameObject.GetComponent<Peso>().damage;
+            Destroy(collision.gameObject);
+
+        }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+
+            direction *= -1;
 
         }
 

@@ -28,6 +28,12 @@ public class Tiro : MonoBehaviour
             Destroy(gameObject);
 
         }
+        if (collision.CompareTag("Peso"))
+        {
+
+            Destroy(gameObject);
+
+        }
     }
     
 }

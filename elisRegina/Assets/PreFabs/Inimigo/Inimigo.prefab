@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7157536662130628187}
   m_Layer: 0
   m_Name: Inimigo
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58e6e68326bb5184d86405af577710a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 0
+  life: 4
   speed: 2
   damage: 2
   body: {fileID: 3438351112410730984}
@@ -108,8 +108,6 @@ MonoBehaviour:
   tiroSpeed: 5
   animator: {fileID: 7157536662130628187}
   enemyTransform: {fileID: 7157536662130628186}
-  enemy: {fileID: 7157536662130628189}
-  isEnemyActive: 0
 --- !u!50 &3438351112410730984
 Rigidbody2D:
   serializedVersion: 4

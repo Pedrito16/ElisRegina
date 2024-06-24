@@ -75,12 +75,12 @@ public class Player : MonoBehaviour
 
             gameOver();
 
-            Destroy(gameObject)
+            
 ;
 
         }
 
-
+       
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -95,18 +95,19 @@ public class Player : MonoBehaviour
 
         }
     }
+    
+    void gameOver()
+    {
+       GameOver.SetActive(true);
+        Destroy(gameObject);
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Espinho"))
         {
-
-            life -= collision.gameObject.GetComponent<Spike>().dano;
+            gameOver();
+            
 
         }
-    }
-    void gameOver()
-    {
-       GameOver.SetActive(true);
-
     }
 }
