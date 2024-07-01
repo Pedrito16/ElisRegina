@@ -17,10 +17,10 @@ public class butao : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Peso"))
         {
 
-            Debug.Log("foi");
+            
             animator.SetBool("Colisao", true);
             animator.SetBool("finish", true);
             ativador = true;

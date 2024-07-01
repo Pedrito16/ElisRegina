@@ -19,8 +19,8 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        //gameObject.SetActive(false);
         InvokeRepeating("UmSegundo", 1.5f, 1.5f);
-
     }
 
     // Update is called once per frame
@@ -77,12 +77,14 @@ public class Enemy : MonoBehaviour
     }
     private void OnBecameVisible()
     {
-
+        /*Debug.Log("visivel");
+        gameObject.SetActive(true);
+        InvokeRepeating("UmSegundo", 1.5f, 1.5f);*/
     }
     private void OnBecameInvisible()
     {
-
-
+        //CancelInvoke();
+        //gameObject.SetActive(false);
 
     }
 }

@@ -19,6 +19,12 @@ public class Player : MonoBehaviour
     public Animator animator;
     public Transform playerTransform;
     public int life = 3;
+    public int pesoCap = 3;
+    public int pesoAtual;
+    public int pesoCooldown = 3;
+
+    [SerializeField]
+    private bool isPesoCooldown = false;
     
     private Vector3 esquerda;
     private Vector3 direita;
@@ -60,34 +66,50 @@ public class Player : MonoBehaviour
             direction = (int)horizontal;
         }
         
-        if (Input.GetButtonDown("Weight") && direction == 1) //1 && Time.time > nextFire
+        if (Input.GetButtonDown("Weight") && direction == 1 && isPesoCooldown == false) //1 && Time.time > nextFire
         {
          Instantiate(Peso, Direita.position, transform.rotation);
+            pesoAtual += 1;
 
         }
-        else if (Input.GetButtonDown("Weight") && direction == -1)
+        
+        if (Input.GetButtonDown("Weight") && direction == -1 && isPesoCooldown == false )
         {
             Instantiate(Peso, Esquerda.position, transform.rotation);
-
+            pesoAtual += 1;
         }
-        if(life <=  0)
+
+        if(pesoAtual >= pesoCap)
         {
 
+            StartCoroutine(Cooldown());
+        }
+
+        
+
+        if(life <=  0)
+        {
             gameOver();
-
-            
-;
-
         }
 
        
+
+    }
+    IEnumerator Cooldown()
+    {
+        isPesoCooldown = true;
+
+        yield return new WaitForSeconds(pesoCooldown);
+        pesoAtual = 0;
+        isPesoCooldown = false;
+        yield break;
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Tiro"))
         {
-            Debug.Log("Colidiu");
+            
             life -= collision.gameObject.GetComponent<Tiro>().dano;
             Destroy(collision.gameObject);
             
@@ -98,6 +120,7 @@ public class Player : MonoBehaviour
     
     void gameOver()
     {
+       life = 0;
        GameOver.SetActive(true);
         Destroy(gameObject);
     }

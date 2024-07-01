@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8016559820068195101, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016559820068195101, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.93
+      objectReference: {fileID: 0}
     - target: {fileID: 8016559820208967108, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: GameOver
       value: 
@@ -57,7 +65,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8016559820208967119, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_Name
-      value: elisRegina (Player)
+      value: elisRegina (Player) Variant 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016559820783420839, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016559820783420839, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 8846302290493060559, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.05751658
+      objectReference: {fileID: 0}
+    - target: {fileID: 8846302290493060559, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1e-45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8846302290493060559, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
