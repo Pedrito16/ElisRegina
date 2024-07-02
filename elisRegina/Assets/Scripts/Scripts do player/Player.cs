@@ -19,9 +19,7 @@ public class Player : MonoBehaviour
     public Animator animator;
     public Transform playerTransform;
     public int life = 3;
-    public int pesoCap = 3;
-    public int pesoAtual;
-    public int pesoCooldown = 3;
+    public int pesoCooldown = 1;
 
     [SerializeField]
     private bool isPesoCooldown = false;
@@ -69,21 +67,17 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Weight") && direction == 1 && isPesoCooldown == false) //1 && Time.time > nextFire
         {
          Instantiate(Peso, Direita.position, transform.rotation);
-            pesoAtual += 1;
+            StartCoroutine(Cooldown());
 
         }
         
         if (Input.GetButtonDown("Weight") && direction == -1 && isPesoCooldown == false )
         {
             Instantiate(Peso, Esquerda.position, transform.rotation);
-            pesoAtual += 1;
-        }
-
-        if(pesoAtual >= pesoCap)
-        {
-
             StartCoroutine(Cooldown());
         }
+
+        
 
         
 
@@ -100,7 +94,7 @@ public class Player : MonoBehaviour
         isPesoCooldown = true;
 
         yield return new WaitForSeconds(pesoCooldown);
-        pesoAtual = 0;
+        
         isPesoCooldown = false;
         yield break;
 
