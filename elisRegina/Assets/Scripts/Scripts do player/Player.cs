@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     public Animator animator;
     public Transform playerTransform;
     public int life = 3;
-    public int pesoCooldown = 1;
+    public float pesoCooldown = 0.5f;
 
     [SerializeField]
     private bool isPesoCooldown = false;
