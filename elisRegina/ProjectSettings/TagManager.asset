@@ -12,6 +12,7 @@ TagManager:
   - Tiro
   - Enemy
   - Espinho
+  - NPC
   layers:
   - Default
   - TransparentFX

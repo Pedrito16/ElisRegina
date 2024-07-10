@@ -20,8 +20,10 @@ public class Player : MonoBehaviour
     public Transform playerTransform;
     public int life = 3;
     public float pesoCooldown = 0.5f;
-
-    [SerializeField]
+    [Header("Raio de Interação")]
+    [SerializeField] private Collider2D playerIntRange;
+    public float InteractionRadius = 0.10f;
+    public bool Ativador;
     private bool isPesoCooldown = false;
     
     private Vector3 esquerda;
@@ -42,9 +44,9 @@ public class Player : MonoBehaviour
 
 
         Esquerda.position = transform.position + esquerda;
-        Direita.position = transform.position + direita; 
+        Direita.position = transform.position + direita;
 
-
+        playerIntRange = Physics2D.OverlapCircle(transform.position, InteractionRadius);
         horizontal = Input.GetAxisRaw("Horizontal");
         body.velocity = new Vector2( horizontal * moveSpeed, body.velocity.y );
 
@@ -131,5 +133,10 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
 
         }
+    }
+    public void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, InteractionRadius);
     }
 }
