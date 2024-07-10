@@ -70,7 +70,7 @@ public class Enemy : MonoBehaviour
     void UmSegundo()
     {
 
-        Debug.Log("funcionou!");
+       
         GameObject temp = Instantiate(tiro, transform.position, transform.rotation);
         temp.GetComponent<Rigidbody2D>().velocity = new Vector2(tiroSpeed * direction, 0);
 

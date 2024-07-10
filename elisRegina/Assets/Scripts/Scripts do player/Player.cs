@@ -19,11 +19,13 @@ public class Player : MonoBehaviour
     public Animator animator;
     public Transform playerTransform;
     public int life = 3;
+    [SerializeField] private LayerMask layermask;
     public float pesoCooldown = 0.5f;
     [Header("Raio de Interação")]
     [SerializeField] private Collider2D playerIntRange;
-    public float InteractionRadius = 0.10f;
+    public float InteractionRadius = 2;
     public bool Ativador;
+
     private bool isPesoCooldown = false;
     
     private Vector3 esquerda;
@@ -46,7 +48,8 @@ public class Player : MonoBehaviour
         Esquerda.position = transform.position + esquerda;
         Direita.position = transform.position + direita;
 
-        playerIntRange = Physics2D.OverlapCircle(transform.position, InteractionRadius);
+        playerIntRange = Physics2D.OverlapCircle(transform.position, InteractionRadius, layermask);
+
         horizontal = Input.GetAxisRaw("Horizontal");
         body.velocity = new Vector2( horizontal * moveSpeed, body.velocity.y );
 
@@ -105,12 +108,12 @@ public class Player : MonoBehaviour
     {
         if (collision.CompareTag("Tiro"))
         {
-            
             life -= collision.gameObject.GetComponent<Tiro>().dano;
             Destroy(collision.gameObject);
-            
-            
-
+        }
+        if (playerIntRange.CompareTag("NPC"))
+        {
+            collision.gameObject.GetComponent<NPC>().eKeybind.SetActive(true);
         }
     }
     
