@@ -81,11 +81,6 @@ public class Player : MonoBehaviour
             Instantiate(Peso, Esquerda.position, transform.rotation);
             StartCoroutine(Cooldown());
         }
-
-        
-
-        
-
         if(life <=  0)
         {
             gameOver();
