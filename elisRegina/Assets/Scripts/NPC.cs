@@ -8,28 +8,52 @@ public class NPC : MonoBehaviour
 
     public GameObject eKeybind;
     public bool isCollidingPlayer;
-
+    public GameObject bolhaChat;
+    
     [Header("Falas do Personagem")]
-    private int falaAtual = 0;
+    [SerializeField] private int falaAtual = -1;
+
     private int falasMaximas;
+
     [SerializeField] private string[] dialogo;
+
     [SerializeField] private Text textoDialogo;
+
+    [SerializeField] private string nomeDoPersonagem;
+
+    [SerializeField] private Text textoNomePersonagem;
+    
     void Start()
     {
+        bolhaChat.SetActive(false);
         eKeybind.SetActive(false);
-        falasMaximas = dialogo.Length;
         textoDialogo.text = "";
+        textoNomePersonagem.text = "";
+        falasMaximas = dialogo.Length;
+       
+
     }
 
    
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E) && isCollidingPlayer == true)
+        // iniciador do dialogo
+        if(Input.GetKeyDown(KeyCode.E) && isCollidingPlayer == true && falaAtual < falasMaximas) 
         {
-            textoDialogo.text = dialogo[falaAtual];
+            bolhaChat.SetActive(true);
             passandoDialogos();
+            textoDialogo.text = dialogo[falaAtual];
+            textoNomePersonagem.text = nomeDoPersonagem;
+
         }
-       
+        // "reiniciador" do texto
+        if (falaAtual >= falasMaximas && Input.GetKeyDown(KeyCode.E))
+        {
+            textoDialogo.text = "";
+            textoNomePersonagem.text = "";
+            bolhaChat.SetActive(false);
+            falaAtual = -1;
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -51,12 +75,10 @@ public class NPC : MonoBehaviour
     {
         if(falaAtual < falasMaximas)
         {
-            falaAtual++;
+            falaAtual += 1;
 
-        }else if(falaAtual > falasMaximas)
-        {
-            textoDialogo.text = "";
         }
+       
 
     }
 }
