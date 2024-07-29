@@ -13,6 +13,9 @@ TagManager:
   - Enemy
   - Espinho
   - NPC
+  - CincoReal
+  - DoisReal
+  - DezReal
   layers:
   - Default
   - TransparentFX

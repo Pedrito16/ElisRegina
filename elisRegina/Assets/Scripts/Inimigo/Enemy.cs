@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Enemy : MonoBehaviour
 {
     public int life = 4;
@@ -13,14 +13,18 @@ public class Enemy : MonoBehaviour
     public float tiroSpeed;
     public Animator animator;
     public Transform enemyTransform;
-
-   
+    [Header("Loot Dropado")]
+    [SerializeField] private int numeroAleatorio;
+    public GameObject doisReais;
+    public GameObject cincoReais;
+    public GameObject dezReais;
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
         //gameObject.SetActive(false);
         InvokeRepeating("UmSegundo", 1.5f, 1.5f);
+        numeroAleatorio = Random.Range(1, 10);
     }
 
     // Update is called once per frame
@@ -36,7 +40,7 @@ public class Enemy : MonoBehaviour
         
          Destroy(gameObject);
         }
-
+        
 
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -55,6 +59,22 @@ public class Enemy : MonoBehaviour
 
         }
 
+    }
+    private void OnDestroy()
+    {
+        
+       if(numeroAleatorio <= 5)
+        {
+            Instantiate(doisReais, transform.position, transform.rotation);
+        }
+       if(5 < numeroAleatorio && numeroAleatorio <= 8)
+        {
+            Instantiate(cincoReais, transform.position, transform.rotation);
+        }
+       if(numeroAleatorio > 8)
+       {
+            Instantiate(dezReais, transform.position, transform.rotation);
+       }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

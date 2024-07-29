@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public int life = 3;
+    public int dinheiro;
     public float moveSpeed = 5;
     float horizontal = 1;
-    public int score;
+    
     public float jumpStrenght = 5;
     public Rigidbody2D body;
     public bool groundCheck;
@@ -18,8 +20,8 @@ public class Player : MonoBehaviour
     public float nextFire = 0.5f;
     public Animator animator;
     public Transform playerTransform;
-    public int life = 3;
-    [SerializeField] private LayerMask layermask;
+    
+    
     public float pesoCooldown = 0.5f;
     [Header("Raio de Interação")]
     [SerializeField] private Collider2D playerIntRange;
@@ -40,6 +42,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        //código que fazz o personagem virar de direção
         Vector2 scale = playerTransform.localScale;
         scale.x = direction;
         playerTransform.localScale = scale;
@@ -48,11 +51,11 @@ public class Player : MonoBehaviour
         Esquerda.position = transform.position + esquerda;
         Direita.position = transform.position + direita;
 
-        playerIntRange = Physics2D.OverlapCircle(transform.position, InteractionRadius, layermask);
-
+        
+        //código que movimenta o jogador
         horizontal = Input.GetAxisRaw("Horizontal");
         body.velocity = new Vector2( horizontal * moveSpeed, body.velocity.y );
-
+        //animação do jogador 
         animator.SetFloat("Speed", Mathf.Abs(horizontal));
 
         groundCheck = Physics2D.OverlapCircle(foot.position, 0.05f);
@@ -68,7 +71,7 @@ public class Player : MonoBehaviour
 
             direction = (int)horizontal;
         }
-        
+        //código que faz o peso do jogador
         if (Input.GetButtonDown("Weight") && direction == 1 && isPesoCooldown == false) //1 && Time.time > nextFire
         {
          Instantiate(Peso, Direita.position, transform.rotation);
@@ -106,9 +109,24 @@ public class Player : MonoBehaviour
             life -= collision.gameObject.GetComponent<Tiro>().dano;
             Destroy(collision.gameObject);
         }
-        if (playerIntRange.CompareTag("NPC"))
+        if (collision.CompareTag("NPC"))
         {
             collision.gameObject.GetComponent<NPC>().eKeybind.SetActive(true);
+        }
+        if (collision.CompareTag("DoisReal"))
+        {
+            dinheiro += 2;
+            Destroy(collision.gameObject);
+        }
+        if (collision.CompareTag("CincoReal"))
+        {
+            dinheiro += 5;
+            Destroy(collision.gameObject);
+        }
+        if(collision.CompareTag("DezReal"))
+        {
+            dinheiro += 10;
+            Destroy(collision.gameObject);
         }
     }
     
@@ -131,10 +149,7 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
 
         }
+        
     }
-    public void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, InteractionRadius);
-    }
+  
 }
