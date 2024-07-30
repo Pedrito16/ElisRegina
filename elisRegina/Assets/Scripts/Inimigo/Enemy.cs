@@ -37,8 +37,8 @@ public class Enemy : MonoBehaviour
         animator.SetFloat("Speed", speed);
         if(life <= 0) 
         { 
-        
          Destroy(gameObject);
+            Derrotado();
         }
         
 
@@ -60,7 +60,7 @@ public class Enemy : MonoBehaviour
         }
 
     }
-    private void OnDestroy()
+    private void Derrotado()
     {
         
        if(numeroAleatorio <= 5)
