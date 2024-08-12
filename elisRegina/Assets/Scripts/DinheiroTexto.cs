@@ -7,6 +7,6 @@ public class DinheiroTexto : MonoBehaviour
     public Text dinheiroText;
     void Update()
     {
-        dinheiroText.text = "Reais: " + GetComponent<Player>().dinheiro;
+        dinheiroText.text = "Cruzeiros: " + GetComponent<Player>().dinheiro;
     }
 }
