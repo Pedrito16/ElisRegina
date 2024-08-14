@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class InfiniteCenario : MonoBehaviour
 {
-    public float velociadeDoCenario;
+    public float velocidadeDoCenario;
     public float posicaoZ;
-    public Transform cameraTransform;
+    public Transform cameraTransform; 
 
     void Update()
     {
@@ -18,7 +18,7 @@ public class InfiniteCenario : MonoBehaviour
     }
     void MovimentarCenario()
     {
-        Vector2 deslocamento = new Vector2(Time.time * velociadeDoCenario, 0);
+        Vector2 deslocamento = new Vector2(Time.time * velocidadeDoCenario, 0);
         GetComponent<Renderer>().material.mainTextureOffset = deslocamento;
     }
 }

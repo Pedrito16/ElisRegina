@@ -53,6 +53,9 @@ TagManager:
   - name: Background
     uniqueID: 2749980249
     locked: 0
+  - name: Background2
+    uniqueID: 4099033091
+    locked: 0
   - name: Palmeiras
     uniqueID: 728917119
     locked: 0

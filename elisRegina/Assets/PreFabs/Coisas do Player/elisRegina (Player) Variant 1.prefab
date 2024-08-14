@@ -87,6 +87,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.10906857
       objectReference: {fileID: 0}
+    - target: {fileID: 8016559820208967111, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 6e8711a5715eefb4e90dc6d7ecf183f0, type: 2}
     - target: {fileID: 8016559820208967119, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_Name
       value: elisRegina (Player) Variant 1
@@ -100,16 +104,40 @@ PrefabInstance:
       value: 2.93
       objectReference: {fileID: 0}
     - target: {fileID: 8846302290493060559, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.98120505
+      objectReference: {fileID: 0}
+    - target: {fileID: 8846302290493060559, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.05751658
+      value: -0.19296803
       objectReference: {fileID: 0}
     - target: {fileID: 8846302290493060559, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1e-45
+      value: 0.00000003142019
       objectReference: {fileID: 0}
     - target: {fileID: 8846302290493060559, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.00000000617923
+      objectReference: {fileID: 0}
+    - target: {fileID: 8846302291139123625, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
+      propertyPath: m_ScreenY
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 8846302291139123626, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
+      propertyPath: m_XDamping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8846302291139123626, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
+      propertyPath: m_YDamping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8846302291139123626, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
+      propertyPath: m_ZDamping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8846302291139123626, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
+      propertyPath: m_BindingMode
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
