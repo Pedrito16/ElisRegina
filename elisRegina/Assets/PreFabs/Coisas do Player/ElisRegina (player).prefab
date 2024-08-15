@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 788049820552174112}
   - component: {fileID: 788049820552174111}
   - component: {fileID: 788049820552174110}
+  - component: {fileID: 5657403410512074619}
   - component: {fileID: 788049820552174109}
   - component: {fileID: 788049820552174103}
   m_Layer: 0
@@ -232,6 +233,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &5657403410512074619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788049820552174102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0320f59e2c3eb854380b7c81ad93fc6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dinheiroText: {fileID: 0}
 --- !u!114 &788049820552174109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,8 +258,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08c96297e27e91d4fa276d8d78fdf100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  life: 3
+  dinheiro: 0
   moveSpeed: 5
-  score: 0
   jumpStrenght: 5.1
   body: {fileID: 788049820552174110}
   groundCheck: 0
@@ -258,8 +273,8 @@ MonoBehaviour:
   nextFire: 0.5
   animator: {fileID: 788049820552174103}
   playerTransform: {fileID: 788049820552174108}
-  life: 3
-  tiro: {fileID: 4970274113876315491, guid: 5c203dec3a41a774dadb45e036a9b463, type: 3}
+  pesoCooldown: 0.5
+  GameOver: {fileID: 0}
 --- !u!95 &788049820552174103
 Animator:
   serializedVersion: 5

@@ -59,9 +59,9 @@ TagManager:
   - name: Palmeiras
     uniqueID: 728917119
     locked: 0
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Characters
     uniqueID: 2846176781
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0

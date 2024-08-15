@@ -23,10 +23,7 @@ public class Player : MonoBehaviour
     
     
     public float pesoCooldown = 0.5f;
-    [Header("Raio de Interação")]
-    [SerializeField] private Collider2D playerIntRange;
-    public float InteractionRadius = 2;
-    public bool Ativador;
+    
 
     private bool isPesoCooldown = false;
     
