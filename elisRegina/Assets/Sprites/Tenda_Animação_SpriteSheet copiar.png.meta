@@ -1,0 +1,475 @@
+fileFormatVersion: 2
+guid: 2583ea6fd8ffc574ebb07823cf0eadf4
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 8
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "Tenda_Anima\xE7\xE3o_SpriteSheet copiar_0"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 29
+        width: 44
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18bb0266a27a43941920c8a799ec8d3f
+      internalID: 941244027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Tenda_Anima\xE7\xE3o_SpriteSheet copiar_1"
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 29
+        width: 44
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aab3931f7f6e4f84eb8501fafa49dfaa
+      internalID: -1966620788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Tenda_Anima\xE7\xE3o_SpriteSheet copiar_2"
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 29
+        width: 44
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c0b59edd8a4d78448a6a7414b36884d
+      internalID: 812375064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Tenda_Anima\xE7\xE3o_SpriteSheet copiar_3"
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 29
+        width: 44
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d93d4ca3e95a264183676bdb7f6f729
+      internalID: -2116036029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Tenda_Anima\xE7\xE3o_SpriteSheet copiar_4"
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 29
+        width: 44
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62a54ca22279e3e4dab5deb29a323bc4
+      internalID: -2138286572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Tenda_Anima\xE7\xE3o_SpriteSheet copiar_5"
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 29
+        width: 44
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eadacd20721eca4abea66717e7b5209
+      internalID: 115064346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Tenda_Anima\xE7\xE3o_SpriteSheet copiar_6"
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 29
+        width: 44
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a425889627f266645abee15fc29c7042
+      internalID: -1970759939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Tenda_Anima\xE7\xE3o_SpriteSheet copiar_7"
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 29
+        width: 44
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd87af0520ff97f4db95e0474aaaabf3
+      internalID: -1956604540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Tenda_Anima\xE7\xE3o_SpriteSheet copiar_8"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 44
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 275e014942db4c44a92d3392f22f4e57
+      internalID: 1795587635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Tenda_Anima\xE7\xE3o_SpriteSheet copiar_9"
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 0
+        width: 44
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb487f68ddb16824aa2e1196c470eb5a
+      internalID: -177417465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Tenda_Anima\xE7\xE3o_SpriteSheet copiar_10"
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 0
+        width: 44
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af8a37de42fd68843b52fbfae4035a7f
+      internalID: 1159367303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Tenda_Anima\xE7\xE3o_SpriteSheet copiar_11"
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 0
+        width: 44
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c88c5162a96f244b9db40ecddd4be1c
+      internalID: 1426771376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Tenda_Anima\xE7\xE3o_SpriteSheet copiar_12"
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 0
+        width: 44
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4369a6ea0e3986943860ffbe3d43c5e6
+      internalID: 1640875992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Tenda_Anima\xE7\xE3o_SpriteSheet copiar_13"
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 0
+        width: 44
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9f1c26ac55966f4e8a6dd24c9a29813
+      internalID: -557261003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Tenda_Anima\xE7\xE3o_SpriteSheet copiar_14"
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 0
+        width: 44
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15c0e880da3960843be3fb819561eea9
+      internalID: 850521662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Tenda_Anima\xE7\xE3o_SpriteSheet copiar_15"
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 0
+        width: 44
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 446f88bcb5b17e445bf480ca51edca96
+      internalID: -1953596853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      "Tenda_Anima\xE7\xE3o_SpriteSheet copiar_6": -1970759939
+      "Tenda_Anima\xE7\xE3o_SpriteSheet copiar_9": -177417465
+      "Tenda_Anima\xE7\xE3o_SpriteSheet copiar_13": -557261003
+      "Tenda_Anima\xE7\xE3o_SpriteSheet copiar_4": -2138286572
+      "Tenda_Anima\xE7\xE3o_SpriteSheet copiar_12": 1640875992
+      "Tenda_Anima\xE7\xE3o_SpriteSheet copiar_8": 1795587635
+      "Tenda_Anima\xE7\xE3o_SpriteSheet copiar_14": 850521662
+      "Tenda_Anima\xE7\xE3o_SpriteSheet copiar_3": -2116036029
+      "Tenda_Anima\xE7\xE3o_SpriteSheet copiar_1": -1966620788
+      "Tenda_Anima\xE7\xE3o_SpriteSheet copiar_11": 1426771376
+      "Tenda_Anima\xE7\xE3o_SpriteSheet copiar_10": 1159367303
+      "Tenda_Anima\xE7\xE3o_SpriteSheet copiar_2": 812375064
+      "Tenda_Anima\xE7\xE3o_SpriteSheet copiar_15": -1953596853
+      "Tenda_Anima\xE7\xE3o_SpriteSheet copiar_0": 941244027
+      "Tenda_Anima\xE7\xE3o_SpriteSheet copiar_5": 115064346
+      "Tenda_Anima\xE7\xE3o_SpriteSheet copiar_7": -1956604540
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
