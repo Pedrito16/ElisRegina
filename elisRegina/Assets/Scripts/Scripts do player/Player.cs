@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     public Animator animator;
     public Transform playerTransform;
     public LayerMask filtro;
-    
+    public bool isBuffActive = false;
     public float pesoCooldown = 0.5f;
     
 

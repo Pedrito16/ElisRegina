@@ -15,13 +15,15 @@ public class Xeverything : MonoBehaviour
     public Player player;
     [SerializeField] int contagemClique = 0;
     [SerializeField] float timer;
+    public bool ativador = false;
+    public bool isBuffActive = false;
     void Start()
     {
         nomeText.text = "";
         custoText.text = "";
         descriçãoText.text = "";
         buffText.text = "";
-        buffDurationText.text = "";
+        buffDurationText.text = "Buff: ";
     }
 
 
@@ -35,7 +37,21 @@ public class Xeverything : MonoBehaviour
         {
             custoText.GetComponent<Text>().color = Color.red;
         }
+    
+        if(buffDuration > 0 && isBuffActive == true)
+        {
+            buffDurationText.text = buffDuration.ToString();
+        }
+    }
 
+    void UmSegundo()
+    {
+        buffDuration -= 1;
+        if( buffDuration <= 0)
+        {
+            isBuffActive = false;
+            CancelInvoke("UmSegundo");
+        }
     }
     public void OnClick()
     {
@@ -60,21 +76,19 @@ public class Xeverything : MonoBehaviour
     void Comprar()
     {
         player.dinheiro -= custo;
-        timer += Time.deltaTime;
-        buffDurationText.text = buffDuration.ToString();
+        player.isBuffActive = true;
+
+        InvokeRepeating("UmSegundo", 1, 1);
+        
             
-        if (timer >= 1)
-        {
-            buffDuration -= 1;
-            timer = 0;
-        }
+       
 
         if(buffDuration > 0)
         {
             player.moveSpeed *= 1.25f;
         }else if (buffDuration <= 0)
         {
-            player.moveSpeed = 5;
+            player.moveSpeed *= 1;
         }
         
     }
