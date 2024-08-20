@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     public float nextFire = 0.5f;
     public Animator animator;
     public Transform playerTransform;
-    
+    public LayerMask filtro;
     
     public float pesoCooldown = 0.5f;
     
@@ -43,29 +43,20 @@ public class Player : MonoBehaviour
         Vector2 scale = playerTransform.localScale;
         scale.x = direction;
         playerTransform.localScale = scale;
-
-
         Esquerda.position = transform.position + esquerda;
         Direita.position = transform.position + direita;
-
-        
         //código que movimenta o jogador
         horizontal = Input.GetAxisRaw("Horizontal");
         body.velocity = new Vector2( horizontal * moveSpeed, body.velocity.y );
         //animação do jogador 
         animator.SetFloat("Speed", Mathf.Abs(horizontal));
-
-        groundCheck = Physics2D.OverlapCircle(foot.position, 0.05f);
-        
-
+        groundCheck = Physics2D.OverlapCircle(foot.position, 0.05f, filtro);
         if(Input.GetButtonDown("Jump")&&  groundCheck)
         {
             body.AddForce(new Vector2(0, jumpStrenght * 75));
-
         }
         if(horizontal != 0)
         {
-
             direction = (int)horizontal;
         }
         //código que faz o peso do jogador
@@ -73,7 +64,6 @@ public class Player : MonoBehaviour
         {
          Instantiate(Peso, Direita.position, transform.rotation);
             StartCoroutine(Cooldown());
-
         }
         
         if (Input.GetButtonDown("Weight") && direction == -1 && isPesoCooldown == false )
@@ -85,19 +75,13 @@ public class Player : MonoBehaviour
         {
             gameOver();
         }
-
-       
-
     }
     IEnumerator Cooldown()
     {
         isPesoCooldown = true;
-
         yield return new WaitForSeconds(pesoCooldown);
-        
         isPesoCooldown = false;
         yield break;
-
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -126,7 +110,6 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
-    
     void gameOver()
     {
        life = 0;
@@ -138,15 +121,10 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Espinho"))
         {
             gameOver();
-            
-
         }
         if (collision.gameObject.CompareTag("Peso"))
         {
             Destroy(collision.gameObject);
-
         }
-        
     }
-  
 }
