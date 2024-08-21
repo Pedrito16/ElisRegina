@@ -16,6 +16,7 @@ TagManager:
   - CincoReal
   - DoisReal
   - DezReal
+  - Escada
   layers:
   - Default
   - TransparentFX
