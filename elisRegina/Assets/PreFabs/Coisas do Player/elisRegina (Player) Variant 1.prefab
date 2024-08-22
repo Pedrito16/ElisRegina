@@ -27,6 +27,10 @@ PrefabInstance:
       propertyPath: GameOver
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8016559820208967108, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
+      propertyPath: filtro.m_Bits
+      value: 63
+      objectReference: {fileID: 0}
     - target: {fileID: 8016559820208967109, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -105,19 +109,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8846302290493060559, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9880095
+      value: 0.99993336
       objectReference: {fileID: 0}
     - target: {fileID: 8846302290493060559, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.15439326
+      value: 0.011545757
       objectReference: {fileID: 0}
     - target: {fileID: 8846302290493060559, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000009564092
+      value: 0.000000017254314
       objectReference: {fileID: 0}
     - target: {fileID: 8846302290493060559, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00000014945516
+      value: -1.9922738e-10
       objectReference: {fileID: 0}
     - target: {fileID: 8846302291139123625, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_BiasY
