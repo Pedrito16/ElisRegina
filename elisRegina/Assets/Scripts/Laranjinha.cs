@@ -1,13 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.UI;
-using System.Threading;
-using UnityEditor.Experimental.GraphView;
-using System;
-
-public class Xeverything : MonoBehaviour
+using TMPro;
+public class Laranjinha : MonoBehaviour
 {
     public Text custoText;
     public TextMeshProUGUI nomeText, descriçãoText, buffText;
@@ -25,7 +21,7 @@ public class Xeverything : MonoBehaviour
         custoText.text = "";
         descriçãoText.text = "";
         buffText.text = "";
-        
+
     }
 
 
@@ -72,7 +68,7 @@ public class Xeverything : MonoBehaviour
         {
 
         }
-        
+
     }
     void Comprar()
     {
@@ -82,14 +78,15 @@ public class Xeverything : MonoBehaviour
         if (bufftext.ativador == false)
         {
             bufftext.ativador = true;
-        }else if(bufftext.ativador == true)
+        }
+        else if (bufftext.ativador == true)
         {
             print("variavel ja em uso");
         }
         if (bufftext.buffDuration > 0)
         {
-            player.moveSpeed *= 1.25f;
+            player.jumpStrenght *= 1.25f;
         }
-        
+
     }
 }

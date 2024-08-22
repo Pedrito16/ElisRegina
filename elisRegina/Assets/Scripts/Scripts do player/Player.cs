@@ -8,8 +8,9 @@ public class Player : MonoBehaviour
     public int dinheiro;
     public float moveSpeed = 5;
     float horizontal = 1;
-    
+    public float inicialMovespeed;
     public float jumpStrenght = 5;
+    float inicialJumpStrength;
     public Rigidbody2D body;
     public bool groundCheck;
     public Transform foot;
@@ -23,8 +24,7 @@ public class Player : MonoBehaviour
     public LayerMask filtro;
     public bool isBuffActive = false;
     public float pesoCooldown = 0.5f;
-    
-
+    public bool buffNotActive = true;
     private bool isPesoCooldown = false;
     
     private Vector3 esquerda;
@@ -34,6 +34,8 @@ public class Player : MonoBehaviour
     {
         //playerTransform.localScale = new Vector2(direction, 1);
         esquerda = Esquerda.position - transform.position;
+        inicialMovespeed = moveSpeed;
+        inicialJumpStrength = jumpStrenght;
         direita = Direita.position - transform.position;
     }
 
@@ -75,6 +77,11 @@ public class Player : MonoBehaviour
         {
             gameOver();
         }
+        if (buffNotActive == true)
+        {
+            moveSpeed = inicialMovespeed;
+            jumpStrenght = inicialJumpStrength;
+        }
     }
     IEnumerator Cooldown()
     {
@@ -108,6 +115,7 @@ public class Player : MonoBehaviour
         {
             dinheiro += 10;
             Destroy(collision.gameObject);
+            
         }
     }
     void gameOver()

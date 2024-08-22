@@ -46,7 +46,6 @@ public class Lojinha : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && isCollidingPlayer == true)
         {
             lojaUI.SetActive(true);
-            Time.timeScale = 0f;
             UISetActive = true;
             
         }

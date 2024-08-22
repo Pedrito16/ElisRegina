@@ -11,6 +11,9 @@ public class Hamburguer : MonoBehaviour
     public int custo;
     public Player player;
     [SerializeField] int contagemClique = 0;
+    bool resetClick = false;
+    [SerializeField] float timer;
+    int segundo = 1;
     void Start()
     {
         nomeText.text = "";
@@ -29,7 +32,17 @@ public class Hamburguer : MonoBehaviour
         {
             custoText.GetComponent<Text>().color = Color.red;
         }
-        
+        timer += Time.deltaTime;
+        if(timer > segundo )
+        {
+            timer = 0;
+        }
+        if (timer >= segundo && resetClick == true)
+        {
+            contagemClique = 0;
+            timer = 0;
+            resetClick = false;
+        }
     }
     public void OnClick()
     {
@@ -37,7 +50,7 @@ public class Hamburguer : MonoBehaviour
         custoText.text = "Custo: " + custo.ToString();
         descriçãoText.text = itemDescription;
         buffText.text = buffDescription;
-
+        resetClick = true;
         contagemClique += 1;
         if(contagemClique >= 2 && player.dinheiro > custo)
         {

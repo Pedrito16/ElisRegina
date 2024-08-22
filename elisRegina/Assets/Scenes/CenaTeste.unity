@@ -531,7 +531,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -64.7, y: -7.5}
+  m_AnchoredPosition: {x: -73.2, y: -6.6}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &142364869
@@ -557,6 +557,7 @@ MonoBehaviour:
   custo: 10
   player: {fileID: 1117666834}
   contagemClique: 0
+  timer: 0
 --- !u!114 &142364870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -582,7 +583,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   custoText: {fileID: 256793736}
-  buffDurationText: {fileID: 2092603741}
   nomeText: {fileID: 255313402}
   "descri\xE7\xE3oText": {fileID: 688145661}
   buffText: {fileID: 155807572}
@@ -591,12 +591,10 @@ MonoBehaviour:
     tambem conhecido como X-Infarto"
   buffDescription: -1.25x de velocidade por 3 minutos
   custo: 22
-  buffDuration: 180
   player: {fileID: 1117666834}
   contagemClique: 0
   timer: 0
-  ativador: 0
-  isBuffActive: 0
+  bufftext: {fileID: 2092603743}
 --- !u!1 &155807571
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,6 +1165,14 @@ PrefabInstance:
       propertyPath: m_Offset.x
       value: 0.1907142
       objectReference: {fileID: 0}
+    - target: {fileID: 4964709326734886791, guid: 8fa539db5df654d4982a3a74d1a257dd, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964709326734886791, guid: 8fa539db5df654d4982a3a74d1a257dd, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4964709326734886833, guid: 8fa539db5df654d4982a3a74d1a257dd, type: 3}
       propertyPath: m_Name
       value: elisRegina (Player) Variant 1
@@ -1261,11 +1267,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5864490915480190897, guid: 8fa539db5df654d4982a3a74d1a257dd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000017213635
+      value: -0.000000017213631
       objectReference: {fileID: 0}
     - target: {fileID: 5864490915480190897, guid: 8fa539db5df654d4982a3a74d1a257dd, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -1.9875769e-10
+      value: 1.9875765e-10
       objectReference: {fileID: 0}
     - target: {fileID: 5864490915480190903, guid: 8fa539db5df654d4982a3a74d1a257dd, type: 3}
       propertyPath: m_Layer
@@ -3018,6 +3024,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2092603740}
   - component: {fileID: 2092603742}
+  - component: {fileID: 2092603743}
   - component: {fileID: 2092603741}
   m_Layer: 5
   m_Name: BuffDuration
@@ -3088,6 +3095,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2092603739}
   m_CullTransparentMesh: 1
+--- !u!114 &2092603743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092603739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72d24e0e5b56854a9310c8ed3404cfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buffDurationText: {fileID: 2092603741}
+  buffDuration: 180
+  timer: 0
+  ativador: 0
+  player: {fileID: 1117666834}
 --- !u!1 &2112956147
 GameObject:
   m_ObjectHideFlags: 0
@@ -3685,11 +3709,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6425792761017644079, guid: 0a4917c14cd9ff945bad0530eeb3c464, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000017213635
+      value: -0.000000017213631
       objectReference: {fileID: 0}
     - target: {fileID: 6425792761017644079, guid: 0a4917c14cd9ff945bad0530eeb3c464, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -1.9875769e-10
+      value: 1.9875765e-10
       objectReference: {fileID: 0}
     - target: {fileID: 6425792761017644079, guid: 0a4917c14cd9ff945bad0530eeb3c464, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4098,7 +4122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8735069292941472191, guid: afb46ec1a04e0a64c9bbb8ede531eafa, type: 3}
       propertyPath: m_MatchWidthOrHeight
-      value: 0.144
+      value: 0.009
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afb46ec1a04e0a64c9bbb8ede531eafa, type: 3}
