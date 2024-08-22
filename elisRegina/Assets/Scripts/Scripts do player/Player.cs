@@ -117,6 +117,10 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
             
         }
+        if(collision.CompareTag("Escada") && Input.GetKeyDown(KeyCode.W))
+        {
+            body.velocity = new Vector2(body.velocity.y, 3);
+        }
     }
     void gameOver()
     {
