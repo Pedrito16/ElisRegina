@@ -100,6 +100,7 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("NPC"))
         {
             collision.gameObject.GetComponent<NPC>().eKeybind.SetActive(true);
+            
         }
         if (collision.CompareTag("DoisReal"))
         {
@@ -122,6 +123,7 @@ public class Player : MonoBehaviour
             body.velocity = new Vector2(body.velocity.y, 3);
         }
     }
+    
     void gameOver()
     {
        life = 0;
