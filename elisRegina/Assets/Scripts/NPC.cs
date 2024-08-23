@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class NPC : MonoBehaviour
 {
     [Header("Coisas Visuais")]
@@ -17,7 +18,8 @@ public class NPC : MonoBehaviour
 
     [SerializeField] private string[] dialogo;
 
-    [SerializeField] private Text textoDialogo;
+
+    [SerializeField] private TextMeshProUGUI dialogoTexto;
 
     [SerializeField] private string nomeDoPersonagem;
 
@@ -27,7 +29,8 @@ public class NPC : MonoBehaviour
     {
         bolhaChat.SetActive(false);
         eKeybind.SetActive(false);
-        textoDialogo.text = "";
+        //textoDialogo.text = "";
+        dialogoTexto.text = "";
         textoNomePersonagem.text = "";
         falasMaximas = dialogo.Length;
        
@@ -42,14 +45,16 @@ public class NPC : MonoBehaviour
         {
             bolhaChat.SetActive(true);
             passandoDialogos();
-            textoDialogo.text = dialogo[falaAtual];
+            //textoDialogo.text = dialogo[falaAtual];
+            dialogoTexto.text = dialogo[falaAtual];
             textoNomePersonagem.text = nomeDoPersonagem;
 
         }
         // "reiniciador" do texto
         if (falaAtual >= falasMaximas && Input.GetKeyDown(KeyCode.E))
         {
-            textoDialogo.text = "";
+            //textoDialogo.text = "";
+            dialogoTexto.text = "";
             textoNomePersonagem.text = "";
             bolhaChat.SetActive(false);
             falaAtual = -1;

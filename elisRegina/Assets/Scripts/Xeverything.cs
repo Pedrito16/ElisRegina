@@ -15,7 +15,7 @@ public class Xeverything : MonoBehaviour
     public Player player;
     [SerializeField] int contagemClique = 0;
     [SerializeField] float timer;
-    int segundo = 1;
+    int segundo = 2;
     public BuffText bufftext;
     bool resetClick = false;
     void Start()
@@ -42,13 +42,9 @@ public class Xeverything : MonoBehaviour
         if (timer > segundo)
         {
             timer = 0;
-        }
-        if (timer >= segundo && resetClick == true)
-        {
             contagemClique = 0;
-            timer = 0;
-            resetClick = false;
         }
+        
     }
     public void OnClick()
     {

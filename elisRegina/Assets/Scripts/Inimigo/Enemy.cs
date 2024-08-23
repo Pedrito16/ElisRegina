@@ -52,12 +52,11 @@ public class Enemy : MonoBehaviour
             Destroy(collision.gameObject);
 
         }
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Tijolo"))
         {
-
             direction *= -1;
-
         }
+       
 
     }
     private void Derrotado()

@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
         inicialMovespeed = moveSpeed;
         inicialJumpStrength = jumpStrenght;
         direita = Direita.position - transform.position;
+        dinheiro = PlayerPrefs.GetInt("Dinheiro");
     }
 
     void Update()
@@ -53,6 +54,7 @@ public class Player : MonoBehaviour
         //animação do jogador 
         animator.SetFloat("Speed", Mathf.Abs(horizontal));
         groundCheck = Physics2D.OverlapCircle(foot.position, 0.05f, filtro);
+        PlayerPrefs.SetInt("Dinheiro", dinheiro);
         if(Input.GetButtonDown("Jump")&&  groundCheck)
         {
             body.AddForce(new Vector2(0, jumpStrenght * 75));
@@ -118,10 +120,7 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
             
         }
-        if(collision.CompareTag("Escada") && Input.GetKeyDown(KeyCode.W))
-        {
-            body.velocity = new Vector2(body.velocity.y, 3);
-        }
+        
     }
     
     void gameOver()
@@ -139,6 +138,10 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Peso"))
         {
             Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            life -= collision.gameObject.GetComponent<Enemy>().damage;
         }
     }
 }

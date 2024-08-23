@@ -115,7 +115,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1.2, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6107794027322915090
@@ -146,10 +146,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "O hamburguer \xE9 um cl\xE1ssico da culinaria, todos gostam de come-lo"
+  m_text: O hamburguer e um classico da culinaria, todos gostam de come-lo
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a536cd60b313ee243bb1fb7437978cfa, type: 2}
+  m_sharedMaterial: {fileID: 5293584363945791288, guid: a536cd60b313ee243bb1fb7437978cfa, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -173,8 +173,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 39
+  m_fontSizeBase: 39
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 72.15426, y: 0, z: -46.004448, w: -15.643124}
+  m_margin: {x: 72.15426, y: 0, z: -46.004448, w: -21.589428}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -551,8 +551,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: -Recupera 1 vida
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a536cd60b313ee243bb1fb7437978cfa, type: 2}
+  m_sharedMaterial: {fileID: 5293584363945791288, guid: a536cd60b313ee243bb1fb7437978cfa, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -576,8 +576,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 55
+  m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -675,8 +675,7 @@ MonoBehaviour:
   "descri\xE7\xE3oText": {fileID: 3294532992303909630}
   buffText: {fileID: 4990028676786791151}
   itemName: Hamburguer
-  itemDescription: "O hamburguer \xE9 um cl\xE1ssico da culinaria, todos gostam de
-    come-lo"
+  itemDescription: O hamburguer e um classico da culinaria, todos gostam de come-lo
   buffDescription: '- Recupera 1 de vida'
   custo: 10
   player: {fileID: 0}
@@ -699,8 +698,7 @@ MonoBehaviour:
   "descri\xE7\xE3oText": {fileID: 3294532992303909630}
   buffText: {fileID: 4990028676786791151}
   itemName: X-Tudo
-  itemDescription: "Um hamburguer modificado para gerar o m\xE1ximo de calorias possiveis,
-    tambem conhecido como X-Infarto"
+  itemDescription: Um hamburguer modificado, conhecido como X-infarto
   buffDescription: -1.25x de velocidade por 3 minutos
   custo: 22
   player: {fileID: 0}
@@ -724,7 +722,7 @@ MonoBehaviour:
   "descri\xE7\xE3oText": {fileID: 3294532992303909630}
   buffText: {fileID: 4990028676786791151}
   itemName: Laranjinha
-  itemDescription: "est\xE1 escrito \"Max Bebidas\" no r\xF3tulo..."
+  itemDescription: esta escrito "Max Bebidas" no rotulo...
   buffDescription: -Aumenta em 1.25x o pulo por 3 minutos
   custo: 22
   player: {fileID: 0}
@@ -1108,7 +1106,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -12.6, y: -25.5}
+  m_AnchoredPosition: {x: -37.3, y: -25.5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4990028678116179680
@@ -1604,7 +1602,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 31.7, y: 30.5}
+  m_AnchoredPosition: {x: 24.4, y: 36.4}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5811308413028294152
@@ -1639,8 +1637,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a536cd60b313ee243bb1fb7437978cfa, type: 2}
+  m_sharedMaterial: {fileID: 5293584363945791288, guid: a536cd60b313ee243bb1fb7437978cfa, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1664,13 +1662,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 65
+  m_fontSizeBase: 65
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 4
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535

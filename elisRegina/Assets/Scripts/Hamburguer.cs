@@ -65,10 +65,14 @@ public class Hamburguer : MonoBehaviour
     }
     void Comprar()
     {
-        player.dinheiro -= custo;
-        if(player.life < 3)
+        if (player.life < 3)
         {
             player.life += 1;
+            player.dinheiro -= custo;
         }
+        else if(player.life > 3)
+        {
+            player.dinheiro += custo;
+        }        
     }
 }
