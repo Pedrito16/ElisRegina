@@ -8,9 +8,13 @@ public class Lojinha : MonoBehaviour
     public GameObject lojaUI;
     public bool UISetActive = false;
     [SerializeField] bool isCollidingPlayer = false;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip DomingoANoite;
+    public AudioController audiocontroller;
     void Start()
     {
         eKeybind.SetActive(false);
+        audioSource.clip = DomingoANoite;
         lojaUI.SetActive(false);
     }
 
@@ -19,6 +23,8 @@ public class Lojinha : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isCollidingPlayer = true;
+            audiocontroller.audiosource.volume = 0;
+            audioSource.Play();
             eKeybind.SetActive(true);
             
         }
@@ -26,10 +32,8 @@ public class Lojinha : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
-        {
-            
+        {   
             isCollidingPlayer = true;
-            
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -37,6 +41,8 @@ public class Lojinha : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             eKeybind.SetActive(false);
+            audioSource.Stop();
+            audiocontroller.audiosource.volume = 1;
             lojaUI.SetActive(false);
             isCollidingPlayer = false;
         }
@@ -46,8 +52,7 @@ public class Lojinha : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && isCollidingPlayer == true)
         {
             lojaUI.SetActive(true);
-            UISetActive = true;
-            
+            print("Apertou E");
         }
         
         

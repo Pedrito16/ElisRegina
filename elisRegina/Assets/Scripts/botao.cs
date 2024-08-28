@@ -11,4 +11,5 @@ public class botao : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
 }

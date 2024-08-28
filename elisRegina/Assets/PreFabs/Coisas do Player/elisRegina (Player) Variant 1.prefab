@@ -113,27 +113,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8846302290493060559, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99993336
+      value: 0.98923934
       objectReference: {fileID: 0}
     - target: {fileID: 8846302290493060559, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.011545757
+      value: 0.14630623
       objectReference: {fileID: 0}
     - target: {fileID: 8846302290493060559, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000017213791
+      value: -0.000000049206108
       objectReference: {fileID: 0}
     - target: {fileID: 8846302290493060559, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -1.987595e-10
+      value: 0.000000007277471
+      objectReference: {fileID: 0}
+    - target: {fileID: 8846302291139123625, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
+      propertyPath: m_BiasX
+      value: 0.00000005731216
       objectReference: {fileID: 0}
     - target: {fileID: 8846302291139123625, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_BiasY
       value: -0.00000036124027
       objectReference: {fileID: 0}
     - target: {fileID: 8846302291139123625, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
+      propertyPath: m_ScreenX
+      value: 0.47999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 8846302291139123625, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_ScreenY
-      value: 0.48
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 8846302291139123626, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_XDamping

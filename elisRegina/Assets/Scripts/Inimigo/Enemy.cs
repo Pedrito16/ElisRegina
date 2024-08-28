@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
     public float tiroSpeed;
     public Animator animator;
     public Transform enemyTransform;
+    [SerializeField] ParticleSystem explosão;
+    
     [Header("Loot Dropado")]
     [SerializeField] private int numeroAleatorio;
     public GameObject doisReais;
@@ -36,18 +38,16 @@ public class Enemy : MonoBehaviour
         enemyTransform.localScale = scale;
         animator.SetFloat("Speed", speed);
         if(life <= 0) 
-        { 
-         Destroy(gameObject);
+        {
+            Destroy(gameObject);
             Derrotado();
         }
-        
-
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Peso"))
         {
-
+            explosão.Play();
             life -= collision.gameObject.GetComponent<Peso>().damage;
             Destroy(collision.gameObject);
 
@@ -80,11 +80,8 @@ public class Enemy : MonoBehaviour
 
         if (collision.CompareTag("Mudador"))
         {
-
             direction *= -1;
-
         }
-
     }
     void UmSegundo()
     {

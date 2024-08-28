@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D body;
     public bool groundCheck;
     public Transform foot;
+    public Collider2D footCollider;
     public GameObject Peso;
     public int direction = 1;
     public Transform Direita, Esquerda;
@@ -26,7 +27,9 @@ public class Player : MonoBehaviour
     public float pesoCooldown = 0.5f;
     public bool buffNotActive = true;
     private bool isPesoCooldown = false;
-    
+    [SerializeField] ParticleSystem explosão;
+    [SerializeField] AudioClip coinPickup;
+    [SerializeField] AudioSource audiosource;
     private Vector3 esquerda;
     private Vector3 direita;
     public GameObject GameOver;
@@ -38,11 +41,16 @@ public class Player : MonoBehaviour
         inicialJumpStrength = jumpStrenght;
         direita = Direita.position - transform.position;
         dinheiro = PlayerPrefs.GetInt("Dinheiro");
+        audiosource.clip = coinPickup;
     }
 
     void Update()
     {
         //código que fazz o personagem virar de direção
+        if(gameObject == null)
+        {
+            explosão.Play();
+        }
         Vector2 scale = playerTransform.localScale;
         scale.x = direction;
         playerTransform.localScale = scale;
@@ -53,7 +61,8 @@ public class Player : MonoBehaviour
         body.velocity = new Vector2( horizontal * moveSpeed, body.velocity.y );
         //animação do jogador 
         animator.SetFloat("Speed", Mathf.Abs(horizontal));
-        groundCheck = Physics2D.OverlapCircle(foot.position, 0.05f, filtro);
+        footCollider = Physics2D.OverlapCircle(foot.position, 0.05f, filtro);
+        groundCheck = footCollider;
         PlayerPrefs.SetInt("Dinheiro", dinheiro);
         if(Input.GetButtonDown("Jump")&&  groundCheck)
         {
@@ -77,6 +86,7 @@ public class Player : MonoBehaviour
         }
         if(life <=  0)
         {
+            explosão.Play();
             gameOver();
         }
         if (buffNotActive == true)
@@ -96,6 +106,7 @@ public class Player : MonoBehaviour
     {
         if (collision.CompareTag("Tiro"))
         {
+            explosão.Play();
             life -= collision.gameObject.GetComponent<Tiro>().dano;
             Destroy(collision.gameObject);
         }
@@ -107,16 +118,19 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("DoisReal"))
         {
             dinheiro += 2;
+            audiosource.Play();
             Destroy(collision.gameObject);
         }
         if (collision.CompareTag("CincoReal"))
         {
             dinheiro += 5;
+            audiosource.Play();
             Destroy(collision.gameObject);
         }
         if(collision.CompareTag("DezReal"))
         {
             dinheiro += 10;
+            audiosource.Play();
             Destroy(collision.gameObject);
             
         }
@@ -129,10 +143,15 @@ public class Player : MonoBehaviour
        GameOver.SetActive(true);
         Destroy(gameObject);
     }
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.DeleteAll();
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Espinho"))
         {
+            
             gameOver();
         }
         if (collision.gameObject.CompareTag("Peso"))

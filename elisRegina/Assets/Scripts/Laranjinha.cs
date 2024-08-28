@@ -11,10 +11,10 @@ public class Laranjinha : MonoBehaviour
     public int custo;
     public Player player;
     [SerializeField] int contagemClique = 0;
-    [SerializeField] float timer;
-    int segundo = 1;
     public BuffText bufftext;
-    bool resetClick = false;
+    [Header("clique duplo ou normal")]
+    float lastClickTime;
+    float catchtime = 0.25f; 
     void Start()
     {
         nomeText.text = "";
@@ -35,40 +35,28 @@ public class Laranjinha : MonoBehaviour
         {
             custoText.GetComponent<Text>().color = Color.red;
         }
-        timer += Time.deltaTime;
-        if (timer > segundo)
-        {
-            timer = 0;
-        }
-        if (timer >= segundo && resetClick == true)
-        {
-            contagemClique = 0;
-            timer = 0;
-            resetClick = false;
-        }
+        
     }
     public void OnClick()
     {
-        nomeText.text = itemName;
-        custoText.text = "Custo: " + custo.ToString();
-        descriçãoText.text = itemDescription;
-        buffText.text = buffDescription;
-        contagemClique++;
-        resetClick = true;
-        if (contagemClique >= 2 && player.dinheiro >= custo)
+        if(Time.time - lastClickTime < catchtime)
         {
-            Comprar();
-            contagemClique = 0;
+            lastClickTime = 0;
+            if(player.dinheiro >= custo)
+            {
+                Comprar();
+            }
+            print("clique duplo");
         }
-        else if (contagemClique >= 2 && player.dinheiro < custo)
+        else
         {
-            print("pobre!");
-            contagemClique = 0;
+            lastClickTime = Time.time;
+            nomeText.text = itemName;
+            custoText.text = "Custo: " + custo.ToString();
+            descriçãoText.text = itemDescription;
+            buffText.text = buffDescription;
+            Debug.Log("clique solo");
         }
-        {
-
-        }
-
     }
     void Comprar()
     {
@@ -87,6 +75,5 @@ public class Laranjinha : MonoBehaviour
         {
             player.jumpStrenght *= 1.25f;
         }
-
     }
 }

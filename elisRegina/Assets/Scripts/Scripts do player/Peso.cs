@@ -22,9 +22,6 @@ public class Peso : MonoBehaviour
         if (collision.gameObject.CompareTag("Tijolo"))
         {
             Destroy(collision.gameObject);
-
-
-
         }
         
         if (!collision.gameObject.CompareTag("Tijolo") /*&& !collision.gameObject.CompareTag("Enemy")*/)

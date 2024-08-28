@@ -13,11 +13,9 @@ public class Xeverything : MonoBehaviour
     public string itemName, itemDescription, buffDescription;
     public int custo;
     public Player player;
-    [SerializeField] int contagemClique = 0;
-    [SerializeField] float timer;
-    int segundo = 2;
     public BuffText bufftext;
-    bool resetClick = false;
+    float lastClickTime = 0;
+    float catchTime = 0.25f;
     void Start()
     {
         nomeText.text = "";
@@ -37,37 +35,28 @@ public class Xeverything : MonoBehaviour
         else if (player.dinheiro < custo)
         {
             custoText.GetComponent<Text>().color = Color.red;
-        }
-        timer += Time.deltaTime;
-        if (timer > segundo)
-        {
-            timer = 0;
-            contagemClique = 0;
-        }
-        
+        } 
     }
     public void OnClick()
     {
-        nomeText.text = itemName;
-        custoText.text = "Custo: " + custo.ToString();
-        descriçãoText.text = itemDescription;
-        buffText.text = buffDescription;
-        contagemClique++;
-        resetClick = true;
-        if (contagemClique >= 2 && player.dinheiro >= custo)
+        if (Time.time - lastClickTime < catchTime)
         {
-            Comprar();
-            contagemClique = 0;
+            lastClickTime = 0;
+            if (player.dinheiro >= custo)
+            {
+                Comprar();
+            }
+            print("clique duplo");
         }
-        else if (contagemClique >= 2 && player.dinheiro < custo)
+        else
         {
-            print("pobre!");
-            contagemClique = 0;
+            lastClickTime = Time.time;
+            nomeText.text = itemName;
+            custoText.text = "Custo: " + custo.ToString();
+            descriçãoText.text = itemDescription;
+            buffText.text = buffDescription;
+            Debug.Log("clique solo");
         }
-        {
-
-        }
-        
     }
     void Comprar()
     {

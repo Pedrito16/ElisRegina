@@ -18,7 +18,10 @@ public class ExitButton : MonoBehaviour
     {
         Application.Quit();
     }
-
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.DeleteAll();
+    }
     // Update is called once per frame
     void Update()
     {
