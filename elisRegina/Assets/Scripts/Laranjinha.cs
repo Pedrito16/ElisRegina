@@ -12,6 +12,7 @@ public class Laranjinha : MonoBehaviour
     public Player player;
     [SerializeField] int contagemClique = 0;
     public BuffText bufftext;
+    public AudioSource BuyItem;
     [Header("clique duplo ou normal")]
     float lastClickTime;
     float catchtime = 0.25f; 
@@ -21,7 +22,6 @@ public class Laranjinha : MonoBehaviour
         custoText.text = "";
         descriçãoText.text = "";
         buffText.text = "";
-
     }
 
 
@@ -62,7 +62,7 @@ public class Laranjinha : MonoBehaviour
     {
         player.dinheiro -= custo;
         player.buffNotActive = false;
-
+        BuyItem.Play();
         if (bufftext.ativador == false)
         {
             bufftext.ativador = true;

@@ -13,6 +13,8 @@ public class Xeverything : MonoBehaviour
     public string itemName, itemDescription, buffDescription;
     public int custo;
     public Player player;
+    public SFX SFXscript;
+    public AudioSource buyItem;
     public BuffText bufftext;
     float lastClickTime = 0;
     float catchTime = 0.25f;
@@ -22,7 +24,6 @@ public class Xeverything : MonoBehaviour
         custoText.text = "";
         descriçãoText.text = "";
         buffText.text = "";
-        
     }
 
 
@@ -44,6 +45,7 @@ public class Xeverything : MonoBehaviour
             lastClickTime = 0;
             if (player.dinheiro >= custo)
             {
+                buyItem.Play();
                 Comprar();
             }
             print("clique duplo");
@@ -62,7 +64,6 @@ public class Xeverything : MonoBehaviour
     {
         player.dinheiro -= custo;
         player.buffNotActive = false;
-
         if (bufftext.ativador == false)
         {
             bufftext.ativador = true;

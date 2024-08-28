@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     private bool isPesoCooldown = false;
     [SerializeField] ParticleSystem explosão;
     [SerializeField] AudioClip coinPickup;
-    [SerializeField] AudioSource audiosource;
+    [SerializeField] public SFX SFXscript;
     private Vector3 esquerda;
     private Vector3 direita;
     public GameObject GameOver;
@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
         inicialJumpStrength = jumpStrenght;
         direita = Direita.position - transform.position;
         dinheiro = PlayerPrefs.GetInt("Dinheiro");
-        audiosource.clip = coinPickup;
+        
     }
 
     void Update()
@@ -118,19 +118,22 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("DoisReal"))
         {
             dinheiro += 2;
-            audiosource.Play();
+            SFXscript.SFXsource.clip = SFXscript.coinPickup;
+            SFXscript.SFXsource.Play();
             Destroy(collision.gameObject);
         }
         if (collision.CompareTag("CincoReal"))
         {
             dinheiro += 5;
-            audiosource.Play();
+            SFXscript.SFXsource.clip = SFXscript.coinPickup;
+            SFXscript.SFXsource.Play();
             Destroy(collision.gameObject);
         }
         if(collision.CompareTag("DezReal"))
         {
             dinheiro += 10;
-            audiosource.Play();
+            SFXscript.SFXsource.clip = SFXscript.coinPickup;
+            SFXscript.SFXsource.Play();
             Destroy(collision.gameObject);
             
         }

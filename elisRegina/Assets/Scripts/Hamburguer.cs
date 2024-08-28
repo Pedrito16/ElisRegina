@@ -12,6 +12,7 @@ public class Hamburguer : MonoBehaviour
     public Player player;
     [SerializeField] int contagemClique = 0;
     [SerializeField] float timer;
+    public AudioSource buyItem;
     float catchTime = 0.25f;
     float lastClickTime = 0;
     void Start()
@@ -59,6 +60,7 @@ public class Hamburguer : MonoBehaviour
     {
         if (player.life < 3)
         {
+            buyItem.Play();
             player.life += 1;
             player.dinheiro -= custo;
         }
