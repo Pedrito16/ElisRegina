@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     public int life = 4;
     public float speed;
     int direction = -1;
-    public int damage = 2;
+    public int damage = 1;
     public Rigidbody2D body;
     public GameObject tiro;
     public float tiroSpeed;
@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         //gameObject.SetActive(false);
-        InvokeRepeating("UmSegundo", 1.5f, 1.5f);
+        InvokeRepeating("UmSegundo", 2f, 2f);
         numeroAleatorio = Random.Range(1, 10);
     }
 

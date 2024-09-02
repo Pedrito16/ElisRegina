@@ -18,6 +18,7 @@ public class NPC : MonoBehaviour
 
     [SerializeField] private string[] dialogo;
 
+    public Player player;
 
     [SerializeField] private TextMeshProUGUI dialogoTexto;
 
@@ -33,8 +34,6 @@ public class NPC : MonoBehaviour
         dialogoTexto.text = "";
         textoNomePersonagem.text = "";
         falasMaximas = dialogo.Length;
-       
-
     }
 
    
@@ -45,10 +44,10 @@ public class NPC : MonoBehaviour
         {
             bolhaChat.SetActive(true);
             passandoDialogos();
+            player.isTalking = true;
             //textoDialogo.text = dialogo[falaAtual];
             dialogoTexto.text = dialogo[falaAtual];
             textoNomePersonagem.text = nomeDoPersonagem;
-
         }
         // "reiniciador" do texto
         if (falaAtual >= falasMaximas && Input.GetKeyDown(KeyCode.E))
@@ -57,6 +56,7 @@ public class NPC : MonoBehaviour
             dialogoTexto.text = "";
             textoNomePersonagem.text = "";
             bolhaChat.SetActive(false);
+            player.isTalking = false;
             falaAtual = -1;
         }
     }
@@ -73,7 +73,6 @@ public class NPC : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isCollidingPlayer = true;
-            
         }
     }
     void passandoDialogos()
@@ -81,9 +80,7 @@ public class NPC : MonoBehaviour
         if(falaAtual < falasMaximas)
         {
             falaAtual += 1;
-
+            player.isTalking = true;
         }
-       
-
     }
 }

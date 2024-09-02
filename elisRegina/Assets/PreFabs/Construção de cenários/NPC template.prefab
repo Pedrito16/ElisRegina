@@ -107,7 +107,8 @@ MonoBehaviour:
   - Ola Elis Regina
   - sou o marcelo
   - gosto de batata frita
-  textoDialogo: {fileID: 0}
+  player: {fileID: 7014518451233141402, guid: cc7f5fcf668f9a647b34cdc7902d93c1, type: 3}
+  dialogoTexto: {fileID: 0}
   nomeDoPersonagem: Marcelo
   textoNomePersonagem: {fileID: 0}
 --- !u!61 &231053574532262718

@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     public Transform playerTransform;
     public LayerMask filtro;
     public bool isBuffActive = false;
+    public bool isTalking = false;
     public float pesoCooldown = 0.5f;
     public bool buffNotActive = true;
     private bool isPesoCooldown = false;
@@ -57,8 +58,11 @@ public class Player : MonoBehaviour
         Esquerda.position = transform.position + esquerda;
         Direita.position = transform.position + direita;
         //código que movimenta o jogador
-        horizontal = Input.GetAxisRaw("Horizontal");
-        body.velocity = new Vector2( horizontal * moveSpeed, body.velocity.y );
+        if(isTalking == false)
+        {
+            horizontal = Input.GetAxisRaw("Horizontal");
+            body.velocity = new Vector2(horizontal * moveSpeed, body.velocity.y);
+        }
         //animação do jogador 
         animator.SetFloat("Speed", Mathf.Abs(horizontal));
         footCollider = Physics2D.OverlapCircle(foot.position, 0.05f, filtro);
@@ -94,6 +98,10 @@ public class Player : MonoBehaviour
             moveSpeed = inicialMovespeed;
             jumpStrenght = inicialJumpStrength;
         }
+        if(Dourado.playerDourado == true)
+        {
+            GetComponent<SpriteRenderer>().color = Color.yellow;
+        }
     }
     IEnumerator Cooldown()
     {
@@ -118,6 +126,7 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("DoisReal"))
         {
             dinheiro += 2;
+            collision.GetComponent<DinheiroScript>().dinheiroParticula.Play();
             SFXscript.SFXsource.clip = SFXscript.coinPickup;
             SFXscript.SFXsource.Play();
             Destroy(collision.gameObject);
@@ -125,6 +134,7 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("CincoReal"))
         {
             dinheiro += 5;
+            collision.GetComponent<DinheiroScript>().dinheiroParticula.Play();
             SFXscript.SFXsource.clip = SFXscript.coinPickup;
             SFXscript.SFXsource.Play();
             Destroy(collision.gameObject);
@@ -132,14 +142,12 @@ public class Player : MonoBehaviour
         if(collision.CompareTag("DezReal"))
         {
             dinheiro += 10;
+            collision.GetComponent<DinheiroScript>().dinheiroParticula.Play();
             SFXscript.SFXsource.clip = SFXscript.coinPickup;
             SFXscript.SFXsource.Play();
             Destroy(collision.gameObject);
-            
         }
-        
     }
-    
     void gameOver()
     {
        life = 0;

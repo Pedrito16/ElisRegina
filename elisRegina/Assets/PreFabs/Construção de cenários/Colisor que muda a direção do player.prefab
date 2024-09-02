@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3754895272022416640}
   - component: {fileID: 4773013177199824852}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: "Colisor que muda a dire\xE7\xE3o do player"
   m_TagString: Mudador
   m_Icon: {fileID: 0}

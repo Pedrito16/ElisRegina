@@ -20,7 +20,7 @@ public class CameraZoom : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            cinemachineCam.m_Lens.OrthographicSize = 10;
+            cinemachineCam.m_Lens.OrthographicSize = 12;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

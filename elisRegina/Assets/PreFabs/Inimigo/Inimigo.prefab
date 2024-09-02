@@ -103,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 4
   speed: 2
-  damage: 2
+  damage: 1
   body: {fileID: 3438351112410730984}
   tiro: {fileID: 5719355496196171692, guid: 5c203dec3a41a774dadb45e036a9b463, type: 3}
   tiroSpeed: 5
