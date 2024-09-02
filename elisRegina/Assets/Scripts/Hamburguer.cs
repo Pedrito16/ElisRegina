@@ -48,6 +48,7 @@ public class Hamburguer : MonoBehaviour
         else
         {
             lastClickTime = Time.time;
+            nomeText.color = Color.white;
             nomeText.text = itemName;
             custoText.text = "Custo: " + custo.ToString();
             descriçãoText.text = itemDescription;

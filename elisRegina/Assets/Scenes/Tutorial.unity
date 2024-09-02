@@ -3820,8 +3820,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3506625035346300981, guid: dca71465d6a3d304b852dafa2cb4a7c0, type: 3}
       propertyPath: custo
-      value: 20
+      value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 3506625035346300981, guid: dca71465d6a3d304b852dafa2cb4a7c0, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1680596401}
     - target: {fileID: 3506625035346300981, guid: dca71465d6a3d304b852dafa2cb4a7c0, type: 3}
       propertyPath: buyItem
       value: 
@@ -3937,6 +3941,10 @@ PrefabInstance:
     - target: {fileID: 5859340038886298991, guid: dca71465d6a3d304b852dafa2cb4a7c0, type: 3}
       propertyPath: m_Name
       value: Lojinha 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7705401011947694884, guid: dca71465d6a3d304b852dafa2cb4a7c0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8067899861265952880, guid: dca71465d6a3d304b852dafa2cb4a7c0, type: 3}
       propertyPath: m_margin.w

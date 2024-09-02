@@ -679,7 +679,7 @@ MonoBehaviour:
   itemDescription: O hamburguer e um classico da culinaria, todos gostam de come-lo
   buffDescription: '- Recupera 1 de vida'
   custo: 10
-  player: {fileID: 0}
+  player: {fileID: 3857683881563026115, guid: 21ebc57e206a0bb498dd19276255a908, type: 3}
   contagemClique: 0
   timer: 0
   buyItem: {fileID: 3937555412294163119}
@@ -703,7 +703,7 @@ MonoBehaviour:
   itemDescription: Um hamburguer modificado, conhecido como X-infarto
   buffDescription: -1.25x de velocidade por 3 minutos
   custo: 22
-  player: {fileID: 0}
+  player: {fileID: 3857683881563026115, guid: 21ebc57e206a0bb498dd19276255a908, type: 3}
   SFXscript: {fileID: 1130350737266383120, guid: 398b87587e5db37479ad2735f7167659, type: 3}
   buyItem: {fileID: 3937555412294163119}
   bufftext: {fileID: 0}
@@ -727,7 +727,7 @@ MonoBehaviour:
   itemDescription: esta escrito "Max Bebidas" no rotulo...
   buffDescription: -Aumenta em 1.25x o pulo por 3 minutos
   custo: 22
-  player: {fileID: 0}
+  player: {fileID: 3857683881563026115, guid: 21ebc57e206a0bb498dd19276255a908, type: 3}
   contagemClique: 0
   bufftext: {fileID: 0}
   BuyItem: {fileID: 3937555412294163119}
@@ -755,17 +755,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e28408323ad177d4eaf53e889f1c8fd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  custoText: {fileID: 0}
-  nomeText: {fileID: 0}
-  "descri\xE7\xE3oText": {fileID: 0}
-  buffText: {fileID: 0}
+  custoText: {fileID: 9152715182045003972}
+  nomeText: {fileID: 8067899861265952880}
+  "descri\xE7\xE3oText": {fileID: 3294532992303909630}
+  buffText: {fileID: 4990028676786791151}
   itemName: Hamburguer D'Or
   itemDescription: Um hamburguer feito de ouro, deve ser ruim
   buffDescription: -te deixa dourado
   custo: 60
-  player: {fileID: 7014518451233141402, guid: cc7f5fcf668f9a647b34cdc7902d93c1, type: 3}
+  player: {fileID: 3857683881563026115, guid: 21ebc57e206a0bb498dd19276255a908, type: 3}
   SFXscript: {fileID: 0}
-  buyItem: {fileID: 0}
+  buyItem: {fileID: 3937555412294163119}
   bufftext: {fileID: 0}
 --- !u!1 &4990028676845753090
 GameObject:
@@ -2023,7 +2023,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24.4, y: 36.4}
+  m_AnchoredPosition: {x: 22.6, y: 36.4}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5811308413028294152

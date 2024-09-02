@@ -44,12 +44,16 @@ public class HamburguerDourado : MonoBehaviour
                 buyItem.Play();
                 Comprar();
                 player.dinheiro -= custo;
+            }else if(player.dinheiro <= custo)
+            {
+                Debug.Log("Sem dinheiro");  
             }
             print("clique duplo");
         }
         else
         {
             lastClickTime = Time.time;
+            nomeText.color = Color.yellow;
             nomeText.text = itemName;
             custoText.text = "Custo: " + custo.ToString();
             descriçãoText.text = itemDescription;
