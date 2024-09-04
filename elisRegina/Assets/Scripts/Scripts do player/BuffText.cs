@@ -7,7 +7,7 @@ public class BuffText : MonoBehaviour
 {
     //public Text buffDurationText;
     public TextMeshProUGUI buffDurationText;
-    public int buffDuration = 180;
+    //public int buffDuration = 180;
     [SerializeField] float timer;
     int segundo = 1;
     public bool ativador = false;
@@ -22,17 +22,20 @@ public class BuffText : MonoBehaviour
         if (timer >= segundo && ativador == true)
         {
             
-            buffDuration -= 1;
-            buffDurationText.text = "Buff: " + buffDuration.ToString();
+            BuffTimer.buffDuration -= 1;
+            buffDurationText.text = "Buff: " + BuffTimer.buffDuration.ToString();
             timer = 0f;
         }
-        if (buffDuration <= 0)
+        if (BuffTimer.buffDuration <= 0)
         {
             player.buffNotActive = true;
             buffDurationText.text = "Buff: ";
             ativador = false;
-            buffDuration = 180;
+            BuffTimer.buffDuration = 180;
         }
     }
 }
-
+public static class BuffTimer
+{
+    public static int buffDuration = 180;
+}

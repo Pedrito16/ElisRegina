@@ -15,6 +15,7 @@ public class HamburguerDourado : MonoBehaviour
     public BuffText bufftext;
     float lastClickTime = 0;
     float catchTime = 0.25f;
+    bool isClicking = false;
     void Start()
     {
         nomeText.text = "";
@@ -25,11 +26,11 @@ public class HamburguerDourado : MonoBehaviour
 
     void Update()
     {
-        if (player.dinheiro > custo)
+        if (player.dinheiro > custo && isClicking == true)
         {
             custoText.GetComponent<Text>().color = Color.green;
         }
-        else if (player.dinheiro < custo)
+        else if (player.dinheiro < custo && isClicking == true)
         {
             custoText.GetComponent<Text>().color = Color.red;
         }
@@ -52,6 +53,7 @@ public class HamburguerDourado : MonoBehaviour
         }
         else
         {
+            isClicking = true;
             lastClickTime = Time.time;
             nomeText.color = Color.yellow;
             nomeText.text = itemName;

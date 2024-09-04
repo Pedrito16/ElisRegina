@@ -62,6 +62,9 @@ public class Player : MonoBehaviour
         {
             horizontal = Input.GetAxisRaw("Horizontal");
             body.velocity = new Vector2(horizontal * moveSpeed, body.velocity.y);
+        }else if(isTalking == true) 
+        {
+            body.velocity = new Vector2(0, 0);
         }
         //animação do jogador 
         animator.SetFloat("Speed", Mathf.Abs(horizontal));

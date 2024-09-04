@@ -10,6 +10,7 @@ public class Jornal : MonoBehaviour
     public GameObject JornalUI;
     public TextMeshProUGUI textoJornalText;
     public string textoJornal;
+    public bool ativado;
     void Start()
     {
         JornalUI.SetActive(false);
@@ -20,9 +21,14 @@ public class Jornal : MonoBehaviour
     void Update()
     {
         textoJornalText.text = textoJornal;
-        if (Input.GetKeyDown(KeyCode.E) && isCollidingPlayer == true)
+        if (Input.GetKeyDown(KeyCode.E) && isCollidingPlayer == true && ativado == false)
         {
             JornalUI.SetActive(true);
+            ativado = true;
+        }else if (Input.GetKeyDown(KeyCode.E) && isCollidingPlayer == true && ativado == true)
+        {
+            JornalUI.SetActive(false);
+            ativado = false;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

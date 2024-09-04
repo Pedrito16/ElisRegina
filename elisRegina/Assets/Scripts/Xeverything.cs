@@ -40,6 +40,14 @@ public class Xeverything : MonoBehaviour
     }
     public void OnClick()
     {
+        if (player.dinheiro > custo)
+        {
+            custoText.GetComponent<Text>().color = Color.green;
+        }
+        else if (player.dinheiro < custo)
+        {
+            custoText.GetComponent<Text>().color = Color.red;
+        }
         if (Time.time - lastClickTime < catchTime)
         {
             lastClickTime = 0;
@@ -72,7 +80,7 @@ public class Xeverything : MonoBehaviour
         {
             print("variavel ja em uso");
         }
-        if (bufftext.buffDuration > 0)
+        if (BuffTimer.buffDuration > 0)
         {
             player.moveSpeed *= 1.25f;
         }

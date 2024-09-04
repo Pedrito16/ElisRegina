@@ -72,7 +72,7 @@ public class Laranjinha : MonoBehaviour
         {
             print("variavel ja em uso");
         }
-        if (bufftext.buffDuration > 0)
+        if (BuffTimer.buffDuration > 0)
         {
             player.jumpStrenght *= 1.25f;
         }
