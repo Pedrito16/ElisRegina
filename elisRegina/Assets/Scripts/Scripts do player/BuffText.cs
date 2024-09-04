@@ -7,7 +7,8 @@ public class BuffText : MonoBehaviour
 {
     //public Text buffDurationText;
     public TextMeshProUGUI buffDurationText;
-    //public int buffDuration = 180;
+    //public int buffDuration = 180;    
+    public int buffDuration;
     [SerializeField] float timer;
     int segundo = 1;
     public bool ativador = false;
@@ -18,19 +19,29 @@ public class BuffText : MonoBehaviour
     }
     void Update()
     {
+        buffDuration = BuffTimer.buffDuration;
         timer += Time.deltaTime;
-        if (timer >= segundo && ativador == true)
+        if (timer >= segundo && BuffTimer.xtudoAtivado == true)
         {
-            
+            player.xtudoAtivo = true;
+            BuffTimer.buffDuration -= 1;
+            buffDurationText.text = "Buff: " + BuffTimer.buffDuration.ToString();
+            timer = 0f;
+        }else if(timer >= segundo && BuffTimer.laranjinhaAtivo == true)
+        {
+            player.laranjinhaAtivo = true;
             BuffTimer.buffDuration -= 1;
             buffDurationText.text = "Buff: " + BuffTimer.buffDuration.ToString();
             timer = 0f;
         }
         if (BuffTimer.buffDuration <= 0)
         {
-            player.buffNotActive = true;
+            player.laranjinhaAtivo = false;
+            player.xtudoAtivo = false;
+            BuffTimer.xtudoAtivado = false;
+            BuffTimer.laranjinhaAtivo = false;
+            
             buffDurationText.text = "Buff: ";
-            ativador = false;
             BuffTimer.buffDuration = 180;
         }
     }
@@ -38,4 +49,6 @@ public class BuffText : MonoBehaviour
 public static class BuffTimer
 {
     public static int buffDuration = 180;
+    public static bool xtudoAtivado;
+    public static bool laranjinhaAtivo;
 }

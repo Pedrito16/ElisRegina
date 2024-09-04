@@ -11,6 +11,7 @@ public class Lojinha : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip DomingoANoite;
     public AudioController audiocontroller;
+    
     void Start()
     {
         eKeybind.SetActive(false);

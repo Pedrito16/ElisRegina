@@ -15,6 +15,17 @@ public class Hamburguer : MonoBehaviour
     public AudioSource buyItem;
     float catchTime = 0.25f;
     float lastClickTime = 0;
+    [Header("Verificação De clique")]
+    public Xeverything xeverything;
+    public HamburguerDourado hamburguerG;
+    public Laranjinha laranjinha;
+    public bool isClicking = false;
+    private void Awake()
+    {
+        xeverything = GetComponent<Xeverything>();
+        hamburguerG = GetComponent<HamburguerDourado>();
+        laranjinha = GetComponent<Laranjinha>();
+    }
     void Start()
     {
         nomeText.text = "";
@@ -26,16 +37,25 @@ public class Hamburguer : MonoBehaviour
     
     void Update()
     {
-        if(player.dinheiro > custo)
-        {
-            custoText.GetComponent<Text>().color = Color.green;
-        }else if (player.dinheiro < custo)
-        {
-            custoText.GetComponent<Text>().color = Color.red;
-        }
+     
     }
     public void OnClick()
     {
+        isClicking = true;
+        if(isClicking == true)
+        {
+            laranjinha.isClicking = false;
+            xeverything.isClicking = false;
+            hamburguerG.isClicking = false;
+        }
+        if (player.dinheiro >= custo && isClicking == true)
+        {
+            custoText.GetComponent<Text>().color = Color.green;
+        }
+        else if (player.dinheiro < custo && isClicking == true)
+        {
+            custoText.GetComponent<Text>().color = Color.red;
+        }
         if (Time.time - lastClickTime < catchTime)
         {
             lastClickTime = 0;

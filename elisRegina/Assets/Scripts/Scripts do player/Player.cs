@@ -26,7 +26,6 @@ public class Player : MonoBehaviour
     public bool isBuffActive = false;
     public bool isTalking = false;
     public float pesoCooldown = 0.5f;
-    public bool buffNotActive = true;
     private bool isPesoCooldown = false;
     [SerializeField] ParticleSystem explosão;
     [SerializeField] AudioClip coinPickup;
@@ -34,6 +33,8 @@ public class Player : MonoBehaviour
     private Vector3 esquerda;
     private Vector3 direita;
     public GameObject GameOver;
+    [Header("Buffs ativos")]
+    public bool xtudoAtivo, laranjinhaAtivo;
     void Start()
     {
         //playerTransform.localScale = new Vector2(direction, 1);
@@ -96,9 +97,19 @@ public class Player : MonoBehaviour
             explosão.Play();
             gameOver();
         }
-        if (buffNotActive == true)
+        if(xtudoAtivo == true)
+        {
+            moveSpeed *= 1.25f;
+        }else
         {
             moveSpeed = inicialMovespeed;
+        }
+        if (laranjinhaAtivo == true)
+        {
+            jumpStrenght *= 1.25f;
+            
+        }else
+        {
             jumpStrenght = inicialJumpStrength;
         }
         if(Dourado.playerDourado == true)

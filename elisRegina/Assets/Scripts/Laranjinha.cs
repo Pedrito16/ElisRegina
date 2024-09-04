@@ -10,12 +10,22 @@ public class Laranjinha : MonoBehaviour
     public string itemName, itemDescription, buffDescription;
     public int custo;
     public Player player;
-    [SerializeField] int contagemClique = 0;
     public BuffText bufftext;
     public AudioSource BuyItem;
+    [Header("Verificação De clique")]
+    public Xeverything xeverything;
+    public Hamburguer hamburguer;
+    public HamburguerDourado hamburguerG;
+    public bool isClicking;
     [Header("clique duplo ou normal")]
     float lastClickTime;
-    float catchtime = 0.25f; 
+    float catchtime = 0.25f;
+    private void Awake()
+    {
+        xeverything = GetComponent<Xeverything>();
+        hamburguerG = GetComponent<HamburguerDourado>();
+        hamburguer = GetComponent<Hamburguer>();
+    }
     void Start()
     {
         nomeText.text = "";
@@ -27,19 +37,27 @@ public class Laranjinha : MonoBehaviour
 
     void Update()
     {
-        if (player.dinheiro > custo)
-        {
-            custoText.GetComponent<Text>().color = Color.green;
-        }
-        else if (player.dinheiro < custo)
-        {
-            custoText.GetComponent<Text>().color = Color.red;
-        }
+        
         
     }
     public void OnClick()
     {
-        if(Time.time - lastClickTime < catchtime)
+        isClicking = true;
+        if(isClicking == true)
+        {
+            hamburguer.isClicking = false;
+            xeverything.isClicking = false;
+            hamburguerG.isClicking = false; 
+        }
+        if (player.dinheiro >= custo && isClicking == true)
+        {
+            custoText.GetComponent<Text>().color = Color.green;
+        }
+        else if (player.dinheiro <= custo && isClicking == true)
+        {
+            custoText.GetComponent<Text>().color = Color.red;
+        }
+        if (Time.time - lastClickTime < catchtime)
         {
             lastClickTime = 0;
             if(player.dinheiro >= custo)
@@ -62,19 +80,15 @@ public class Laranjinha : MonoBehaviour
     void Comprar()
     {
         player.dinheiro -= custo;
-        player.buffNotActive = false;
+        BuffTimer.laranjinhaAtivo = true;
         BuyItem.Play();
-        if (bufftext.ativador == false)
+        if (BuffTimer.laranjinhaAtivo == false)
         {
-            bufftext.ativador = true;
+            BuffTimer.laranjinhaAtivo = true;
         }
-        else if (bufftext.ativador == true)
+        else if (BuffTimer.laranjinhaAtivo == true)
         {
             print("variavel ja em uso");
-        }
-        if (BuffTimer.buffDuration > 0)
-        {
-            player.jumpStrenght *= 1.25f;
         }
     }
 }

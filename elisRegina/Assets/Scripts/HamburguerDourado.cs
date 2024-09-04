@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using JetBrains.Annotations;
+using Unity.VisualScripting;
+
 public class HamburguerDourado : MonoBehaviour
 {
     public Text custoText;
@@ -15,9 +18,19 @@ public class HamburguerDourado : MonoBehaviour
     public BuffText bufftext;
     float lastClickTime = 0;
     float catchTime = 0.25f;
-    bool isClicking = false;
-    void Start()
+    [Header("Verificação De clique")]
+    public Xeverything xeverything;
+    public Hamburguer hamburguer;
+    public Laranjinha laranjinha;
+    public bool isClicking = false;
+    private void Awake()
     {
+        xeverything = GetComponent<Xeverything>();
+        laranjinha = GetComponent<Laranjinha>();
+        hamburguer = GetComponent<Hamburguer>();
+    }
+    void Start()
+    {    
         nomeText.text = "";
         custoText.text = "";
         descriçãoText.text = "";
@@ -26,18 +39,25 @@ public class HamburguerDourado : MonoBehaviour
 
     void Update()
     {
-        if (player.dinheiro > custo && isClicking == true)
-        {
-            custoText.GetComponent<Text>().color = Color.green;
-        }
-        else if (player.dinheiro < custo && isClicking == true)
-        {
-            custoText.GetComponent<Text>().color = Color.red;
-        }
+        
     }
     public void OnClick()
     {
-        if (Time.time - lastClickTime < catchTime)
+        isClicking = true;
+        if(isClicking == true)
+        {
+            xeverything.isClicking = false;
+            laranjinha.isClicking = false;
+            hamburguer.isClicking = false;
+        }
+        if (player.dinheiro > custo && isClicking == true)
+        {
+            custoText.GetComponent<Text>().color = Color.green;
+        }else if(player.dinheiro <= custo && isClicking == true)
+        {
+            custoText.GetComponent<Text>().color = Color.red;
+        }
+            if (Time.time - lastClickTime < catchTime)
         {
             lastClickTime = 0;
             if (player.dinheiro >= custo)
@@ -53,7 +73,6 @@ public class HamburguerDourado : MonoBehaviour
         }
         else
         {
-            isClicking = true;
             lastClickTime = Time.time;
             nomeText.color = Color.yellow;
             nomeText.text = itemName;

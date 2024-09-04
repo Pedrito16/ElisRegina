@@ -18,6 +18,17 @@ public class Xeverything : MonoBehaviour
     public BuffText bufftext;
     float lastClickTime = 0;
     float catchTime = 0.25f;
+    [Header("Verificação De clique")]
+    public Hamburguer hamburguer;
+    public HamburguerDourado hamburguerG;
+    public Laranjinha laranjinha;
+    public bool isClicking;
+    private void Awake()
+    {
+        hamburguer = GetComponent<Hamburguer>();
+        hamburguerG = GetComponent<HamburguerDourado>();
+        laranjinha = GetComponent<Laranjinha>();
+    }
     void Start()
     {
         nomeText.text = "";
@@ -29,22 +40,22 @@ public class Xeverything : MonoBehaviour
 
     void Update()
     {
-        if (player.dinheiro > custo)
-        {
-            custoText.GetComponent<Text>().color = Color.green;
-        }
-        else if (player.dinheiro < custo)
-        {
-            custoText.GetComponent<Text>().color = Color.red;
-        } 
+
     }
     public void OnClick()
     {
-        if (player.dinheiro > custo)
+        isClicking = true;
+        if(isClicking == true)
+        {
+            laranjinha.isClicking = false;
+            hamburguer.isClicking = false;
+            hamburguerG.isClicking = false;
+        }
+        if (player.dinheiro >= custo && isClicking == true)
         {
             custoText.GetComponent<Text>().color = Color.green;
         }
-        else if (player.dinheiro < custo)
+        else if (player.dinheiro <= custo && isClicking == true)
         {
             custoText.GetComponent<Text>().color = Color.red;
         }
@@ -72,18 +83,13 @@ public class Xeverything : MonoBehaviour
     void Comprar()
     {
         player.dinheiro -= custo;
-        player.buffNotActive = false;
-        if (bufftext.ativador == false)
+        
+        if (BuffTimer.xtudoAtivado == false)
         {
-            bufftext.ativador = true;
-        }else if(bufftext.ativador == true)
+            BuffTimer.xtudoAtivado = true;
+        }else if(BuffTimer.xtudoAtivado == true)
         {
             print("variavel ja em uso");
         }
-        if (BuffTimer.buffDuration > 0)
-        {
-            player.moveSpeed *= 1.25f;
-        }
-        
     }
 }
