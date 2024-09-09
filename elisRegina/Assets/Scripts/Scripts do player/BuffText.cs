@@ -28,7 +28,7 @@ public class BuffText : MonoBehaviour
             BuffTimer.xtudoAtivado = false;
             BuffTimer.laranjinhaAtivo = false;
         }
-        BuffTimer.buffDuration = buffDuration;
+        
         timer += Time.deltaTime;
         if(BuffTimer.xtudoAtivado == true && ativador == false)
         {

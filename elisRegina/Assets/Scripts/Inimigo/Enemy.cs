@@ -82,6 +82,13 @@ public class Enemy : MonoBehaviour
         {
             direction *= -1;
         }
+        if (collision.gameObject.CompareTag("Peso"))
+        {
+            explosão.Play();
+            life -= collision.gameObject.GetComponent<Peso>().damage;
+            Destroy(collision.gameObject);
+
+        }
     }
     void UmSegundo()
     {

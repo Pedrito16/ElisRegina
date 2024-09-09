@@ -17,8 +17,11 @@ public class GameOver : MonoBehaviour
     {
         if (Input.GetButtonDown("Respawn"))
         {
+            BuffTimer.xtudoAtivado = false;
+            BuffTimer.laranjinhaAtivo = false;
+            BuffTimer.buffDuration = 180;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            StartCoroutine(Morreu());
+            //StartCoroutine(Morreu());
 
         }
     }

@@ -153,7 +153,7 @@ PrefabInstance:
       objectReference: {fileID: 6200000, guid: 6e8711a5715eefb4e90dc6d7ecf183f0, type: 2}
     - target: {fileID: 8016559820208967119, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_Name
-      value: Elis Regina (Player) Particula1
+      value: Elis Regina (Player) Particula1 1
       objectReference: {fileID: 0}
     - target: {fileID: 8016559820208967119, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_Layer

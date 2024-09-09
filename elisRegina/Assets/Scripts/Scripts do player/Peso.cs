@@ -29,17 +29,19 @@ public class Peso : MonoBehaviour
             Destroy(gameObject, 0.75f);
 
         }
-        
-        /*if (collision.gameObject.CompareTag("Ground"))
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Ground"))
         {
-
-            Destroy(gameObject, 0.5f);
-
+            gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
+            Destroy(gameObject, 0.75f);
         }
-        if (collision.gameObject.CompareTag("Peso"))
+        if (collision.gameObject.CompareTag("Tijolo"))
         {
-            Destroy(gameObject, 0.5f);
-        }*/
+            gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
+            Destroy(collision.gameObject);
+        }
     }
     private void OnBecameInvisible()
     {

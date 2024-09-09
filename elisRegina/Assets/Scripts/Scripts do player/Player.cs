@@ -72,7 +72,7 @@ public class Player     : MonoBehaviour
         }
         //animação do jogador 
         animator.SetFloat("Speed", Mathf.Abs(horizontal));
-        footCollider = Physics2D.OverlapCircle(foot.position, 0.05f, filtro);
+        footCollider = Physics2D.OverlapCircle(foot.position, 0.13f, filtro);
         groundCheck = footCollider;
         PlayerPrefs.SetInt("Dinheiro", dinheiro);
         if(Input.GetButtonDown("Jump")&&  groundCheck)
@@ -120,6 +120,10 @@ public class Player     : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.CompareTag("Peso"))
+        {
+            Destroy(collision.gameObject);
+        }
         if (collision.CompareTag("Tiro"))
         {
             explosão.Play();
