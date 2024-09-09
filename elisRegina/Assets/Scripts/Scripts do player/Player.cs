@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player     : MonoBehaviour
 {
     public int life = 3;
     public int dinheiro;
@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
     public GameObject GameOver;
     [Header("Buffs ativos")]
     public bool xtudoAtivo, laranjinhaAtivo;
+    public bool notActiveBuffs = true;
     void Start()
     {
         //playerTransform.localScale = new Vector2(direction, 1);
@@ -63,7 +64,9 @@ public class Player : MonoBehaviour
         {
             horizontal = Input.GetAxisRaw("Horizontal");
             body.velocity = new Vector2(horizontal * moveSpeed, body.velocity.y);
-        }else if(isTalking == true) 
+            animator.SetFloat("Speed", Mathf.Abs(horizontal));
+        }
+        else if(isTalking == true) 
         {
             body.velocity = new Vector2(0, 0);
         }
@@ -97,21 +100,12 @@ public class Player : MonoBehaviour
             explosão.Play();
             gameOver();
         }
-        if(xtudoAtivo == true)
-        {
-            moveSpeed *= 1.25f;
-        }else
+        if(notActiveBuffs == true) 
         {
             moveSpeed = inicialMovespeed;
-        }
-        if (laranjinhaAtivo == true)
-        {
-            jumpStrenght *= 1.25f;
-            
-        }else
-        {
             jumpStrenght = inicialJumpStrength;
         }
+        
         if(Dourado.playerDourado == true)
         {
             GetComponent<SpriteRenderer>().color = Color.yellow;

@@ -80,7 +80,7 @@ public class Laranjinha : MonoBehaviour
     void Comprar()
     {
         player.dinheiro -= custo;
-        BuffTimer.laranjinhaAtivo = true;
+        
         BuyItem.Play();
         if (BuffTimer.laranjinhaAtivo == false)
         {
