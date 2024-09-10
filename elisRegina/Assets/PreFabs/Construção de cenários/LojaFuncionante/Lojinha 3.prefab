@@ -683,6 +683,10 @@ MonoBehaviour:
   contagemClique: 0
   timer: 0
   buyItem: {fileID: 3937555412294163119}
+  xeverything: {fileID: 0}
+  hamburguerG: {fileID: 0}
+  laranjinha: {fileID: 0}
+  isClicking: 0
 --- !u!114 &4990028676802715004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -707,6 +711,10 @@ MonoBehaviour:
   SFXscript: {fileID: 1130350737266383120, guid: 398b87587e5db37479ad2735f7167659, type: 3}
   buyItem: {fileID: 3937555412294163119}
   bufftext: {fileID: 0}
+  hamburguer: {fileID: 0}
+  hamburguerG: {fileID: 0}
+  laranjinha: {fileID: 0}
+  isClicking: 0
 --- !u!114 &4990028676802714995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -728,9 +736,12 @@ MonoBehaviour:
   buffDescription: -Aumenta em 1.25x o pulo por 3 minutos
   custo: 22
   player: {fileID: 3857683881563026115, guid: 21ebc57e206a0bb498dd19276255a908, type: 3}
-  contagemClique: 0
   bufftext: {fileID: 0}
   BuyItem: {fileID: 3937555412294163119}
+  xeverything: {fileID: 0}
+  hamburguer: {fileID: 0}
+  hamburguerG: {fileID: 0}
+  isClicking: 0
 --- !u!114 &4990028676802715005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -767,6 +778,10 @@ MonoBehaviour:
   SFXscript: {fileID: 0}
   buyItem: {fileID: 3937555412294163119}
   bufftext: {fileID: 0}
+  xeverything: {fileID: 0}
+  hamburguer: {fileID: 0}
+  laranjinha: {fileID: 0}
+  isClicking: 0
 --- !u!1 &4990028676845753090
 GameObject:
   m_ObjectHideFlags: 0
@@ -990,21 +1005,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4990028677612686536}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4990028676802715005}
-        m_TargetAssemblyTypeName: TimeScaleButton, Assembly-CSharp
-        m_MethodName: timeScaleReturn
+      - m_Target: {fileID: 4990028676636150646}
+        m_TargetAssemblyTypeName: Lojinha, Assembly-CSharp
+        m_MethodName: XDeactivator
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1025,6 +1028,7 @@ GameObject:
   - component: {fileID: 4990028677612686543}
   - component: {fileID: 4990028677612686541}
   - component: {fileID: 4990028677612686542}
+  - component: {fileID: 1857830445554648075}
   m_Layer: 6
   m_Name: LojaPanel
   m_TagString: Untagged
@@ -1056,7 +1060,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 85}
+  m_AnchoredPosition: {x: 0, y: 93}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4990028677612686541
@@ -1097,6 +1101,26 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &1857830445554648075
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4990028677612686536}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f5aaa6683dea2244eb5ffbf8170f178a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &4990028678116179692
 GameObject:
   m_ObjectHideFlags: 0
@@ -1652,6 +1676,8 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   DomingoANoite: {fileID: 0}
   audiocontroller: {fileID: 0}
+  panel: {fileID: 1857830445554648075}
+  panelAtivo: 0
 --- !u!1 &7141860132528699976
 GameObject:
   m_ObjectHideFlags: 0

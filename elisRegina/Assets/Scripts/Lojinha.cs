@@ -11,7 +11,8 @@ public class Lojinha : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip DomingoANoite;
     public AudioController audiocontroller;
-    
+    public Animator panel;
+    public bool panelAtivo;
     void Start()
     {
         eKeybind.SetActive(false);
@@ -50,16 +51,31 @@ public class Lojinha : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && isCollidingPlayer == true)
+        if (Input.GetKeyDown(KeyCode.E) && isCollidingPlayer == true && panelAtivo == false)
         {
             lojaUI.SetActive(true);
-            print("Apertou E");
+            StartCoroutine(Open());
+
+        }else if(Input.GetKeyDown(KeyCode.E) && isCollidingPlayer == true && panelAtivo == true)
+        {
+            StartCoroutine(Close());
+            panelAtivo = false;
         }
-        
-        
+    }
+    IEnumerator Open()
+    {
+        panel.SetTrigger("AtivarUI");
+        yield return new WaitForSeconds(1);
+        panelAtivo = true;
+    }
+    IEnumerator Close()
+    {
+        panel.SetTrigger("DesativarUI");
+        yield return new WaitForSeconds(1);
+        lojaUI.SetActive(false);
     }
     public void XDeactivator()
     {
-        Time.timeScale = 1f;
+        StartCoroutine(Close());
     }
 }

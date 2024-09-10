@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7157536662130628186}
   - component: {fileID: 1089117066157788581}
   - component: {fileID: 1668659727059269036}
+  - component: {fileID: 1349244163856751304}
   - component: {fileID: 3438351112410730984}
   - component: {fileID: 5304033625335077296}
   - component: {fileID: 7157536662130628187}
@@ -103,6 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 4
   speed: 2
+  direction: -1
   damage: 1
   body: {fileID: 3438351112410730984}
   tiro: {fileID: 5719355496196171692, guid: 5c203dec3a41a774dadb45e036a9b463, type: 3}
@@ -114,6 +116,22 @@ MonoBehaviour:
   doisReais: {fileID: 3458714514726493731, guid: a09217301cfa1054ba10bbd8b0e6df3f, type: 3}
   cincoReais: {fileID: 1223512492860425161, guid: 75cc1de1e28f0b840981fa347bcdb009, type: 3}
   dezReais: {fileID: 1670303849967491869, guid: 48bc2b71f8098664d9bae2dd41d04ed4, type: 3}
+--- !u!114 &1349244163856751304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7157536662130628189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7edd9c5d69f9649985ae8ce9ab9e94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 0}
+  tiro: {fileID: 5719355496196171692, guid: 5c203dec3a41a774dadb45e036a9b463, type: 3}
+  tiroSpeed: 3.5
+  segundosParaAtirar: 2
 --- !u!50 &3438351112410730984
 Rigidbody2D:
   serializedVersion: 4
