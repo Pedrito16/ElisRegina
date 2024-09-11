@@ -6,6 +6,7 @@ public class FadeIn : MonoBehaviour
 {
     [SerializeField] Animator startAnimation;
     [SerializeField] string parameterName;
+    
     void Start()
     {
         StartCoroutine(FadeOutCooldown());
@@ -15,5 +16,6 @@ public class FadeIn : MonoBehaviour
         startAnimation.SetBool(parameterName, false);
         yield return new WaitForSeconds(1f);
         startAnimation.SetBool(parameterName, true);
+        
     }
 }
