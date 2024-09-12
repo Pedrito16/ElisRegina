@@ -4133,6 +4133,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 997515947}
     - target: {fileID: 231053574532262719, guid: 3ea5c6ef89d7d044a8a0f61a2aacbd21, type: 3}
+      propertyPath: bolhaChatAnimator
+      value: 
+      objectReference: {fileID: 1768122513}
+    - target: {fileID: 231053574532262719, guid: 3ea5c6ef89d7d044a8a0f61a2aacbd21, type: 3}
       propertyPath: dialogo.Array.size
       value: 4
       objectReference: {fileID: 0}
