@@ -18,6 +18,7 @@ public class Lojinha : MonoBehaviour
         eKeybind.SetActive(false);
         audioSource.clip = DomingoANoite;
         lojaUI.SetActive(false);
+        audioSource.Play();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -26,7 +27,7 @@ public class Lojinha : MonoBehaviour
         {
             isCollidingPlayer = true;
             audiocontroller.audiosource.volume = 0;
-            audioSource.Play();
+         
             eKeybind.SetActive(true);
             
         }

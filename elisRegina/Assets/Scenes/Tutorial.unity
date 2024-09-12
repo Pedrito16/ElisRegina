@@ -728,6 +728,10 @@ PrefabInstance:
       value: Cleide
       objectReference: {fileID: 0}
     - target: {fileID: 231053574532262719, guid: 3ea5c6ef89d7d044a8a0f61a2aacbd21, type: 3}
+      propertyPath: bolhaChatAnimator
+      value: 
+      objectReference: {fileID: 1768122513}
+    - target: {fileID: 231053574532262719, guid: 3ea5c6ef89d7d044a8a0f61a2aacbd21, type: 3}
       propertyPath: dialogo.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -1057,6 +1061,10 @@ PrefabInstance:
       propertyPath: nomeDoPersonagem
       value: Cleide
       objectReference: {fileID: 0}
+    - target: {fileID: 231053574532262719, guid: 3ea5c6ef89d7d044a8a0f61a2aacbd21, type: 3}
+      propertyPath: bolhaChatAnimator
+      value: 
+      objectReference: {fileID: 1768122513}
     - target: {fileID: 231053574532262719, guid: 3ea5c6ef89d7d044a8a0f61a2aacbd21, type: 3}
       propertyPath: dialogo.Array.size
       value: 5
@@ -2085,11 +2093,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8420738321650879121, guid: cc7f5fcf668f9a647b34cdc7902d93c1, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.020313473
+      value: 0.02031511
       objectReference: {fileID: 0}
     - target: {fileID: 8420738321650879121, guid: cc7f5fcf668f9a647b34cdc7902d93c1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00023455007
+      value: -0.000234569
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1117666830, guid: cc7f5fcf668f9a647b34cdc7902d93c1, type: 3}
@@ -2172,7 +2180,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 601868225}
-  m_LocalRotation: {x: 0.011543376, y: 0.020313473, z: -0.00023455007, w: 0.999727}
+  m_LocalRotation: {x: 0.011543376, y: 0.02031511, z: -0.000234569, w: 0.999727}
   m_LocalPosition: {x: -2.2104013, y: -5.8454638, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3205,6 +3213,10 @@ PrefabInstance:
       value: Cleide
       objectReference: {fileID: 0}
     - target: {fileID: 231053574532262719, guid: 3ea5c6ef89d7d044a8a0f61a2aacbd21, type: 3}
+      propertyPath: bolhaChatAnimator
+      value: 
+      objectReference: {fileID: 1768122513}
+    - target: {fileID: 231053574532262719, guid: 3ea5c6ef89d7d044a8a0f61a2aacbd21, type: 3}
       propertyPath: dialogo.Array.size
       value: 6
       objectReference: {fileID: 0}
@@ -3325,6 +3337,18 @@ PrefabInstance:
       propertyPath: "descri\xE7\xE3oText"
       value: 
       objectReference: {fileID: 551295815}
+    - target: {fileID: 4692045181001953105, guid: dca71465d6a3d304b852dafa2cb4a7c0, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4692045181001953105, guid: dca71465d6a3d304b852dafa2cb4a7c0, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4692045181001953105, guid: dca71465d6a3d304b852dafa2cb4a7c0, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4990028676636150646, guid: dca71465d6a3d304b852dafa2cb4a7c0, type: 3}
       propertyPath: audioSource
       value: 
@@ -3662,6 +3686,11 @@ PrefabInstance:
       objectReference: {fileID: 1709101887}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2cf94cd34887cf43af74a96bc015b79, type: 3}
+--- !u!95 &1768122513 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7619446653245159579, guid: f2cf94cd34887cf43af74a96bc015b79, type: 3}
+  m_PrefabInstance: {fileID: 1768122512}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1776978826
 PrefabInstance:
   m_ObjectHideFlags: 0

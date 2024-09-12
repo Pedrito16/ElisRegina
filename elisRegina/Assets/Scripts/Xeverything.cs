@@ -40,7 +40,14 @@ public class Xeverything : MonoBehaviour
 
     void Update()
     {
-
+        if (player.dinheiro >= custo && isClicking == true)
+        {
+            custoText.GetComponent<Text>().color = Color.green;
+        }
+        else if (player.dinheiro <= custo && isClicking == true)
+        {
+            custoText.GetComponent<Text>().color = Color.red;
+        }
     }
     public void OnClick()
     {
@@ -50,14 +57,6 @@ public class Xeverything : MonoBehaviour
             laranjinha.isClicking = false;
             hamburguer.isClicking = false;
             hamburguerG.isClicking = false;
-        }
-        if (player.dinheiro >= custo && isClicking == true)
-        {
-            custoText.GetComponent<Text>().color = Color.green;
-        }
-        else if (player.dinheiro <= custo && isClicking == true)
-        {
-            custoText.GetComponent<Text>().color = Color.red;
         }
         if (Time.time - lastClickTime < catchTime)
         {

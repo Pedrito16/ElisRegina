@@ -25,6 +25,8 @@ public class NPC : MonoBehaviour
     [SerializeField] private string nomeDoPersonagem;
 
     [SerializeField] private Text textoNomePersonagem;
+
+    [SerializeField] Animator bolhaChatAnimator;
     
     void Start()
     {
@@ -53,12 +55,17 @@ public class NPC : MonoBehaviour
         if (falaAtual >= falasMaximas && Input.GetKeyDown(KeyCode.E))
         {
             //textoDialogo.text = "";
-            dialogoTexto.text = "";
-            textoNomePersonagem.text = "";
-            bolhaChat.SetActive(false);
-            player.isTalking = false;
-            falaAtual = -1;
+            bolhaChatAnimator.SetTrigger("Close");
+            StartCoroutine(Close());
         }
+    }
+    IEnumerator Close()
+    {
+        yield return new WaitForSeconds(0.45f);
+        bolhaChat.SetActive(false); dialogoTexto.text = "";
+        textoNomePersonagem.text = "";
+        player.isTalking = false;
+        falaAtual = -1;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {

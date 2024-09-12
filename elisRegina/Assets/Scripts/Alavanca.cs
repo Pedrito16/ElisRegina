@@ -6,6 +6,7 @@ public class Alavanca : MonoBehaviour
 {
     public GameObject interactionE;
     [SerializeField] bool IsCollidingPlayer;
+    [SerializeField]public  bool currentState = true; //false para vermelho e true para verde
     [SerializeField] Animator leverAnimator;
     private void Awake()
     {
@@ -14,8 +15,16 @@ public class Alavanca : MonoBehaviour
     void Update()
     {
         if(IsCollidingPlayer == true && Input.GetKeyDown(KeyCode.E))
-        { 
-         
+        {
+            leverAnimator.SetTrigger("Pressed");
+            if (currentState == false)
+            {
+                currentState = true;
+            }else if (currentState == true)
+            {
+                currentState = false;
+            }
+                      
         }
         interactionE.SetActive(IsCollidingPlayer);
     }
