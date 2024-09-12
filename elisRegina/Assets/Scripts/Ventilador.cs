@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Ventilador : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float velocityYSpeed;
+    public ParticleSystem ventoBaixo, ventoCima;
     void Start()
     {
-        
+        ventoBaixo.Play(); 
     }
 
     // Update is called once per frame
@@ -19,7 +20,22 @@ public class Ventilador : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<Rigidbody2D>().velocity.y = 0;
+            Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
+
+            Vector2 newVelocity = rb.velocity;
+            newVelocity.y = velocityYSpeed;
+            rb.velocity = newVelocity;
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Player"))
+        {
+            Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
+
+            Vector2 newVelocity = rb.velocity;
+            newVelocity.y = velocityYSpeed;
+            rb.velocity = newVelocity;
         }
     }
 }
