@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3001058748317536489}
   - component: {fileID: 6104723747888292720}
   - component: {fileID: 118232419145570048}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: VentiladorCollision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18c9f45969ea58a44afccfe7b3158aa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityYSpeed: 0
+  XouY: 0
+  velocitySpeed: 3
   ventoBaixoObject: {fileID: 3001058750312162472}
   ventoCimaObject: {fileID: 6240341505994097225}
   ventoBaixo: {fileID: 3001058750312162474}
@@ -142,7 +143,7 @@ GameObject:
   - component: {fileID: 3001058750312162475}
   - component: {fileID: 3001058750312162474}
   - component: {fileID: 3001058750312162473}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ParticulaBaixo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4952,7 +4953,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2487655224599904852}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ventilador
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4989,7 +4990,7 @@ GameObject:
   - component: {fileID: 6069846436991046652}
   - component: {fileID: 5310959850879481709}
   - component: {fileID: 4029102420164530239}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ParticulaCima
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9848,6 +9849,10 @@ PrefabInstance:
     - target: {fileID: 878526376171092196, guid: a1da585089d6cac41b9f90e613fe03d4, type: 3}
       propertyPath: m_Name
       value: Ventilador Sprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 878526376171092196, guid: a1da585089d6cac41b9f90e613fe03d4, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1da585089d6cac41b9f90e613fe03d4, type: 3}

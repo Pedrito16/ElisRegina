@@ -41,6 +41,7 @@ public class NPC : MonoBehaviour
    
     void Update()
     {
+        eKeybind.SetActive(isCollidingPlayer);
         // iniciador do dialogo
         if(Input.GetKeyDown(KeyCode.E) && isCollidingPlayer == true && falaAtual < falasMaximas) 
         {

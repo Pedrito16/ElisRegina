@@ -17,6 +17,7 @@ TagManager:
   - DoisReal
   - DezReal
   - Escada
+  - CleideUnlockPower
   layers:
   - Default
   - TransparentFX

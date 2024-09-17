@@ -36,6 +36,7 @@ public class Player     : MonoBehaviour
     [Header("Buffs ativos")]
     public bool xtudoAtivo, laranjinhaAtivo;
     public bool notActiveBuffs = true;
+    [SerializeField] bool soPr·Testa;
     void Start()
     {
         //playerTransform.localScale = new Vector2(direction, 1);
@@ -84,13 +85,13 @@ public class Player     : MonoBehaviour
             direction = (int)horizontal;
         }
         //cÛdigo que faz o peso do jogador
-        if (Input.GetButtonDown("Weight") && direction == 1 && isPesoCooldown == false) //1 && Time.time > nextFire
+        if (Input.GetButtonDown("Weight") && direction == 1 && isPesoCooldown == false && Powers.unlockPower == true) //1 && Time.time > nextFire
         {
-         Instantiate(Peso, Direita.position, transform.rotation);
+            Instantiate(Peso, Direita.position, transform.rotation);
             StartCoroutine(Cooldown());
         }
         
-        if (Input.GetButtonDown("Weight") && direction == -1 && isPesoCooldown == false )
+        if (Input.GetButtonDown("Weight") && direction == -1 && isPesoCooldown == false && Powers.unlockPower == true)
         {
             Instantiate(Peso, Esquerda.position, transform.rotation);
             StartCoroutine(Cooldown());
@@ -110,6 +111,7 @@ public class Player     : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().color = Color.yellow;
         }
+        Powers.unlockPower = soPr·Testa;
     }
     IEnumerator Cooldown()
     {
@@ -120,6 +122,10 @@ public class Player     : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("CleideUnlockPower"))
+        {
+            Powers.unlockPower = true;
+        }
         if (collision.gameObject.CompareTag("Peso"))
         {
             Destroy(collision.gameObject);
@@ -129,11 +135,6 @@ public class Player     : MonoBehaviour
             explos„o.Play();
             life -= collision.gameObject.GetComponent<Tiro>().dano;
             Destroy(collision.gameObject);
-        }
-        if (collision.CompareTag("NPC"))
-        {
-            collision.gameObject.GetComponent<NPC>().eKeybind.SetActive(true);
-            
         }
         if (collision.CompareTag("DoisReal"))
         {
@@ -174,7 +175,6 @@ public class Player     : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Espinho"))
         {
-            
             gameOver();
         }
         if (collision.gameObject.CompareTag("Peso"))
@@ -186,4 +186,8 @@ public class Player     : MonoBehaviour
             life -= collision.gameObject.GetComponent<Enemy>().damage;
         }
     }
+}
+public static class Powers
+{
+    public static bool unlockPower = false;
 }

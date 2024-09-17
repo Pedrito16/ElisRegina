@@ -16,16 +16,16 @@ public class Alavanca : MonoBehaviour
     {
         if(IsCollidingPlayer == true && Input.GetKeyDown(KeyCode.E))
         {
-            leverAnimator.SetTrigger("Pressed");
-            if (currentState == false)
-            {
-                currentState = true;
-            }else if (currentState == true)
+            if(currentState == true)
             {
                 currentState = false;
             }
-                      
+            else
+            {
+                currentState = true;
+            }
         }
+        leverAnimator.SetBool("currentState", currentState);
         interactionE.SetActive(IsCollidingPlayer);
     }
     private void OnTriggerEnter2D(Collider2D collision)

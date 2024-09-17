@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9039484742824298332}
   - component: {fileID: 9039484742824298335}
   - component: {fileID: 9039484742824298331}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alavanca
   m_TagString: Untagged
   m_Icon: {fileID: 0}
