@@ -124,14 +124,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18c9f45969ea58a44afccfe7b3158aa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XouY: 0
   velocitySpeed: 3
-  ventoBaixoObject: {fileID: 3001058750312162472}
-  ventoCimaObject: {fileID: 6240341505994097225}
-  ventoBaixo: {fileID: 3001058750312162474}
-  ventoCima: {fileID: 5310959850879481709}
+  ventoBaixoObject: {fileID: 6240341505994097225}
+  ventoCimaObject: {fileID: 3001058750312162472}
+  ventoBaixo: {fileID: 5310959850879481709}
+  ventoCima: {fileID: 3001058750312162474}
   alavancaScript: {fileID: 0}
   ventiladorAnimator: {fileID: 4644695146417256060}
+  inverter: 0
 --- !u!1 &3001058750312162472
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,12 +144,12 @@ GameObject:
   - component: {fileID: 3001058750312162474}
   - component: {fileID: 3001058750312162473}
   m_Layer: 6
-  m_Name: ParticulaBaixo
+  m_Name: ParticulaDeCima
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3001058750312162475
 Transform:
   m_ObjectHideFlags: 0
@@ -4991,7 +4991,7 @@ GameObject:
   - component: {fileID: 5310959850879481709}
   - component: {fileID: 4029102420164530239}
   m_Layer: 6
-  m_Name: ParticulaCima
+  m_Name: ParticulaDeBaixo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

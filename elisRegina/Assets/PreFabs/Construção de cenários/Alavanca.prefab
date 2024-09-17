@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionE: {fileID: 5799259484288445541}
   IsCollidingPlayer: 0
-  currentState: 0
+  currentState: 1
   leverAnimator: {fileID: 9039484742824298335}
 --- !u!95 &9039484742824298335
 Animator:
