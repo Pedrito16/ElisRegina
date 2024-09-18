@@ -4,35 +4,54 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
-    public GameObject pauseMenu;
-    public string activeSceneName;
+    public GameObject pauseMenu, blur;
+    string activeSceneName;
+    [SerializeField] Animator pauseAnimator;
     public bool Ativador = false;
     void Start()
     {
         pauseMenu.SetActive(false);
+        blur.SetActive(false);
         activeSceneName = SceneManager.GetActiveScene().name;
+        pauseAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
+    }
+    private void Awake()
+    {
+        pauseAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
     }
 
-   
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && Ativador == false)
         {
             pauseMenu.SetActive(true);
+            blur.SetActive(true);
             Time.timeScale = 0;
             Ativador = true;
         } else if (Input.GetKeyDown(KeyCode.Escape) && Ativador == true)
         {
-          Ativador = false;
-          Time.timeScale = 1;
-          pauseMenu.SetActive(false);
+            StartCoroutine(CloseAnimation());
         }
+    }
+    IEnumerator Open()
+    {
+        yield return new WaitForSecondsRealtime(0.45f);
+        Time.timeScale = 0;
+        Ativador = true;
+    }
+    IEnumerator CloseAnimation()
+    {
+        pauseAnimator.SetTrigger("Close");
+        yield return new WaitForSecondsRealtime(0.35f);
+        pauseMenu.SetActive(false);
+        blur.SetActive(false);
+        Ativador = false;
+        Time.timeScale = 1;
     }
     public void Resume()
     {
         Time.timeScale = 1;
-        pauseMenu.SetActive(false);
-        print("clicou");
+        StartCoroutine(CloseAnimation());
     }
     public void Restart()
     {

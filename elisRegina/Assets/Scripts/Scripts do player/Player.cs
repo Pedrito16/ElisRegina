@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Player     : MonoBehaviour
 {
     public int life = 3;
@@ -36,7 +36,7 @@ public class Player     : MonoBehaviour
     [Header("Buffs ativos")]
     public bool xtudoAtivo, laranjinhaAtivo;
     public bool notActiveBuffs = true;
-    [SerializeField] bool soPráTesta;
+    [SerializeField] bool UnlockedPower;
     void Start()
     {
         //playerTransform.localScale = new Vector2(direction, 1);
@@ -50,6 +50,10 @@ public class Player     : MonoBehaviour
 
     void Update()
     {
+        if(SceneManager.GetActiveScene().name != "Tutorial")
+        {
+            Powers.unlockPower = true;
+        }
         //código que fazz o personagem virar de direção
         if(gameObject == null)
         {
@@ -106,12 +110,11 @@ public class Player     : MonoBehaviour
             moveSpeed = inicialMovespeed;
             jumpStrenght = inicialJumpStrength;
         }
-        
         if(Dourado.playerDourado == true)
         {
             GetComponent<SpriteRenderer>().color = Color.yellow;
         }
-        Powers.unlockPower = soPráTesta;
+        
     }
     IEnumerator Cooldown()
     {
@@ -124,7 +127,8 @@ public class Player     : MonoBehaviour
     {
         if (collision.CompareTag("CleideUnlockPower"))
         {
-            Powers.unlockPower = true;
+            UnlockedPower = true;
+            Powers.unlockPower = UnlockedPower;
         }
         if (collision.gameObject.CompareTag("Peso"))
         {
