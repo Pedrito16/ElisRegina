@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: "Assets/Scenes/Bot\xF5es tela inicial.unity"
     guid: e7d08cd9d856d05449f4dd99cb0fc50e
@@ -20,10 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/City.unity
     guid: e61425dd94cc78240966b5f6d551710c
-  - enabled: 0
-    path: Assets/Scenes/CenaTeste.unity
-    guid: 65587c70afb7f304497de10d77595594
   - enabled: 1
-    path: Assets/Scenes/Cena 4 (fernando).unity
-    guid: df62b718c8f169843ab9350e68b9d2bc
+    path: Assets/Scenes/Truco.unity
+    guid: 9633613cc24d5054988c5af10e04c463
   m_configObjects: {}

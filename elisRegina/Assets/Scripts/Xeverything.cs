@@ -52,7 +52,7 @@ public class Xeverything : MonoBehaviour
     public void OnClick()
     {
         isClicking = true;
-        if(isClicking == true)
+        if(isClicking)
         {
             laranjinha.isClicking = false;
             hamburguer.isClicking = false;
