@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class ArrastaCartaPlayer : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public CanvasGroup cartasConfigs;
+    public gameState currentState;
     public RectTransform transformDaCarta;
     public float canvasScaleFactor;
     Vector3 transformDaCartaInicial;
@@ -18,17 +20,42 @@ public class ArrastaCartaPlayer : MonoBehaviour, IBeginDragHandler, IDragHandler
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
-        cartasConfigs.alpha = 0.8f;
-        cartasConfigs.blocksRaycasts = false;
+        if (currentState == gameState.playerTurn)
+        {
+            cartasConfigs.alpha = 0.8f;
+            cartasConfigs.blocksRaycasts = false;
+        }
     }
     public void OnDrag(PointerEventData eventData)
     {
-        transformDaCarta.anchoredPosition += eventData.delta / canvasScaleFactor;
+        if(currentState == gameState.playerTurn)
+        {
+            transformDaCarta.anchoredPosition += eventData.delta / canvasScaleFactor;
+        }
+        else
+        {
+            eventData.dragging = false;
+        }
     }
     public void OnEndDrag(PointerEventData eventData)
     {
-        cartasConfigs.alpha = 1f;
-        transformDaCarta.transform.position = transformDaCartaInicial;
-        cartasConfigs.blocksRaycasts = true;
+        if(currentState == gameState.playerTurn)
+        {
+            cartasConfigs.alpha = 1f;
+            transformDaCarta.transform.position = transformDaCartaInicial;
+            cartasConfigs.blocksRaycasts = true;
+        }
+    }
+    void Update() 
+    {
+     if(currentState == gameState.enemyTurn)
+     {
+            gameObject.GetComponent<Image>().color = Color.gray;
+            cartasConfigs.interactable = false;
+     }else if(currentState == gameState.playerTurn)
+        {
+            cartasConfigs.interactable = true;
+            gameObject.GetComponent<Image>().color = Color.white;
+        }
     }
 }
