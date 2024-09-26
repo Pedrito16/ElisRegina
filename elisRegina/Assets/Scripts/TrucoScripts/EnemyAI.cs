@@ -12,7 +12,8 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] Transform bundleTransform;
     [SerializeField] List<int> inventário;
-    int card1, card2;
+    int card1, card2, card3;
+    public int escolha;
     public GameObject cartaJogar;
     [SerializeField] SpritesTruco sprites;
     public GameObject bundle;
@@ -25,6 +26,8 @@ public class EnemyAI : MonoBehaviour
     bool mudarTurno;
     private void Awake()
     {
+        imageAnimator.gameObject.SetActive(false);
+        turnTextAnimator.gameObject.SetActive(false);
         ativador = false;
         sprites = FindObjectOfType<SpritesTruco>();
         imageAnimator.gameObject.SetActive(false);
@@ -32,9 +35,13 @@ public class EnemyAI : MonoBehaviour
     }
     void Start()
     {
+        carta = Instantiate(cartaJogar, spawnLocation.position, bundleTransform.rotation);
+        carta.transform.SetParent(spawnLocation, false);
+        carta.SetActive(false);
         mudarTurno = true;
-        card1 = Random.Range(1, sprites.spritesTruco.Length);
-        card2 = Random.Range(1, sprites.spritesTruco.Length);
+        escolha = Random.Range(1, 2);
+        card1 = Random.Range(1, sprites.spritesTruco.Length + 1);
+        card2 = Random.Range(1, sprites.spritesTruco.Length + 1);
         inventário.Add(card1);
         inventário.Add(card2);
     }
@@ -47,10 +54,8 @@ public class EnemyAI : MonoBehaviour
         turnTextAnimator.gameObject.SetActive(false);
         ativador = true;
     }
-    // Update is called once per frame
     void Update()
-    {
-        
+    { 
         if(currentState == gameState.enemyTurn && mudarTurno)
         {
             StartCoroutine(turnAnimation());
@@ -58,18 +63,15 @@ public class EnemyAI : MonoBehaviour
             turnText.text = text;
             mudarTurno = false;
         }
-        
-        int Escolha = Random.Range(1, 2);
-        if(Escolha == 1 && ativador)
+        if(escolha == 1 && ativador)
         {
             if (inventário.Contains(card1))
             {
-                carta = Instantiate(cartaJogar, spawnLocation.position, bundleTransform.rotation);
-                carta.transform.SetParent(spawnLocation, false);
+                carta.SetActive(true);
                 carta.GetComponent<UnityEngine.UI.Image>().sprite = sprites.spritesTruco[card1];
                 inventário.Remove(card1);
             }
-            if(carta !=  null)
+            if(carta !=  null && isActiveAndEnabled)
             {
                 carta.transform.position = Vector3.MoveTowards(carta.transform.position, bundleTransform.position, speed);
             }
@@ -77,15 +79,29 @@ public class EnemyAI : MonoBehaviour
             {
                 carta.SetActive(false);
                 bundle.GetComponent<UnityEngine.UI.Image>().sprite = sprites.spritesTruco[card1];
-                Destroy(carta);
+                carta.transform.position = spawnLocation.position;
+                ativador = false;
             }
         }
-        else if(Escolha == 2 && ativador)
+        else if(escolha == 2 && ativador)
         {
-            carta = Instantiate(cartaJogar, spawnLocation.position, bundleTransform.rotation);
-            carta.transform.SetParent(spawnLocation, false);
-            carta.GetComponent<UnityEngine.UI.Image>().sprite = sprites.spritesTruco[card2];
-            inventário.Remove(card2);
+            if (inventário.Contains(card2))
+            {
+                carta.SetActive(true);
+                carta.GetComponent<UnityEngine.UI.Image>().sprite = sprites.spritesTruco[card2];
+                inventário.Remove(card2);
+            }
+            if (carta != null && isActiveAndEnabled)
+            {
+                carta.transform.position = Vector3.MoveTowards(carta.transform.position, bundleTransform.position, speed);
+            }
+            if (carta.transform.position == bundleTransform.position && carta != null)
+            {
+                carta.SetActive(false);
+                bundle.GetComponent<UnityEngine.UI.Image>().sprite = sprites.spritesTruco[card2];
+                carta.transform.position = spawnLocation.position;
+                ativador = false;
+            }
         }
     }
     

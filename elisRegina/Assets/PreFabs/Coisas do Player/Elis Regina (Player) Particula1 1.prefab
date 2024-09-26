@@ -147,6 +147,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.10906857
       objectReference: {fileID: 0}
+    - target: {fileID: 8016559820208967110, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 3.125
+      objectReference: {fileID: 0}
     - target: {fileID: 8016559820208967111, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_Material
       value: 
@@ -193,19 +197,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8846302290493060559, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.999727
+      value: 0.99972683
       objectReference: {fileID: 0}
     - target: {fileID: 8846302290493060559, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.011543359
+      value: 0.011543357
       objectReference: {fileID: 0}
     - target: {fileID: 8846302290493060559, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.020313445
+      value: 0.020323604
       objectReference: {fileID: 0}
     - target: {fileID: 8846302290493060559, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0002345494
+      value: -0.00023466667
       objectReference: {fileID: 0}
     - target: {fileID: 8846302291139123620, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_Layer
