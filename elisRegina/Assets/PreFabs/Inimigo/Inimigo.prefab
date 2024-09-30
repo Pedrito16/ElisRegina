@@ -108,6 +108,7 @@ MonoBehaviour:
   damage: 1
   body: {fileID: 3438351112410730984}
   tiro: {fileID: 5719355496196171692, guid: 5c203dec3a41a774dadb45e036a9b463, type: 3}
+  "fuma\xE7aParticula": {fileID: 1165549887802466855, guid: 6952b656f0106a54db651c103e7ddff8, type: 3}
   tiroSpeed: 5
   animator: {fileID: 7157536662130628187}
   enemyTransform: {fileID: 7157536662130628186}
@@ -132,6 +133,7 @@ MonoBehaviour:
   tiro: {fileID: 5719355496196171692, guid: 5c203dec3a41a774dadb45e036a9b463, type: 3}
   tiroSpeed: 3.5
   segundosParaAtirar: 2
+  ativador: 0
 --- !u!50 &3438351112410730984
 Rigidbody2D:
   serializedVersion: 4

@@ -67,13 +67,13 @@ public class Lojinha : MonoBehaviour
     IEnumerator Open()
     {
         panel.SetTrigger("AtivarUI");
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.30f);
         panelAtivo = true;
     }
     IEnumerator Close()
     {
         panel.SetTrigger("DesativarUI");
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.30f);
         lojaUI.SetActive(false);
     }
     public void XDeactivator()

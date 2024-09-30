@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public int damage = 1;
     public Rigidbody2D body;
     public GameObject tiro;
+    public GameObject fumaçaParticula;
     public float tiroSpeed;
     public Animator animator;
     public Transform enemyTransform;
@@ -61,7 +62,8 @@ public class Enemy : MonoBehaviour
     }
     private void Derrotado()
     {
-        
+       GameObject fumacinha = Instantiate(fumaçaParticula, transform.position, transform.rotation);
+        Destroy(fumacinha, 0.75f);
        if(numeroAleatorio <= 5)
         {
             Instantiate(doisReais, transform.position, transform.rotation);

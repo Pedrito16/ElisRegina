@@ -33,6 +33,11 @@ public class Player     : MonoBehaviour
     private Vector3 esquerda;
     private Vector3 direita;
     public GameObject GameOver;
+    float invensibilityTime = 1.1f;
+    [SerializeField] bool isInvensible;
+    [Header("Coyote Time e jump Buffering")]
+    float coyoteTime = 0.1f;
+    float coyoteTimeCounter;
     [Header("Buffs ativos")]
     public bool xtudoAtivo, laranjinhaAtivo;
     public bool notActiveBuffs = true;
@@ -55,6 +60,14 @@ public class Player     : MonoBehaviour
             Powers.unlockPower = true;
         }
         //código que fazz o personagem virar de direção
+        if (groundCheck)
+        {
+            coyoteTimeCounter = coyoteTime;
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
         if(gameObject == null)
         {
             explosão.Play();
@@ -80,9 +93,11 @@ public class Player     : MonoBehaviour
         footCollider = Physics2D.OverlapCircle(foot.position, 0.13f, filtro);
         groundCheck = footCollider;
         PlayerPrefs.SetInt("Dinheiro", dinheiro);
-        if(Input.GetButtonDown("Jump")&&  groundCheck)
+
+        if(Input.GetButtonDown("Jump") &&  coyoteTimeCounter > 0)
         {
             body.AddForce(new Vector2(0, jumpStrenght * 75));
+            coyoteTimeCounter = 0; 
         }
         if(horizontal != 0)
         {
@@ -136,9 +151,13 @@ public class Player     : MonoBehaviour
         }
         if (collision.CompareTag("Tiro"))
         {
-            explosão.Play();
-            life -= collision.gameObject.GetComponent<Tiro>().dano;
-            Destroy(collision.gameObject);
+            if (!isInvensible)
+            {
+                explosão.Play();
+                life -= collision.gameObject.GetComponent<Tiro>().dano;
+                Destroy(collision.gameObject);
+                StartCoroutine(invensibility());
+            }
         }
         if (collision.CompareTag("DoisReal"))
         {
@@ -164,6 +183,12 @@ public class Player     : MonoBehaviour
             SFXscript.SFXsource.Play();
             Destroy(collision.gameObject);
         }
+    }
+    IEnumerator invensibility()
+    {
+        isInvensible = true;
+        yield return new WaitForSeconds(invensibilityTime);
+        isInvensible = false;
     }
     void gameOver()
     {
