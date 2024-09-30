@@ -62,7 +62,7 @@ public class NPC : MonoBehaviour
     }
     IEnumerator Close()
     {
-        yield return new WaitForSeconds(0.45f);
+        yield return new WaitForSeconds(0.25f);
         bolhaChat.SetActive(false); dialogoTexto.text = "";
         textoNomePersonagem.text = "";
         player.isTalking = false;

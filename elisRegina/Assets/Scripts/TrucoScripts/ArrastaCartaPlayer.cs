@@ -7,12 +7,14 @@ using UnityEngine.UI;
 public class ArrastaCartaPlayer : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public CanvasGroup cartasConfigs;
+    Bundle bundleScript;
     public gameState currentState;
     public RectTransform transformDaCarta;
     public float canvasScaleFactor;
     Vector3 transformDaCartaInicial;
     public void Awake()
     {
+        bundleScript = FindObjectOfType<Bundle>();
         cartasConfigs = GetComponent<CanvasGroup>();
         transformDaCarta = GetComponent<RectTransform>();
         transformDaCartaInicial = transformDaCarta.position;
@@ -20,7 +22,7 @@ public class ArrastaCartaPlayer : MonoBehaviour, IBeginDragHandler, IDragHandler
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if (currentState == gameState.playerTurn)
+        if (bundleScript.currentTurn == gameState.playerTurn)
         {
             cartasConfigs.alpha = 0.8f;
             cartasConfigs.blocksRaycasts = false;
@@ -28,7 +30,7 @@ public class ArrastaCartaPlayer : MonoBehaviour, IBeginDragHandler, IDragHandler
     }
     public void OnDrag(PointerEventData eventData)
     {
-        if(currentState == gameState.playerTurn)
+        if(bundleScript.currentTurn == gameState.playerTurn)
         {
             transformDaCarta.anchoredPosition += eventData.delta / canvasScaleFactor;
         }
@@ -39,7 +41,7 @@ public class ArrastaCartaPlayer : MonoBehaviour, IBeginDragHandler, IDragHandler
     }
     public void OnEndDrag(PointerEventData eventData)
     {
-        if(currentState == gameState.playerTurn)
+        if(bundleScript.currentTurn == gameState.playerTurn)
         {
             cartasConfigs.alpha = 1f;
             transformDaCarta.transform.position = transformDaCartaInicial;
@@ -48,11 +50,11 @@ public class ArrastaCartaPlayer : MonoBehaviour, IBeginDragHandler, IDragHandler
     }
     void Update() 
     {
-     if(currentState == gameState.enemyTurn)
+     if(bundleScript.currentTurn == gameState.enemyTurn)
      {
             gameObject.GetComponent<Image>().color = Color.gray;
             cartasConfigs.interactable = false;
-     }else if(currentState == gameState.playerTurn)
+     }else if(bundleScript.currentTurn == gameState.playerTurn)
         {
             cartasConfigs.interactable = true;
             gameObject.GetComponent<Image>().color = Color.white;

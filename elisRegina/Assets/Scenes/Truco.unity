@@ -251,7 +251,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 618138619}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -392,6 +392,7 @@ RectTransform:
   - {fileID: 1876653324}
   - {fileID: 978415935}
   - {fileID: 2068337796}
+  - {fileID: 1762476782}
   - {fileID: 148430450}
   - {fileID: 1415799481}
   m_Father: {fileID: 0}
@@ -923,9 +924,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d383c4f03de32dd46abb2d91da1d71c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentState: 0
+  bundleScript: {fileID: 0}
   sprites: {fileID: 0}
+  turnControlScript: {fileID: 0}
   cardStrength: 0
-  hoverSpeed: 0.1
+  hoverSpeed: 0.01
+  turnText: {fileID: 926579408}
+  text: Player
+  turnTextAnim: {fileID: 926579407}
+  turnImageAnim: {fileID: 137614642}
 --- !u!1 &1110336872
 GameObject:
   m_ObjectHideFlags: 0
@@ -1395,7 +1403,7 @@ RectTransform:
   m_GameObject: {fileID: 1334772564}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6056108, y: 0.6056108, z: 0.6056108}
+  m_LocalScale: {x: 0.48784977, y: 0.48784977, z: 0.48784977}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 728511102}
@@ -1435,9 +1443,14 @@ MonoBehaviour:
   canva: {fileID: 618138619}
   spawnLocation: {fileID: 1415799481}
   carta: {fileID: 0}
+  cartaVerso:
+  - {fileID: 728511101}
+  - {fileID: 802017974}
   speed: 0.06
   bundleTransform: {fileID: 1876653324}
   "invent\xE1rio": 
+  bundleScript: {fileID: 0}
+  turnController: {fileID: 0}
   escolha: 0
   cartaJogar: {fileID: 148430449}
   sprites: {fileID: 0}
@@ -1448,6 +1461,7 @@ MonoBehaviour:
   currentState: 0
   text: Enemy Turn
   turnText: {fileID: 926579408}
+  mudarTurno: 0
 --- !u!1 &1415799480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1477,7 +1491,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 618138619}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1459400722
 GameObject:
@@ -1644,6 +1658,57 @@ RectTransform:
   m_AnchoredPosition: {x: 18040158, y: -124515650}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1762476781
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1762476782}
+  - component: {fileID: 1762476783}
+  m_Layer: 0
+  m_Name: PlayerTurnController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1762476782
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762476781}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -69.795044, y: 54.473953, z: -5465.5425}
+  m_LocalScale: {x: 60.737614, y: 60.737614, z: 60.737614}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 618138619}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1762476783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762476781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d20cc0c252956164b8df490f5cff5152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnText: {fileID: 926579408}
+  text: Player Turn
+  turnTextAnim: {fileID: 926579407}
+  turnImageAnim: {fileID: 137614642}
+  bundleScript: {fileID: 0}
+  mudarTurno: 1
+  "podeCome\xE7ar": 0
 --- !u!1 &1848990387
 GameObject:
   m_ObjectHideFlags: 0
@@ -2042,9 +2107,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d383c4f03de32dd46abb2d91da1d71c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentState: 0
+  bundleScript: {fileID: 0}
   sprites: {fileID: 0}
+  turnControlScript: {fileID: 0}
   cardStrength: 0
-  hoverSpeed: 0.1
+  hoverSpeed: 0.01
+  turnText: {fileID: 926579408}
+  text: Player
+  turnTextAnim: {fileID: 926579407}
+  turnImageAnim: {fileID: 137614642}
 --- !u!1 &2128663435
 GameObject:
   m_ObjectHideFlags: 0

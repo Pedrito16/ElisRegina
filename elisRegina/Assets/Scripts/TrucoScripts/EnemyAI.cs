@@ -9,9 +9,12 @@ public class EnemyAI : MonoBehaviour
 {
     [SerializeField] Transform canva, spawnLocation;
     [SerializeField] GameObject carta;
+    [SerializeField] GameObject[] cartaVerso;
     [SerializeField] float speed;
     [SerializeField] Transform bundleTransform;
     [SerializeField] List<int> inventário;
+    [SerializeField] Bundle bundleScript;
+    [SerializeField] PlayerTurnController turnController;
     int card1, card2, card3;
     public int escolha;
     public GameObject cartaJogar;
@@ -23,29 +26,35 @@ public class EnemyAI : MonoBehaviour
     public gameState currentState;
     [SerializeField] string text;
     public TextMeshProUGUI turnText;
-    bool mudarTurno;
+    public bool mudarTurno;
     private void Awake()
     {
         imageAnimator.gameObject.SetActive(false);
         turnTextAnimator.gameObject.SetActive(false);
+        turnController = FindObjectOfType<PlayerTurnController>();
         ativador = false;
         sprites = FindObjectOfType<SpritesTruco>();
+        bundleScript = FindObjectOfType<Bundle>();
         imageAnimator.gameObject.SetActive(false);
         turnTextAnimator.gameObject.SetActive(false);
     }
     void Start()
     {
+        startTurn();
+    }
+    public void startTurn()
+    {
         carta = Instantiate(cartaJogar, spawnLocation.position, bundleTransform.rotation);
         carta.transform.SetParent(spawnLocation, false);
         carta.SetActive(false);
         mudarTurno = true;
-        escolha = Random.Range(1, 2);
+        escolha = Random.Range(0, 2);
         card1 = Random.Range(1, sprites.spritesTruco.Length + 1);
         card2 = Random.Range(1, sprites.spritesTruco.Length + 1);
         inventário.Add(card1);
         inventário.Add(card2);
     }
-    IEnumerator turnAnimation()
+    public IEnumerator turnAnimation()
     {
         imageAnimator.gameObject.SetActive(true);
         turnTextAnimator.gameObject.SetActive(true);
@@ -56,14 +65,14 @@ public class EnemyAI : MonoBehaviour
     }
     void Update()
     { 
-        if(currentState == gameState.enemyTurn && mudarTurno)
+        if(bundleScript.currentTurn == gameState.enemyTurn && mudarTurno)
         {
             StartCoroutine(turnAnimation());
             turnText.color = Color.red;
             turnText.text = text;
             mudarTurno = false;
         }
-        if(escolha == 1 && ativador)
+        if(escolha == 0 && ativador)
         {
             if (inventário.Contains(card1))
             {
@@ -77,13 +86,13 @@ public class EnemyAI : MonoBehaviour
             }
             if(carta.transform.position == bundleTransform.position && carta != null)
             {
-                carta.SetActive(false);
                 bundle.GetComponent<UnityEngine.UI.Image>().sprite = sprites.spritesTruco[card1];
-                carta.transform.position = spawnLocation.position;
-                ativador = false;
+                bundleScript.enemyStrength = card1;
+                Destroy(cartaVerso[escolha]);
+                EndTurn();
             }
         }
-        else if(escolha == 2 && ativador)
+        else if(escolha == 1 && ativador)
         {
             if (inventário.Contains(card2))
             {
@@ -97,12 +106,19 @@ public class EnemyAI : MonoBehaviour
             }
             if (carta.transform.position == bundleTransform.position && carta != null)
             {
-                carta.SetActive(false);
                 bundle.GetComponent<UnityEngine.UI.Image>().sprite = sprites.spritesTruco[card2];
-                carta.transform.position = spawnLocation.position;
-                ativador = false;
+                bundleScript.enemyStrength = card2;
+                Destroy(cartaVerso[escolha]);
+                EndTurn();
             }
         }
     }
-    
+    void EndTurn()
+    {
+        carta.SetActive(false);
+        carta.transform.position = spawnLocation.position;
+        ativador = false;
+        bundleScript.currentTurn = gameState.playerTurn;
+        turnController.mudarTurno = true;
+    }
 }
