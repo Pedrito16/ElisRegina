@@ -8,6 +8,6 @@ public class DinheiroTexto : MonoBehaviour
     public TextMeshProUGUI dinheiroText;
     void Update()
     {
-        dinheiroText.text = "Cruzeiros: " + GetComponent<Player>().dinheiro;
+        dinheiroText.text = GetComponent<Player>().dinheiro.ToString();
     }
 }

@@ -35,7 +35,7 @@ public class PauseMenu : MonoBehaviour
     }
     IEnumerator Open()
     {
-        yield return new WaitForSecondsRealtime(0.45f);
+        yield return new WaitForSecondsRealtime(0.20f);
         Time.timeScale = 0;
         Ativador = true;
     }

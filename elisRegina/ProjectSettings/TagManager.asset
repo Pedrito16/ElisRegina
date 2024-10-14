@@ -19,6 +19,7 @@ TagManager:
   - Escada
   - CleideUnlockPower
   - "Verifica\xE7\xE3o"
+  - HUD
   layers:
   - Default
   - TransparentFX
@@ -70,4 +71,7 @@ TagManager:
     locked: 0
   - name: Interagiveis
     uniqueID: 3598182825
+    locked: 0
+  - name: OmaisNaFrente
+    uniqueID: 3391772353
     locked: 0

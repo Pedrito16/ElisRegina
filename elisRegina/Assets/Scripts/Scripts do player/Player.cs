@@ -28,12 +28,14 @@ public class Player     : MonoBehaviour
     public float pesoCooldown = 0.5f;
     private bool isPesoCooldown = false;
     [SerializeField] ParticleSystem explosão;
+    [SerializeField] ParticleSystem fumaçaPé;
     [SerializeField] AudioClip coinPickup;
     [SerializeField] public SFX SFXscript;
     private Vector3 esquerda;
     private Vector3 direita;
-    public GameObject GameOver;
-    float invensibilityTime = 1.1f;
+    float invensibilityTime = 0.75f;
+    [SerializeField] Material defaultMaterial;
+    [SerializeField] Material redMaterial;
     [SerializeField] bool isInvensible;
     [Header("Coyote Time e jump Buffering")]
     float coyoteTime = 0.1f;
@@ -42,6 +44,7 @@ public class Player     : MonoBehaviour
     public bool xtudoAtivo, laranjinhaAtivo;
     public bool notActiveBuffs = true;
     [SerializeField] bool UnlockedPower;
+    Coroutine blinkRoutine;
     void Start()
     {
         //playerTransform.localScale = new Vector2(direction, 1);
@@ -50,7 +53,7 @@ public class Player     : MonoBehaviour
         inicialJumpStrength = jumpStrenght;
         direita = Direita.position - transform.position;
         dinheiro = PlayerPrefs.GetInt("Dinheiro");
-        
+        defaultMaterial = gameObject.GetComponent<SpriteRenderer>().material;
     }
 
     void Update()
@@ -129,7 +132,10 @@ public class Player     : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().color = Color.yellow;
         }
-        
+        if(Input.GetButtonDown("Horizontal") && groundCheck)
+        {
+            fumaçaPé.Play();
+        }
     }
     IEnumerator Cooldown()
     {
@@ -156,6 +162,7 @@ public class Player     : MonoBehaviour
                 explosão.Play();
                 life -= collision.gameObject.GetComponent<Tiro>().dano;
                 Destroy(collision.gameObject);
+                Pisca();
                 StartCoroutine(invensibility());
             }
         }
@@ -184,6 +191,22 @@ public class Player     : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
+    public void Pisca()
+    {
+        if(blinkRoutine != null)
+        {
+            StopCoroutine(blinkRoutine);
+        }
+        blinkRoutine = StartCoroutine(Blink());
+    }
+    IEnumerator Blink()
+    {
+        SpriteRenderer player = GetComponent<SpriteRenderer>();
+        player.material = redMaterial;
+        yield return new WaitForSeconds(0.35f);
+        player.material = defaultMaterial;
+        blinkRoutine = null;
+    }
     IEnumerator invensibility()
     {
         isInvensible = true;
@@ -193,7 +216,6 @@ public class Player     : MonoBehaviour
     void gameOver()
     {
        life = 0;
-       GameOver.SetActive(true);
         Destroy(gameObject);
     }
     private void OnApplicationQuit()
