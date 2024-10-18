@@ -49,8 +49,8 @@ public class EnemyAI : MonoBehaviour
         carta.SetActive(false);
         mudarTurno = true;
         escolha = Random.Range(0, 2);
-        card1 = Random.Range(1, sprites.spritesTruco.Length + 1);
-        card2 = Random.Range(1, sprites.spritesTruco.Length + 1);
+        card1 = Random.Range(-1, sprites.spritesTruco.Length + 1);
+        card2 = Random.Range(-1, sprites.spritesTruco.Length + 1);
         inventário.Add(card1);
         inventário.Add(card2);
     }

@@ -325,6 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b091c2d545555047be51fa5ee17d0f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roundsController: {fileID: 499797577}
 --- !u!4 &212361577
 Transform:
   m_ObjectHideFlags: 0
@@ -689,7 +690,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &285234786
 RectTransform:
@@ -771,9 +772,9 @@ MonoBehaviour:
   vitoriaDerrota:
   - {fileID: 21300000, guid: a231bbb31ef49f440b5dc3654f555e1f, type: 3}
   - {fileID: 21300000, guid: ad689427a7fe6ae4e8a6b2e39641c316, type: 3}
-  RodadaAtual: 1
   rodadaEscolhida: 0
   bundle: {fileID: 0}
+  canvas: {fileID: 285234785}
 --- !u!1 &618138615
 GameObject:
   m_ObjectHideFlags: 0

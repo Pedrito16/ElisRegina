@@ -21,6 +21,7 @@ public class Bundle : MonoBehaviour, IDropHandler
     [Header("Tela De Vitoria ou Derrota")]
     [SerializeField] GameObject panel;
     [SerializeField] TextMeshProUGUI winText, explainText;
+    private bool ativador = true;
     public void Awake()
     {
         sprite = FindObjectOfType<SpritesTruco>();
@@ -40,7 +41,7 @@ public class Bundle : MonoBehaviour, IDropHandler
     }
     void LateUpdate()
     {
-        if(enemyStrength > 0 && playerStrength > 0)
+        if(enemyStrength > 0 && playerStrength > 0 && ativador)
         {
             if(enemyStrength < playerStrength)
             {
@@ -49,8 +50,11 @@ public class Bundle : MonoBehaviour, IDropHandler
                 winText.text = "Vitoria!!!";
                 explainText.text = "Ganhou a Primeira Rodada";
                 RodadasSystem.ganhou++;
+                print(RodadasSystem.ganhou.ToString());
+                RodadasSystem.rodadaAtual++;
                 ganhou = true;
                 Time.timeScale = 0f;
+                ativador = false;
             }else if(enemyStrength > playerStrength)
             {
                 panel.SetActive(true);
@@ -58,8 +62,10 @@ public class Bundle : MonoBehaviour, IDropHandler
                 winText.text = "Derrota.";
                 explainText.text = "Perdeu a Primeira Rodada";
                 RodadasSystem.perdeu++;
+                RodadasSystem.rodadaAtual++;
                 perdeu = true;
                 Time.timeScale = 0f;
+                ativador = false;
             }
         }
     }
