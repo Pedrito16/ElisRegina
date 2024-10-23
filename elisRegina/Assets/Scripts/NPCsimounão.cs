@@ -26,6 +26,8 @@ public class NPCsimounão : MonoBehaviour
 
     [SerializeField] private Text textoNomePersonagem;
 
+    [SerializeField] private string falaNão;
+
     [SerializeField] Animator bolhaChatAnimator;
     [Header("Opções de escolha")]
     [SerializeField] int Choose;
@@ -79,6 +81,8 @@ public class NPCsimounão : MonoBehaviour
         {
             eKeybind.SetActive(false);
             isCollidingPlayer = false;
+            bolhaChat.SetActive(false);
+            player.isTalking = false;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -93,6 +97,16 @@ public class NPCsimounão : MonoBehaviour
         bolhaChat.SetActive(false);
         sim.SetActive(false);
         não.SetActive(false);
+        falaAtual = -1;
+    }
+    public void botaoNão()
+    {
+        dialogoTexto.text = falaNão;
+        if(Input.GetKeyDown(KeyCode.E)) 
+        {
+            StartCoroutine(Close());
+        }
+        
     }
     void passandoDialogos()
     {

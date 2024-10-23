@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 public enum gameState
 {
     enemyTurn,
@@ -21,11 +22,15 @@ public class Bundle : MonoBehaviour, IDropHandler
     [Header("Tela De Vitoria ou Derrota")]
     [SerializeField] GameObject panel;
     [SerializeField] TextMeshProUGUI winText, explainText;
+    [SerializeField] GameObject vitoriaVerdadeira;
     private bool ativador = true;
+    public UnityEvent soundEffect;
+    public UnityEvent cardflip;
     public void Awake()
     {
         sprite = FindObjectOfType<SpritesTruco>();
         enemyScript = FindObjectOfType<EnemyAI>();
+        vitoriaVerdadeira.SetActive(false);
         panel.SetActive(false);
     }
     public void OnDrop(PointerEventData data)
@@ -33,6 +38,7 @@ public class Bundle : MonoBehaviour, IDropHandler
         panel.SetActive(false);
         PlayerCard card = data.pointerDrag.GetComponent<PlayerCard>();
         Destroy(data.pointerDrag);
+        cardflip.Invoke();
         gameObject.GetComponent<Image>().sprite = sprite.spritesTruco[card.cardStrength];
         playerStrength = card.cardStrength;
         currentTurn = gameState.enemyTurn;
@@ -48,10 +54,9 @@ public class Bundle : MonoBehaviour, IDropHandler
                 panel.SetActive(true);
                 winText.color = Color.green;
                 winText.text = "Vitoria!!!";
-                explainText.text = "Ganhou a Primeira Rodada";
                 RodadasSystem.ganhou++;
-                print(RodadasSystem.ganhou.ToString());
                 RodadasSystem.rodadaAtual++;
+                explainText.text = "Ganhou a " + RodadasSystem.rodadaAtual.ToString() + "º Rodada";
                 ganhou = true;
                 Time.timeScale = 0f;
                 ativador = false;
@@ -60,13 +65,28 @@ public class Bundle : MonoBehaviour, IDropHandler
                 panel.SetActive(true);
                 winText.color = Color.red;
                 winText.text = "Derrota.";
-                explainText.text = "Perdeu a Primeira Rodada";
                 RodadasSystem.perdeu++;
                 RodadasSystem.rodadaAtual++;
+                explainText.text = "Perdeu a " + RodadasSystem.rodadaAtual.ToString() + "º Rodada";
                 perdeu = true;
                 Time.timeScale = 0f;
                 ativador = false;
             }
         }
+        if(RodadasSystem.perdeu >= 2)
+        {
+            
+        }else if(RodadasSystem.ganhou >= 2)
+        {
+            panel.SetActive(false);
+            vitoriaVerdadeira.SetActive(true);
+            Time.timeScale = 0f;
+            soundEffect.Invoke();
+        }
+    }
+    public void VoltarBTN()
+    {
+        SceneManager.LoadScene("Bar");
+        Time.timeScale = 1f;
     }
 }

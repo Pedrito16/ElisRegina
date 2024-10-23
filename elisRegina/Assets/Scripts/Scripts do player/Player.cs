@@ -7,7 +7,7 @@ public class Player     : MonoBehaviour
     public int life = 3;
     public int dinheiro;
     public float moveSpeed = 5;
-    float horizontal = 1;
+    [SerializeField]float horizontal = 1;
     public float inicialMovespeed;
     public float jumpStrenght = 5;
     float inicialJumpStrength;
@@ -38,7 +38,7 @@ public class Player     : MonoBehaviour
     [SerializeField] Material redMaterial;
     [SerializeField] bool isInvensible;
     [Header("Coyote Time e jump Buffering")]
-    float coyoteTime = 0.1f;
+    float coyoteTime = 0.05f;
     float coyoteTimeCounter;
     [Header("Buffs ativos")]
     public bool xtudoAtivo, laranjinhaAtivo;
@@ -132,7 +132,7 @@ public class Player     : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().color = Color.yellow;
         }
-        if(Input.GetButtonDown("Horizontal") && groundCheck)
+        if (Input.GetButtonDown("Horizontal") && groundCheck)
         {
             fumaçaPé.Play();
         }

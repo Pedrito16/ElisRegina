@@ -18,5 +18,6 @@ public class ResetScene : MonoBehaviour
     public void resetScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1.0f;
     }
 }

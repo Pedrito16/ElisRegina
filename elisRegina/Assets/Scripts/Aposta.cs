@@ -11,6 +11,7 @@ public class Aposta : MonoBehaviour
     [SerializeField] int valorApostado;
     [SerializeField] Animator fadeOut;
     [SerializeField] GameObject apostaMenu;
+    [SerializeField] GameObject canva;
     private void Awake()
     {
         player = FindObjectOfType<Player>();
@@ -19,9 +20,44 @@ public class Aposta : MonoBehaviour
     {
         apostaMenu.SetActive(false);
     }
+    public void RightArrow()
+    {
+        if(valorApostado <= player.dinheiro)
+        {
+            valorApostado++;
+            betField.text = valorApostado.ToString();
+        }
+        else
+        {
+            valorApostado = player.dinheiro;
+            betField.text = valorApostado.ToString();
+        }
+    }
+    public void LeftArrow()
+    {
+            valorApostado--;
+            betField.text = valorApostado.ToString();
+
+        if(valorApostado <= 0)
+        {
+            valorApostado = 0;
+            betField.text = valorApostado.ToString();
+        }
+    }
     public void YesBTN()
     {
         StartCoroutine(trocarFase());
+        BetInfo.valorAposta = valorApostado;
+    }
+    public void NoBTN()
+    {
+        StartCoroutine(trocarFase());
+        BetInfo.valorAposta = 0;
+    }
+    public void SairBTN()
+    {
+        canva.SetActive(false);
+        player.isTalking = false;
     }
     IEnumerator trocarFase()
     {

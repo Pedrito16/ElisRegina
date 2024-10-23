@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class RoundsController : MonoBehaviour
 {
     public GameObject[] contadores;
@@ -11,12 +11,25 @@ public class RoundsController : MonoBehaviour
     public int  rodadaEscolhida; // é a rodada escolhida para o contador de vitória agir individualmente
     public Bundle bundle;
     public Canvas canvas;
+    [SerializeField] GameObject introdução;
     private void Awake()
     {
-        bundle = FindObjectOfType<Bundle>();
+        if(RodadasSystem.rodadaAtual <= 0)
+        {
+            introdução.SetActive(true);
+        }
+        else
+        {
+            introdução.SetActive(false);
+        }
     }
     void Update()
     {
+        if(SceneManager.GetActiveScene().name == "Truco")
+        {
+            bundle = FindObjectOfType<Bundle>();
+            introdução = GameObject.FindWithTag("HUD");
+        }
         if(RodadasSystem.rodadaAtual == 0)
         {
             canvas.sortingOrder = 11;
@@ -24,33 +37,11 @@ public class RoundsController : MonoBehaviour
         }
         if (bundle.ganhou)
         {
-            if (RodadasSystem.rodadaAtual == 1)
-            {
-                contadores[0].GetComponent<Image>().sprite = vitoriaDerrota[0];
-            }
-            else if (RodadasSystem.rodadaAtual == 2)
-            {
-                contadores[1].GetComponent<Image>().sprite = vitoriaDerrota[0];
-            }
-            else if (RodadasSystem.rodadaAtual == 3)
-            {
-                contadores[2].GetComponent<Image>().sprite = vitoriaDerrota[0];
-            }
+            contadores[RodadasSystem.rodadaAtual - 1].GetComponent<Image>().sprite = vitoriaDerrota[0];
         }
         else if (bundle.perdeu)
         {
-            if (RodadasSystem.rodadaAtual == 1)
-            {
-                contadores[0].GetComponent<Image>().sprite = vitoriaDerrota[1];
-            }
-            else if (RodadasSystem.rodadaAtual == 2)
-            {
-                contadores[1].GetComponent<Image>().sprite = vitoriaDerrota[1];
-            }
-            else if (RodadasSystem.rodadaAtual == 3)
-            {
-                contadores[2].GetComponent<Image>().sprite = vitoriaDerrota[1];
-            }
+            contadores[RodadasSystem.rodadaAtual - 1].GetComponent<Image>().sprite = vitoriaDerrota[1];
         }
     }
 }
