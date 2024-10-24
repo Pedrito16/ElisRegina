@@ -54,6 +54,12 @@ public class Player     : MonoBehaviour
         direita = Direita.position - transform.position;
         dinheiro = PlayerPrefs.GetInt("Dinheiro");
         defaultMaterial = gameObject.GetComponent<SpriteRenderer>().material;
+        if(Powers.locationSalva)
+        {
+           transform.position = Powers.lastSavedLocation;
+           Powers.locationSalva = false;
+           Powers.lastSavedLocation = new Vector3(0,0,0);
+        }
     }
 
     void Update()
@@ -190,6 +196,11 @@ public class Player     : MonoBehaviour
             SFXscript.SFXsource.Play();
             Destroy(collision.gameObject);
         }
+        if (collision.CompareTag("Sebastian"))
+        {
+            Powers.lastSavedLocation = gameObject.transform.position;
+            Powers.locationSalva = true;
+        }
     }
     public void Pisca()
     {
@@ -241,4 +252,7 @@ public class Player     : MonoBehaviour
 public static class Powers
 {
     public static bool unlockPower = false;
+    public static Vector3 lastSavedLocation;
+    public static Vector3 previousSavedLocation;
+    public static bool locationSalva;
 }

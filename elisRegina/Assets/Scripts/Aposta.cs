@@ -12,9 +12,11 @@ public class Aposta : MonoBehaviour
     [SerializeField] Animator fadeOut;
     [SerializeField] GameObject apostaMenu;
     [SerializeField] GameObject canva;
+    [SerializeField] NPCsimounão npc;
     private void Awake()
     {
         player = FindObjectOfType<Player>();
+        npc = FindObjectOfType<NPCsimounão>();
     }
     private void Start()
     {
@@ -58,6 +60,7 @@ public class Aposta : MonoBehaviour
     {
         canva.SetActive(false);
         player.isTalking = false;
+        npc.dito = false;
     }
     IEnumerator trocarFase()
     {

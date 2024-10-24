@@ -32,6 +32,8 @@ public class NPCsimounão : MonoBehaviour
     [Header("Opções de escolha")]
     [SerializeField] int Choose;
     [SerializeField] GameObject sim, não;
+    [SerializeField]public bool dito;
+    [SerializeField] bool apertouNo;
     void Start()
     {
         player = FindObjectOfType<Player>();
@@ -61,19 +63,28 @@ public class NPCsimounão : MonoBehaviour
             textoNomePersonagem.text = nomeDoPersonagem;
         }
         // "reiniciador" do texto
-        if (falaAtual >= falasMaximas && Input.GetKeyDown(KeyCode.E))
+        if (falaAtual >= falasMaximas && Input.GetKeyDown(KeyCode.E) && !dito)
         {
             sim.SetActive(true);
             não.SetActive(true);
+            dito = true;
+        }
+        if(apertouNo == true && Input.GetKey(KeyCode.E))
+        {
+            bolhaChatAnimator.SetTrigger("Close");
+            StartCoroutine(Close());
+            apertouNo = false;
         }
     }
     IEnumerator Close()
     {
-        yield return new WaitForSeconds(0.45f);
-        bolhaChat.SetActive(false); dialogoTexto.text = "";
+        yield return new WaitForSeconds(0.25f);
+        bolhaChat.SetActive(false); 
+        dialogoTexto.text = "";
         textoNomePersonagem.text = "";
         player.isTalking = false;
         falaAtual = -1;
+        dito = false;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -102,11 +113,9 @@ public class NPCsimounão : MonoBehaviour
     public void botaoNão()
     {
         dialogoTexto.text = falaNão;
-        if(Input.GetKeyDown(KeyCode.E)) 
-        {
-            StartCoroutine(Close());
-        }
-        
+        sim.SetActive(false);
+        não.SetActive(false);
+        apertouNo = true;
     }
     void passandoDialogos()
     {

@@ -12,7 +12,7 @@ public class PlayerCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     public SpritesTruco sprites;
     public PlayerTurnController turnControlScript;
     public int cardStrength = 0;
-    bool ativador = true, mudarTurno = true;
+    bool ativador = true;
     Vector3 HoverPos, negativeHoverPos;
     Vector3 initialPos;
     [SerializeField] float hoverSpeed = 1f;
