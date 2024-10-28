@@ -25,6 +25,7 @@ public class Laranjinha : MonoBehaviour
         xeverything = GetComponent<Xeverything>();
         hamburguerG = GetComponent<HamburguerDourado>();
         hamburguer = GetComponent<Hamburguer>();
+        player = FindObjectOfType<Player>();
     }
     void Start()
     {

@@ -1,13 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class Player     : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public int life = 3;
     public int dinheiro;
     public float moveSpeed = 5;
-    [SerializeField]float horizontal = 1;
+    [SerializeField] float horizontal = 1;
     public float inicialMovespeed;
     public float jumpStrenght = 5;
     float inicialJumpStrength;
@@ -25,6 +24,7 @@ public class Player     : MonoBehaviour
     public LayerMask filtro;
     public bool isBuffActive = false;
     public bool isTalking = false;
+    [SerializeField] 
     public float pesoCooldown = 0.5f;
     private bool isPesoCooldown = false;
     [SerializeField] ParticleSystem explosão;
@@ -33,9 +33,6 @@ public class Player     : MonoBehaviour
     [SerializeField] public SFX SFXscript;
     private Vector3 esquerda;
     private Vector3 direita;
-    float invensibilityTime = 0.75f;
-    [SerializeField] Material defaultMaterial;
-    [SerializeField] Material redMaterial;
     [SerializeField] bool isInvensible;
     [Header("Coyote Time e jump Buffering")]
     float coyoteTime = 0.05f;
@@ -44,7 +41,11 @@ public class Player     : MonoBehaviour
     public bool xtudoAtivo, laranjinhaAtivo;
     public bool notActiveBuffs = true;
     [SerializeField] bool UnlockedPower;
+    [Header("PiscarVermelho")]
     Coroutine blinkRoutine;
+    float invensibilityTime = 0.75f;
+    [SerializeField] Material defaultMaterial;
+    [SerializeField] Material redMaterial;
     void Start()
     {
         //playerTransform.localScale = new Vector2(direction, 1);
@@ -54,14 +55,27 @@ public class Player     : MonoBehaviour
         direita = Direita.position - transform.position;
         dinheiro = PlayerPrefs.GetInt("Dinheiro");
         defaultMaterial = gameObject.GetComponent<SpriteRenderer>().material;
-        if(Powers.locationSalva)
+        if (Powers.canChangeLocation)
         {
-           transform.position = Powers.lastSavedLocation;
-           Powers.locationSalva = false;
-           Powers.lastSavedLocation = new Vector3(0,0,0);
+            SetLocation();
         }
     }
-
+    public void SetLocation()
+    {
+        if (Powers.lastLocationSalva)
+        {
+            transform.position = Powers.lastSavedLocation;
+            Powers.lastLocationSalva = false;
+            Powers.lastSavedLocation = new Vector3(0, 0, 0);
+        }
+        else if(Powers.previousLocationSalva) 
+        {
+            transform.position = Powers.previousSavedLocation;
+            Powers.previousLocationSalva = false;
+            Powers.previousSavedLocation = new Vector3(0, 0, 0);
+        }
+        Powers.canChangeLocation = false;
+    }
     void Update()
     {
         if(SceneManager.GetActiveScene().name != "Tutorial")
@@ -199,7 +213,7 @@ public class Player     : MonoBehaviour
         if (collision.CompareTag("Sebastian"))
         {
             Powers.lastSavedLocation = gameObject.transform.position;
-            Powers.locationSalva = true;
+            Powers.lastLocationSalva = true;
         }
     }
     public void Pisca()
@@ -252,7 +266,8 @@ public class Player     : MonoBehaviour
 public static class Powers
 {
     public static bool unlockPower = false;
+    public static bool canChangeLocation = false;
     public static Vector3 lastSavedLocation;
     public static Vector3 previousSavedLocation;
-    public static bool locationSalva;
+    public static bool lastLocationSalva, previousLocationSalva;
 }

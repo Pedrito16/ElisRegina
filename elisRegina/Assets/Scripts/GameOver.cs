@@ -12,9 +12,13 @@ public class GameOver : MonoBehaviour
     float timer;
     float timerLimit = 1;
     [SerializeField ]float timer2, timerLimit2 = 15f;
+    [SerializeField] AudioSource mainSoundtrack, rainSound;
+    [SerializeField] AudioClip rainSFX;
+    bool ativador = true;
     private void Awake()
     {
         player = FindObjectOfType<Player>();
+        rainSound.clip = rainSFX;
     }
     void Start()
     {
@@ -33,9 +37,15 @@ public class GameOver : MonoBehaviour
             particula.SetActive(true);
             thunder.gameObject.SetActive(true);
             canvaPrincipal.SetActive(false);
+            mainSoundtrack.Pause();
+            if (rainSound.gameObject.activeSelf && ativador)
+            {
+                rainSound.PlayOneShot(rainSFX);
+                ativador = false;
+            }
         }
         timer += Time.deltaTime;
-        if(timer >= timerLimit && isActive) 
+        if(timer >= timerLimit && isActive)
         {
             textoRessurgir.SetActive(!textoRessurgir.activeSelf);
             timer = 0f;
@@ -57,11 +67,4 @@ public class GameOver : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
-    IEnumerator morteTextPiscar()
-    {
-        
-        textoRessurgir.SetActive(true);
-        yield return new WaitForSeconds(1);
-        textoRessurgir.SetActive(false);
-    }    
 }

@@ -111,8 +111,8 @@ public class Bundle : MonoBehaviour, IDropHandler
         }
     }
     public void VoltarBTN()
-    { 
-
+    {
+        Powers.canChangeLocation = true;
         Time.timeScale = 1f;
         SceneManager.LoadScene("Bar");
     }

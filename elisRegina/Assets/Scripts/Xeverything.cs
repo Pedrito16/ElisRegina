@@ -28,6 +28,7 @@ public class Xeverything : MonoBehaviour
         hamburguer = GetComponent<Hamburguer>();
         hamburguerG = GetComponent<HamburguerDourado>();
         laranjinha = GetComponent<Laranjinha>();
+        player = FindObjectOfType<Player>();
     }
     void Start()
     {

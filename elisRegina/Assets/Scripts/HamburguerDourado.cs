@@ -28,6 +28,7 @@ public class HamburguerDourado : MonoBehaviour
         xeverything = GetComponent<Xeverything>();
         laranjinha = GetComponent<Laranjinha>();
         hamburguer = GetComponent<Hamburguer>();
+        player = FindObjectOfType<Player>();
     }
     void Start()
     {    
