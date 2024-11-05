@@ -13,6 +13,8 @@ public class RoundsController : MonoBehaviour
     public Canvas canvas;
     [SerializeField] AudioSource soundtrackBar;
     [SerializeField] GameObject introdução;
+    [SerializeField] Animator counterGIF;
+    bool activateStart = true;
     private void Awake()
     {
         if (RodadasSystem.rodadaAtual <= 0)
@@ -22,6 +24,12 @@ public class RoundsController : MonoBehaviour
         else
         {
             introdução.SetActive(false);
+        }
+        GameObject counterOBJ = GameObject.FindWithTag("CounterGIF");
+        if (introdução.activeSelf)
+        {
+            counterGIF = counterOBJ.GetComponent<Animator>();
+            counterGIF.updateMode = AnimatorUpdateMode.UnscaledTime;
         }
         if (RodadasSystem.soundtrackTime != 0)
         {
@@ -44,11 +52,10 @@ public class RoundsController : MonoBehaviour
         }
         if (RodadasSystem.rodadaAtual == 0)
         {
-            canvas.sortingOrder = 11;
+            canvas.sortingOrder = 2;
             DontDestroyOnLoad(transform.root.gameObject);
         }
         RodadasSystem.soundtrackTime = soundtrackBar.time;
-        print(RodadasSystem.soundtrackTime.ToString());
         if (bundle.ganhou)
         {
             contadores[RodadasSystem.rodadaAtual - 1].GetComponent<Image>().sprite = vitoriaDerrota[0];

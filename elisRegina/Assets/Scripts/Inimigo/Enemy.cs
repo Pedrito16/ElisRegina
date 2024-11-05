@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
     public Animator animator;
     public Transform enemyTransform;
     [SerializeField] ParticleSystem explosão;
-    
+    [SerializeField] GameObject particulaGota;
     [Header("Loot Dropado")]
     [SerializeField] private int numeroAleatorio;
     public GameObject doisReais;
@@ -64,6 +64,8 @@ public class Enemy : MonoBehaviour
     {
        GameObject fumacinha = Instantiate(fumaçaParticula, transform.position, transform.rotation);
         Destroy(fumacinha, 0.75f);
+        GameObject fumaçaParafuso = Instantiate(particulaGota, transform.position, transform.rotation);
+        Destroy(fumaçaParafuso, 0.5f) ;
        if(numeroAleatorio <= 5)
         {
             Instantiate(doisReais, transform.position, transform.rotation);
@@ -89,7 +91,6 @@ public class Enemy : MonoBehaviour
             explosão.Play();
             life -= collision.gameObject.GetComponent<Peso>().damage;
             Destroy(collision.gameObject);
-
         }
     }
     void UmSegundo()

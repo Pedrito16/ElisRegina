@@ -10,11 +10,10 @@ public class Hamburguer : MonoBehaviour
     public string itemName, itemDescription, buffDescription;
     public int custo;
     public Player player;
-    [SerializeField] int contagemClique = 0;
-    [SerializeField] float timer;
     public AudioSource buyItem;
     float catchTime = 0.25f;
     float lastClickTime = 0;
+    [SerializeField] Life life;
     [Header("Verificação De clique")]
     public Xeverything xeverything;
     public HamburguerDourado hamburguerG;
@@ -22,6 +21,7 @@ public class Hamburguer : MonoBehaviour
     public bool isClicking = false;
     private void Awake()
     {
+        life = FindObjectOfType<Life>();
         xeverything = GetComponent<Xeverything>();
         hamburguerG = GetComponent<HamburguerDourado>();
         laranjinha = GetComponent<Laranjinha>();
@@ -35,11 +35,6 @@ public class Hamburguer : MonoBehaviour
         buffText.text = "";
     }
 
-    
-    void Update()
-    {
-     
-    }
     public void OnClick()
     {
         isClicking = true;
@@ -84,6 +79,7 @@ public class Hamburguer : MonoBehaviour
         {
             buyItem.Play();
             player.life += 1;
+            life.recoverLife = true;
             player.dinheiro -= custo;
         }
         else if(player.life > 3)

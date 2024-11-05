@@ -113,6 +113,7 @@ MonoBehaviour:
   animator: {fileID: 7157536662130628187}
   enemyTransform: {fileID: 7157536662130628186}
   "explos\xE3o": {fileID: 1504201115597961651, guid: b99b25b49755f9741b3a1f84b490ebdb, type: 3}
+  particulaGota: {fileID: 4840054938180989571, guid: 91d96fe66dcbeca47b28d70079f6dd38, type: 3}
   numeroAleatorio: 0
   doisReais: {fileID: 3458714514726493731, guid: a09217301cfa1054ba10bbd8b0e6df3f, type: 3}
   cincoReais: {fileID: 1223512492860425161, guid: 75cc1de1e28f0b840981fa347bcdb009, type: 3}

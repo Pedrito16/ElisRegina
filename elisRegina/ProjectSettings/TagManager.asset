@@ -21,6 +21,7 @@ TagManager:
   - "Verifica\xE7\xE3o"
   - HUD
   - Sebastian
+  - CounterGIF
   layers:
   - Default
   - TransparentFX

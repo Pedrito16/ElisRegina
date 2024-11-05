@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
     [SerializeField] public SFX SFXscript;
     private Vector3 esquerda;
     private Vector3 direita;
-    [SerializeField] bool isInvensible;
+    [SerializeField]public bool isInvensible;
     [Header("Coyote Time e jump Buffering")]
     float coyoteTime = 0.05f;
     float coyoteTimeCounter;
@@ -249,6 +249,26 @@ public class Player : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        switch(collision.gameObject.tag)
+        {
+            case "Espinhos":
+                gameOver();
+
+            break;
+            case "Peso":
+                Destroy(collision.gameObject);
+            break;
+            case "Enemy":
+                if (!isInvensible)
+                {
+                    explosão.Play();
+                    life -= collision.gameObject.GetComponent<Enemy>().damage;
+                    Pisca();
+                    StartCoroutine(invensibility());
+                }
+                break;
+        }
+        /*
         if (collision.gameObject.CompareTag("Espinho"))
         {
             gameOver();
@@ -259,8 +279,15 @@ public class Player : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            life -= collision.gameObject.GetComponent<Enemy>().damage;
+            if (!isInvensible)
+            {
+                explosão.Play();
+                life -= collision.gameObject.GetComponent<Enemy>().damage;
+                Pisca();
+                StartCoroutine(invensibility());
+            }
         }
+        */
     }
 }
 public static class Powers

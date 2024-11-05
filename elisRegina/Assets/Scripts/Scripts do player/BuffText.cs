@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.SceneManagement;
 public class BuffText : MonoBehaviour
 {
     //public Text buffDurationText;
@@ -14,10 +13,14 @@ public class BuffText : MonoBehaviour
     int segundo = 1;
     public bool ativador = false;
     public Player player;
+    [SerializeField] Slider cdFillBar;
+    [SerializeField] Sprite[] comidas;
+    [SerializeField] Image foodImage;
     private void Start()
     {
-        buffDurationText.text = "Buff: ";
         buffDuration = BuffTimer.buffDuration;
+         cdFillBar.gameObject.SetActive(false);
+        player = FindObjectOfType<Player>();
     }
     void Update()
     {
@@ -28,7 +31,8 @@ public class BuffText : MonoBehaviour
             BuffTimer.xtudoAtivado = false;
             BuffTimer.laranjinhaAtivo = false;
         }
-        
+        cdFillBar.value = BuffTimer.buffDuration;
+        buffDurationText.text = BuffTimer.buffDuration.ToString();
         timer += Time.deltaTime;
         if(BuffTimer.xtudoAtivado == true && ativador == false)
         {
@@ -45,14 +49,12 @@ public class BuffText : MonoBehaviour
             
             player.notActiveBuffs = false;
             BuffTimer.buffDuration -= 1;
-            buffDurationText.text = "Buff: " + BuffTimer.buffDuration.ToString();
             timer = 0f;
         }else if(timer >= segundo && BuffTimer.laranjinhaAtivo == true)
         {
             player.laranjinhaAtivo = true;
             player.notActiveBuffs = false;
             BuffTimer.buffDuration -= 1;
-            buffDurationText.text = "Buff: " + BuffTimer.buffDuration.ToString();
             timer = 0f;
         }
         if (BuffTimer.buffDuration <= 0)
@@ -61,7 +63,6 @@ public class BuffText : MonoBehaviour
             BuffTimer.xtudoAtivado = false;
             BuffTimer.laranjinhaAtivo = false;
             player.notActiveBuffs = true;
-            buffDurationText.text = "Buff: ";
             BuffTimer.buffDuration = 180;
         }
     }
