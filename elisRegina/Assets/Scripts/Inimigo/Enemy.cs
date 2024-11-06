@@ -14,8 +14,11 @@ public class Enemy : MonoBehaviour
     public float tiroSpeed;
     public Animator animator;
     public Transform enemyTransform;
+    [Header("OnHit")]
     [SerializeField] ParticleSystem explosão;
     [SerializeField] GameObject particulaGota;
+    [SerializeField] Material hitMaterial, originalMaterial;
+    Coroutine blinkRoutine;
     [Header("Loot Dropado")]
     [SerializeField] private int numeroAleatorio;
     public GameObject doisReais;
@@ -25,8 +28,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
-        //gameObject.SetActive(false);
-        //InvokeRepeating("UmSegundo", 2f, 2f);
+        originalMaterial = GetComponent<SpriteRenderer>().material;
         numeroAleatorio = Random.Range(1, 10);
     }
 
@@ -50,8 +52,8 @@ public class Enemy : MonoBehaviour
         {
             explosão.Play();
             life -= collision.gameObject.GetComponent<Peso>().damage;
+            piscar();
             Destroy(collision.gameObject);
-
         }
         if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Tijolo"))
         {
@@ -59,6 +61,21 @@ public class Enemy : MonoBehaviour
         }
        
 
+    }
+    void piscar()
+    {
+        if (blinkRoutine != null)
+        {
+            StopCoroutine(blinkRoutine);
+        }
+        blinkRoutine = StartCoroutine(Blink());
+    }
+    IEnumerator Blink()
+    {
+        GetComponent<SpriteRenderer>().material = hitMaterial;
+        yield return new WaitForSeconds(0.1f);
+        GetComponent<SpriteRenderer>().material = originalMaterial;
+        blinkRoutine = null;
     }
     private void Derrotado()
     {
@@ -88,8 +105,12 @@ public class Enemy : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Peso"))
         {
-            explosão.Play();
+            if (!explosão.isPlaying)
+            {
+                explosão.Play();
+            }
             life -= collision.gameObject.GetComponent<Peso>().damage;
+            piscar();
             Destroy(collision.gameObject);
         }
     }

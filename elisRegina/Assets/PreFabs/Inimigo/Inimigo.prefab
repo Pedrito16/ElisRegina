@@ -114,6 +114,8 @@ MonoBehaviour:
   enemyTransform: {fileID: 7157536662130628186}
   "explos\xE3o": {fileID: 1504201115597961651, guid: b99b25b49755f9741b3a1f84b490ebdb, type: 3}
   particulaGota: {fileID: 4840054938180989571, guid: 91d96fe66dcbeca47b28d70079f6dd38, type: 3}
+  hitMaterial: {fileID: 2100000, guid: 1102231cab1f01a4c8c6c0d939f85954, type: 2}
+  originalMaterial: {fileID: 0}
   numeroAleatorio: 0
   doisReais: {fileID: 3458714514726493731, guid: a09217301cfa1054ba10bbd8b0e6df3f, type: 3}
   cincoReais: {fileID: 1223512492860425161, guid: 75cc1de1e28f0b840981fa347bcdb009, type: 3}
@@ -209,6 +211,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7157536662130628186}
     m_Modifications:
+    - target: {fileID: 1504201115597961648, guid: b99b25b49755f9741b3a1f84b490ebdb, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1504201115597961648, guid: b99b25b49755f9741b3a1f84b490ebdb, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1504201115597961648, guid: b99b25b49755f9741b3a1f84b490ebdb, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1504201115597961649, guid: b99b25b49755f9741b3a1f84b490ebdb, type: 3}
       propertyPath: m_Name
       value: "Explos\xE3o"
@@ -219,11 +233,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1504201115597961650, guid: b99b25b49755f9741b3a1f84b490ebdb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.021
+      value: -0.06
       objectReference: {fileID: 0}
     - target: {fileID: 1504201115597961650, guid: b99b25b49755f9741b3a1f84b490ebdb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.079
+      value: -0.12
       objectReference: {fileID: 0}
     - target: {fileID: 1504201115597961650, guid: b99b25b49755f9741b3a1f84b490ebdb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -256,6 +270,46 @@ PrefabInstance:
     - target: {fileID: 1504201115597961650, guid: b99b25b49755f9741b3a1f84b490ebdb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1504201115597961651, guid: b99b25b49755f9741b3a1f84b490ebdb, type: 3}
+      propertyPath: lengthInSec
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 1504201115597961651, guid: b99b25b49755f9741b3a1f84b490ebdb, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1504201115597961651, guid: b99b25b49755f9741b3a1f84b490ebdb, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1504201115597961651, guid: b99b25b49755f9741b3a1f84b490ebdb, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1504201115597961651, guid: b99b25b49755f9741b3a1f84b490ebdb, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1504201115597961651, guid: b99b25b49755f9741b3a1f84b490ebdb, type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1504201115597961651, guid: b99b25b49755f9741b3a1f84b490ebdb, type: 3}
+      propertyPath: InitialModule.startSize.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1504201115597961651, guid: b99b25b49755f9741b3a1f84b490ebdb, type: 3}
+      propertyPath: InitialModule.startSizeY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1504201115597961651, guid: b99b25b49755f9741b3a1f84b490ebdb, type: 3}
+      propertyPath: InitialModule.startSizeZ.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1504201115597961651, guid: b99b25b49755f9741b3a1f84b490ebdb, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b99b25b49755f9741b3a1f84b490ebdb, type: 3}

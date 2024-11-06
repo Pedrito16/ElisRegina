@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
+
 public class BuffText : MonoBehaviour
 {
-    //public Text buffDurationText;
     public TextMeshProUGUI buffDurationText;
-    //public int buffDuration = 180;    
-    public int buffDuration;
     [SerializeField] float timer;
     int segundo = 1;
     public bool ativador = false;
@@ -18,9 +17,23 @@ public class BuffText : MonoBehaviour
     [SerializeField] Image foodImage;
     private void Start()
     {
-        buffDuration = BuffTimer.buffDuration;
-         cdFillBar.gameObject.SetActive(false);
         player = FindObjectOfType<Player>();
+        foodImage.gameObject.SetActive(false);
+        buffDurationText.gameObject.SetActive(false);
+        if (BuffTimer.buffDuration > 0 && BuffTimer.xtudoAtivado)
+        {
+            currentFood();
+        }else if(BuffTimer.buffDuration > 0 && BuffTimer.laranjinhaAtivo)
+        {
+            currentFood();
+        }
+    }
+    void currentFood()
+    {
+        buffDurationText.gameObject.SetActive(true);
+        foodImage.gameObject.SetActive(true);
+        foodImage.sprite = BuffTimer.currentSprite;
+        BuffTimer.currentSprite = null;
     }
     void Update()
     {
@@ -37,10 +50,18 @@ public class BuffText : MonoBehaviour
         if(BuffTimer.xtudoAtivado == true && ativador == false)
         {
             player.moveSpeed *= 1.25f;
+            foodImage.gameObject.SetActive(true);
+            buffDurationText.gameObject.SetActive(true);
+            foodImage.sprite = comidas[1];
+            BuffTimer.currentSprite = comidas[1];
             ativador = true;
         }else if(BuffTimer.laranjinhaAtivo == true && ativador == false)
         {
             player.jumpStrenght *= 1.25f;
+            foodImage.gameObject.SetActive(true);
+            buffDurationText.gameObject.SetActive(true);
+            foodImage.sprite = comidas[2];
+            BuffTimer.currentSprite = comidas[2];
             ativador = true;
         }
 
@@ -60,6 +81,9 @@ public class BuffText : MonoBehaviour
         if (BuffTimer.buffDuration <= 0)
         {
             ativador = false;
+            foodImage.sprite = null;
+            buffDurationText.gameObject.SetActive(false);
+            foodImage.gameObject.SetActive(false);
             BuffTimer.xtudoAtivado = false;
             BuffTimer.laranjinhaAtivo = false;
             player.notActiveBuffs = true;
@@ -71,6 +95,7 @@ public class BuffText : MonoBehaviour
 public static class BuffTimer
 {
     public static int buffDuration = 180;
+    public static Sprite currentSprite;
     public static bool xtudoAtivado;
     public static bool laranjinhaAtivo;
     public static bool morreu = false;

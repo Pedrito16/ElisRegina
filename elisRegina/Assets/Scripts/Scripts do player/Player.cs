@@ -177,6 +177,7 @@ public class Player : MonoBehaviour
         }
         if (collision.CompareTag("Tiro"))
         {
+            Destroy(collision.gameObject);
             if (!isInvensible)
             {
                 explosão.Play();
@@ -251,7 +252,7 @@ public class Player : MonoBehaviour
     {
         switch(collision.gameObject.tag)
         {
-            case "Espinhos":
+            case "Espinho":
                 gameOver();
 
             break;
