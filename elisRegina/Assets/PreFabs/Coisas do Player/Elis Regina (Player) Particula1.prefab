@@ -4849,11 +4849,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8016559820068195101, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.83
+      value: 4.59
       objectReference: {fileID: 0}
     - target: {fileID: 8016559820068195101, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.93
+      value: 3.25
       objectReference: {fileID: 0}
     - target: {fileID: 8016559820208967108, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: sfx
@@ -4993,11 +4993,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8016559820783420839, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.83
+      value: -4.59
       objectReference: {fileID: 0}
     - target: {fileID: 8016559820783420839, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.93
+      value: 3.25
       objectReference: {fileID: 0}
     - target: {fileID: 8016559820916580850, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_Layer
@@ -5009,19 +5009,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8846302290493060559, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99972695
+      value: 0.999727
       objectReference: {fileID: 0}
     - target: {fileID: 8846302290493060559, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.0115433745
+      value: 0.011543377
       objectReference: {fileID: 0}
     - target: {fileID: 8846302290493060559, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.02031683
+      value: 0.02031335
       objectReference: {fileID: 0}
     - target: {fileID: 8846302290493060559, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00023458886
+      value: -0.0002345487
       objectReference: {fileID: 0}
     - target: {fileID: 8846302291139123620, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_Layer
@@ -5091,7 +5091,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28f7ee637be4e204992e16de0ff50944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeText: {fileID: 0}
+  player: {fileID: 0}
+  pillsAnimators: []
+  lostLife: 0
+  recoverLife: 0
 --- !u!4 &7014518451233141403 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8016559820208967109, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}

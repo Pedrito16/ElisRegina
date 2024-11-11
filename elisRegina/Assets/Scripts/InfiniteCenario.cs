@@ -8,7 +8,7 @@ public class InfiniteCenario : MonoBehaviour
     public float valorY;
     public Transform cameraTransform; 
 
-    void FixedUpdate()
+    void Update()
     {
         MovimentarCenario();
         /*Vector3 newposition = transform.position;

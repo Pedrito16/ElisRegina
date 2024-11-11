@@ -23,10 +23,14 @@ public class PassaFase : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            if(currentSceneIndex != nextSceneIndex)
-            {
-                SceneManager.LoadScene(nextSceneIndex);
-            }
+            PassarFase();
+        }
+    }
+    public void PassarFase()
+    {
+        if (currentSceneIndex != nextSceneIndex)
+        {
+            SceneManager.LoadScene(nextSceneIndex);
         }
     }
 }

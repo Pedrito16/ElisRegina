@@ -15,6 +15,7 @@ public class BuffText : MonoBehaviour
     [SerializeField] Slider cdFillBar;
     [SerializeField] Sprite[] comidas;
     [SerializeField] Image foodImage;
+    [SerializeField] Animator garfoFaca;
     private void Start()
     {
         player = FindObjectOfType<Player>();
@@ -70,10 +71,10 @@ public class BuffText : MonoBehaviour
             
             player.notActiveBuffs = false;
             BuffTimer.buffDuration -= 1;
+            garfoFaca.SetBool("Comendo", true);
             timer = 0f;
         }else if(timer >= segundo && BuffTimer.laranjinhaAtivo == true)
         {
-            player.laranjinhaAtivo = true;
             player.notActiveBuffs = false;
             BuffTimer.buffDuration -= 1;
             timer = 0f;
@@ -82,6 +83,7 @@ public class BuffText : MonoBehaviour
         {
             ativador = false;
             foodImage.sprite = null;
+            garfoFaca.SetBool("Comendo", false);
             buffDurationText.gameObject.SetActive(false);
             foodImage.gameObject.SetActive(false);
             BuffTimer.xtudoAtivado = false;

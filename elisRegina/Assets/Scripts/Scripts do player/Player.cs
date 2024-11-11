@@ -269,26 +269,6 @@ public class Player : MonoBehaviour
                 }
                 break;
         }
-        /*
-        if (collision.gameObject.CompareTag("Espinho"))
-        {
-            gameOver();
-        }
-        if (collision.gameObject.CompareTag("Peso"))
-        {
-            Destroy(collision.gameObject);
-        }
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            if (!isInvensible)
-            {
-                explosão.Play();
-                life -= collision.gameObject.GetComponent<Enemy>().damage;
-                Pisca();
-                StartCoroutine(invensibility());
-            }
-        }
-        */
     }
 }
 public static class Powers

@@ -22,7 +22,7 @@ public class Parallax : MonoBehaviour
         //peguei essa parte do youtube porque nao sei fazer parallax
         if(returnBG > startPosition + length)
         {
-            startPosition += length;
+            startPosition = length;
         }else if(returnBG < startPosition - length)
         {
             startPosition -= length;

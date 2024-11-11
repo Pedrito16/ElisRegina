@@ -42,8 +42,8 @@ public class NPC : MonoBehaviour
     void Update()
     {
         eKeybind.SetActive(isCollidingPlayer);
-        // iniciador do dialogo
-        if(Input.GetKeyDown(KeyCode.E) && isCollidingPlayer == true && falaAtual < falasMaximas) 
+        // iniciador do dialogo 
+        if(Input.GetKeyDown(KeyCode.E) && isCollidingPlayer == true && falaAtual < falasMaximas || Input.GetMouseButtonDown(0) && isCollidingPlayer == true && falaAtual < falasMaximas)
         {
             bolhaChat.SetActive(true);
             passandoDialogos();
@@ -53,7 +53,7 @@ public class NPC : MonoBehaviour
             textoNomePersonagem.text = nomeDoPersonagem;
         }
         // "reiniciador" do texto
-        if (falaAtual >= falasMaximas && Input.GetKeyDown(KeyCode.E))
+        if (falaAtual >= falasMaximas && Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0) && falaAtual >= falasMaximas)
         {
             //textoDialogo.text = "";
             bolhaChatAnimator.SetTrigger("Close");

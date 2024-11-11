@@ -29,6 +29,7 @@ public class Jornal : MonoBehaviour
         {
             JornalUI.SetActive(false);
             ativado = false;
+            Destruir();
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -48,7 +49,7 @@ public class Jornal : MonoBehaviour
             JornalUI.SetActive(false);
         }
     }
-    public void Destroy()
+    public void Destruir()
     {
         Destroy(gameObject);
     }

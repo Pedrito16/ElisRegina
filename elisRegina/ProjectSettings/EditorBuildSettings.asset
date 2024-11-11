@@ -18,6 +18,12 @@ EditorBuildSettings:
     path: Assets/Scenes/City.unity
     guid: e61425dd94cc78240966b5f6d551710c
   - enabled: 1
+    path: Assets/Scenes/CutsceneAntesFavela.unity
+    guid: 25353c69985a7ad4490ae46601240867
+  - enabled: 1
+    path: Assets/Scenes/Favela.unity
+    guid: 8400f04481528324193d359f49964b14
+  - enabled: 1
     path: Assets/Scenes/Truco.unity
     guid: 9633613cc24d5054988c5af10e04c463
   - enabled: 1
