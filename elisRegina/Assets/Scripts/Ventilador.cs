@@ -12,6 +12,7 @@ public class Ventilador : MonoBehaviour
     public Alavanca alavancaScript;
     [SerializeField] Animator ventiladorAnimator;
     [SerializeField] bool inverter = false; //serve para inverter os sentidos
+    [SerializeField] bool invertHorizontal; //Serve para inverter de deitado, para em pé
     private void Start()
     {
         if (alavancaScript.currentState)
@@ -34,7 +35,7 @@ public class Ventilador : MonoBehaviour
             ventiladorAnimator.SetBool("Trocar", alavancaScript.currentState);
         }
         
-        if (alavancaScript.currentState == true && inverter == false)
+        if (alavancaScript.currentState == true && inverter == false || alavancaScript.currentState == true && invertHorizontal && !inverter)
         {
             if (ventoCima.isPlaying)
             {
@@ -45,7 +46,7 @@ public class Ventilador : MonoBehaviour
                 ventoBaixo.Play();
             }
         }
-        else if(alavancaScript.currentState == true && inverter == true) 
+        else if(alavancaScript.currentState == true && inverter == true || alavancaScript.currentState == true && invertHorizontal && inverter) 
         {
             if (ventoBaixo.isPlaying)
             {
@@ -84,28 +85,50 @@ public class Ventilador : MonoBehaviour
         if(collision.CompareTag("Player"))
         {
             Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
-            if(alavancaScript.currentState == true && inverter == false)
+            if(alavancaScript.currentState == true && inverter == false && !invertHorizontal)
             { //empurrando pra cima
                 Vector2 newYvelocity = rb.velocity;
                 newYvelocity.y = velocitySpeed;
                 rb.velocity = newYvelocity;
             }
-            else if(alavancaScript.currentState == false && inverter == false)
+            else if(alavancaScript.currentState == false && inverter == false && !invertHorizontal)
             { //empurrando pra baixo
                 Vector2 newYvelocity = rb.velocity;
                 newYvelocity.y = velocitySpeed * -1;
                 rb.velocity = newYvelocity;
             }
-            if(inverter == true && alavancaScript.currentState == true)
+            if(alavancaScript.currentState == false && invertHorizontal && !inverter)
             {
-                Vector2 newYvelocity = rb.velocity;
-                newYvelocity.y = velocitySpeed;
-                rb.velocity = newYvelocity;
+                Vector2 newXvelocity = rb.velocity;
+                newXvelocity.x = velocitySpeed * -1;
+                rb.velocity = newXvelocity;
+            }else if(alavancaScript.currentState == true && invertHorizontal && !inverter)
+            {
+                Vector2 newXvelocity = rb.velocity;
+                newXvelocity.x = velocitySpeed;
+                rb.velocity = newXvelocity;
             }
-            else if(inverter == true && alavancaScript.currentState == false)
+            if(alavancaScript.currentState == false && invertHorizontal && inverter)
+            {
+                Vector2 newXvelocity = rb.velocity;
+                newXvelocity.x = velocitySpeed;
+                rb.velocity = newXvelocity;
+            }else if(alavancaScript.currentState == true && invertHorizontal && inverter)
+            {
+                Vector2 newXvelocity = rb.velocity;
+                newXvelocity.x = velocitySpeed * -1;
+                rb.velocity = newXvelocity;
+            }
+            if(inverter == true && alavancaScript.currentState == true && !invertHorizontal)
             {
                 Vector2 newYvelocity = rb.velocity;
                 newYvelocity.y = velocitySpeed * -1;
+                rb.velocity = newYvelocity;
+            }
+            else if(inverter == true && alavancaScript.currentState == false && !invertHorizontal)
+            {
+                Vector2 newYvelocity = rb.velocity;
+                newYvelocity.y = velocitySpeed;
                 rb.velocity = newYvelocity;
             }
         }
