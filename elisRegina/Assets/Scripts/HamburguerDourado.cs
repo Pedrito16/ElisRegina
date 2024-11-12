@@ -58,7 +58,7 @@ public class HamburguerDourado : MonoBehaviour
         {
             custoText.GetComponent<Text>().color = Color.red;
         }
-            if (Time.time - lastClickTime < catchTime)
+        if (Time.time - lastClickTime < catchTime)
         {
             lastClickTime = 0;
             if (player.dinheiro >= custo)
