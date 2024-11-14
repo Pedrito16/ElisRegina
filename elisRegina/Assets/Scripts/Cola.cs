@@ -13,6 +13,7 @@ public class Cola : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            print("Colidindo");
             initialMoveSpeedValue = collision.gameObject.GetComponent<Player>().moveSpeed;
             initialJumpStrengthValue = collision.gameObject.GetComponent<Player>().jumpStrenght;
             collision.gameObject.GetComponent<Player>().moveSpeed -= slowValue;

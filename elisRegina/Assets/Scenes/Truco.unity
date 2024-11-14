@@ -3679,7 +3679,7 @@ MonoBehaviour:
   cartaVerso:
   - {fileID: 728511101}
   - {fileID: 802017974}
-  speed: 0.1
+  speed: 0.25
   bundleTransform: {fileID: 1876653324}
   "invent\xE1rio": 
   bundleScript: {fileID: 0}
