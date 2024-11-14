@@ -22,7 +22,7 @@ public class TurretBullet : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Tijolo"))
+        if (collision.CompareTag("Tijolo") || collision.CompareTag("Caixa"))
         {
             Destroy(gameObject);
         }
