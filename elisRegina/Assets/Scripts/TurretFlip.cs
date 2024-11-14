@@ -21,20 +21,14 @@ public class TurretFlip : MonoBehaviour
     }
     void Update()
     {
-        if (!ativada)
-        {
-            animator.SetBool("Ativada", ativada);
-        }
-        if(gameObject.activeSelf)
-        {
-            CalcularOffset();
-        }
-        if(offset >= 0)
+        animator.SetBool("Ativada", ativada);
+        CalcularOffset();
+        if(offset >= 0 && ativada)
         {
             Vector3 scale = gameObject.transform.localScale;
             scale.x = Mathf.Abs(transform.localScale.x) * -1;
             gameObject.transform.localScale = scale;
-        }else if(offset < 0)
+        }else if(offset < 0 && ativada)
         {
             Vector3 scale = gameObject.transform.localScale;
             scale.x = Mathf.Abs(transform.localScale.x);
