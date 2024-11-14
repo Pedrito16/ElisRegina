@@ -22,6 +22,7 @@ TagManager:
   - HUD
   - Sebastian
   - CounterGIF
+  - Caixa
   layers:
   - Default
   - TransparentFX

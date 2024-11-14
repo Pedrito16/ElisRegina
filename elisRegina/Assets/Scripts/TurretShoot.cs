@@ -15,9 +15,10 @@ public class TurretShoot : MonoBehaviour
     [SerializeField] float cooldownTime;
     [SerializeField] Transform balaTransform;
     [SerializeField] Animator animator;
-    [SerializeField] bool inCooldown;
+    [SerializeField]public  bool inCooldown;
     [SerializeField] float shootingTime;
     bool ativador;
+    [SerializeField] bool Visivel;
     private void Awake()
     {
         fireRateMax = fireRate;
@@ -33,18 +34,24 @@ public class TurretShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      fireRate -= Time.deltaTime;
-      timer += Time.deltaTime;
-      shootingTime += Time.deltaTime;
+      if(Visivel)
+      {
+            fireRate -= Time.deltaTime;
+            timer += Time.deltaTime;
+            shootingTime += Time.deltaTime;
+      }
       if(timer >= Mathf.Max(fireRate, 0.25f) && gameObject.activeSelf && !inCooldown)
       {
-            randomSpawn = Random.Range(-0.25f, 0.25f);
-            GameObject temp = Instantiate(tiro, new Vector2(balaTransform.position.x, balaTransform.position.y + randomSpawn), balaTransform.rotation);
-            temp.GetComponent<Rigidbody2D>().velocity = new Vector2(tiroSpeed * changeDirection.direction, 0);
+            if (Visivel)
+            {
+                randomSpawn = Random.Range(-0.25f, 0.25f);
+                GameObject temp = Instantiate(tiro, new Vector2(balaTransform.position.x, balaTransform.position.y + randomSpawn), balaTransform.rotation);
+                temp.GetComponent<Rigidbody2D>().velocity = new Vector2(tiroSpeed * changeDirection.direction, 0);
+            }
             timer = 0;
       }
       animator.SetFloat("Normal", fireRate);
-      if(shootingTime >= 7f && !inCooldown && ativador)
+      if(shootingTime >= 7f && !inCooldown && ativador && Visivel)
       {
             animator.SetBool("Regen", false);
             shootingTime = 0f;
@@ -56,7 +63,11 @@ public class TurretShoot : MonoBehaviour
     }
     private void OnBecameVisible()
     {
-        
+        Visivel = true;
+    }
+    private void OnBecameInvisible()
+    {
+        Visivel = false;
     }
     IEnumerator Red()
     {

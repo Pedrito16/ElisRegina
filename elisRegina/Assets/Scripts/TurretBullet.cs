@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tiro : MonoBehaviour
+public class TurretBullet : MonoBehaviour
 {
-    public int dano = 1;
+    public int damage = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,10 +26,5 @@ public class Tiro : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        if (collision.CompareTag("Peso"))
-        {
-            Destroy(gameObject);
-        }
     }
-    
 }

@@ -17,14 +17,11 @@ public class butao : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Peso"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Peso") || collision.gameObject.CompareTag("Caixa"))
         {
-
-            
             animator.SetBool("Colisao", true);
             animator.SetBool("finish", true);
             ativador = true;
-
         }
     }
 }

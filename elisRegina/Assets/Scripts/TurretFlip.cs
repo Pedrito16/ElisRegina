@@ -6,13 +6,14 @@ public class TurretFlip : MonoBehaviour
 {
     [SerializeField] Transform playerTransform;
     [SerializeField] float offset; //a distancia entre a torreta e o player
-    [SerializeField] SpriteRenderer spriteRenderer;
     public int direction;
+    public int life = 10;
+    [SerializeField] TurretShoot turretShoot;
     void Start()
     {
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;  
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        turretShoot = GetComponent<TurretShoot>();
         CalcularOffset();
-        spriteRenderer = GetComponent<SpriteRenderer>();
     }
     void Update()
     {
@@ -34,12 +35,21 @@ public class TurretFlip : MonoBehaviour
     }
     private void OnBecameVisible()
     {
-        gameObject.SetActive(true);
         CalcularOffset();
     }
-    private void OnBecameInvisible()
+    private void OnTriggerEnter(Collider other)
     {
-        gameObject.SetActive(false);
+        if (other.CompareTag("Peso"))
+        {
+            life -= other.GetComponent<Peso>().damage;
+        }
+        if (other.CompareTag("Player"))
+        {
+            if (turretShoot.inCooldown)
+            {
+                other.GetComponent<Player>().life -= 1;
+            }
+        }
     }
     void CalcularOffset()
     {
