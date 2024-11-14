@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 public class NPCsimounão : MonoBehaviour
 {
     [Header("Coisas Visuais")]
@@ -28,12 +30,18 @@ public class NPCsimounão : MonoBehaviour
 
     [SerializeField] private string falaNão;
 
+    [SerializeField] private string falaSim;
+
+    [SerializeField] private string falaSimSemDinheiro;    
     [SerializeField] Animator bolhaChatAnimator;
     [Header("Opções de escolha")]
     [SerializeField] int Choose;
     [SerializeField] GameObject sim, não;
     [SerializeField]public bool dito;
     [SerializeField] bool apertouNo;
+    [SerializeField] bool apertouSim;
+    [SerializeField] UnityEvent yesClick;
+    [SerializeField] bool yesChat;
     void Start()
     {
         player = FindObjectOfType<Player>();
@@ -75,6 +83,23 @@ public class NPCsimounão : MonoBehaviour
             StartCoroutine(Close());
             apertouNo = false;
         }
+        if(apertouSim && Input.GetKey(KeyCode.E))
+        {
+            if(player.dinheiro >= 10)
+            {
+                bolhaChatAnimator.SetTrigger("Close");
+                StartCoroutine(Close());
+                apertouSim = false;
+                player.dinheiro -= 10;
+                SceneManager.LoadScene("CutsceneAntesFavela");
+            }
+            else
+            {
+                bolhaChatAnimator.SetTrigger("Close");
+                StartCoroutine(Close());
+                apertouSim = false;
+            }
+        }
     }
     IEnumerator Close()
     {
@@ -109,6 +134,10 @@ public class NPCsimounão : MonoBehaviour
         sim.SetActive(false);
         não.SetActive(false);
         falaAtual = -1;
+        if (yesChat)
+        {
+            yesClick.Invoke();
+        }
     }
     public void botaoNão()
     {
@@ -116,6 +145,19 @@ public class NPCsimounão : MonoBehaviour
         sim.SetActive(false);
         não.SetActive(false);
         apertouNo = true;
+    }
+    public void YesGuarantee()
+    {
+        bolhaChat.SetActive(true);
+        if(player.dinheiro >= 10)
+        {
+            dialogoTexto.text = falaSim;
+        }
+        else
+        {
+            dialogoTexto.text = falaSimSemDinheiro;
+        }
+        apertouSim = true;
     }
     void passandoDialogos()
     {

@@ -20,6 +20,7 @@ public class BuffText : MonoBehaviour
     {
         player = FindObjectOfType<Player>();
         foodImage.gameObject.SetActive(false);
+        garfoFaca.gameObject.SetActive(false);
         buffDurationText.gameObject.SetActive(false);
         if (BuffTimer.buffDuration > 0 && BuffTimer.xtudoAtivado)
         {
@@ -41,13 +42,17 @@ public class BuffText : MonoBehaviour
         if(BuffTimer.morreu == true)
         {
             ativador = false;
-            BuffTimer.buffDuration = 180;
+            BuffTimer.buffDuration = 120;
             BuffTimer.xtudoAtivado = false;
             BuffTimer.laranjinhaAtivo = false;
         }
         cdFillBar.value = BuffTimer.buffDuration;
         buffDurationText.text = BuffTimer.buffDuration.ToString();
         timer += Time.deltaTime;
+        if (player.notActiveBuffs)
+        {
+            garfoFaca.gameObject.SetActive(true);
+        }
         if(BuffTimer.xtudoAtivado == true && ativador == false)
         {
             player.moveSpeed *= 1.25f;
@@ -71,32 +76,33 @@ public class BuffText : MonoBehaviour
             
             player.notActiveBuffs = false;
             BuffTimer.buffDuration -= 1;
-            garfoFaca.SetBool("Comendo", true);
+            garfoFaca.gameObject.SetActive(false);
             timer = 0f;
         }else if(timer >= segundo && BuffTimer.laranjinhaAtivo == true)
         {
             player.notActiveBuffs = false;
             BuffTimer.buffDuration -= 1;
+            garfoFaca.gameObject.SetActive(false);
             timer = 0f;
         }
         if (BuffTimer.buffDuration <= 0)
         {
             ativador = false;
             foodImage.sprite = null;
-            garfoFaca.SetBool("Comendo", false);
+            garfoFaca.gameObject.SetActive(true);
             buffDurationText.gameObject.SetActive(false);
             foodImage.gameObject.SetActive(false);
             BuffTimer.xtudoAtivado = false;
             BuffTimer.laranjinhaAtivo = false;
             player.notActiveBuffs = true;
-            BuffTimer.buffDuration = 180;
+            BuffTimer.buffDuration = 120;
         }
     }
     
 }
 public static class BuffTimer
 {
-    public static int buffDuration = 180;
+    public static int buffDuration = 120;
     public static Sprite currentSprite;
     public static bool xtudoAtivado;
     public static bool laranjinhaAtivo;

@@ -6,15 +6,20 @@ public class InfiniteCenario : MonoBehaviour
 {
     public float velocidadeDoCenario;
     public float valorY;
-    public Transform cameraTransform; 
-
+    public Transform cameraTransform;
+    float originalZPos;
+    private void Awake()
+    {
+        originalZPos = transform.position.z;
+    }
     void Update()
     {
         MovimentarCenario();
         /*Vector3 newposition = transform.position;
         newposition.z = posicaoZ;
         transform.position = newposition;*/
-        transform.position = new Vector3(cameraTransform.position.x, cameraTransform.position.y + valorY, transform.position.z);
+        transform.position = new Vector3(cameraTransform.position.x, cameraTransform.position.y + valorY, originalZPos);
+        transform.SetParent(cameraTransform, false);
     }
     void MovimentarCenario()
     {

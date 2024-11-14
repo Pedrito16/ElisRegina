@@ -704,7 +704,7 @@ MonoBehaviour:
   buffText: {fileID: 4990028676786791151}
   itemName: X-Tudo
   itemDescription: Um hamburguer modificado, conhecido como X-infarto
-  buffDescription: -1.25x de velocidade por 3 minutos
+  buffDescription: -1.25x de velocidade por 2 minutos
   custo: 22
   player: {fileID: 3857683881563026115, guid: 21ebc57e206a0bb498dd19276255a908, type: 3}
   SFXscript: {fileID: 1130350737266383120, guid: 398b87587e5db37479ad2735f7167659, type: 3}
@@ -732,7 +732,7 @@ MonoBehaviour:
   buffText: {fileID: 4990028676786791151}
   itemName: Laranjinha
   itemDescription: esta escrito "Max Bebidas" no rotulo...
-  buffDescription: -Aumenta em 1.25x o pulo por 3 minutos
+  buffDescription: -Aumenta em 1.25x o pulo por 2 minutos
   custo: 22
   player: {fileID: 3857683881563026115, guid: 21ebc57e206a0bb498dd19276255a908, type: 3}
   bufftext: {fileID: 0}

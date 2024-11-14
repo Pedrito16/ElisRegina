@@ -16,6 +16,7 @@ public class TurretShoot : MonoBehaviour
     [SerializeField] Transform balaTransform;
     [SerializeField] Animator animator;
     [SerializeField] bool inCooldown;
+    [SerializeField] float shootingTime;
     bool ativador;
     private void Awake()
     {
@@ -34,14 +35,7 @@ public class TurretShoot : MonoBehaviour
     {
       fireRate -= Time.deltaTime;
       timer += Time.deltaTime;
-      if(!inCooldown && ativador)
-      {
-            animator.SetBool("Regen", false);
-            animator.SetBool("Red", false);
-            animator.SetBool("TurnRed", false);
-            StartCoroutine(Red());
-            ativador = false;
-      }
+      shootingTime += Time.deltaTime;
       if(timer >= Mathf.Max(fireRate, 0.25f) && gameObject.activeSelf && !inCooldown)
       {
             randomSpawn = Random.Range(-0.25f, 0.25f);
@@ -49,27 +43,31 @@ public class TurretShoot : MonoBehaviour
             temp.GetComponent<Rigidbody2D>().velocity = new Vector2(tiroSpeed * changeDirection.direction, 0);
             timer = 0;
       }
-      if(Mathf.Max(fireRate, 0.25f) == 0.25f)
+      animator.SetFloat("Normal", fireRate);
+      if(shootingTime >= 7f && !inCooldown && ativador)
       {
-            animator.SetBool("Normal", true);
+            animator.SetBool("Regen", false);
+            shootingTime = 0f;
+            fireRate = fireRateMax;
+            animator.SetBool("TurnRed", true);
+            StartCoroutine(Red());
+            ativador = false;
       }
+    }
+    private void OnBecameVisible()
+    {
+        
     }
     IEnumerator Red()
     {
-        yield return new WaitForSeconds(6f);
         inCooldown = true;
-        animator.SetBool("TurnRed", true);
-        animator.SetBool("Red", true);
-        animator.SetBool("Normal", false);
-        Invoke("Regen", cooldownTime);
-    }
-    void Regen()
-    {
-        print("Invokado");
-        animator.SetBool("Regen", true);
         fireRate = fireRateMax;
-        ativador = true;
-        timer = 3;
+        yield return new WaitForSeconds(6f);
+        fireRate = fireRateMax;
+        animator.SetBool("TurnRed", false);
+        animator.SetBool("Regen", true);
         inCooldown = false;
+        shootingTime = 0f;
+        ativador = true;
     }
 }

@@ -1,0 +1,607 @@
+fileFormatVersion: 2
+guid: 1b70529bbf0fbb4449aef4898dbf1b9a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpriteSheet_ArvoreFinalDoJogo_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 89
+        width: 96
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b36e8f7c7b6079a448f43e283f3f2c92
+      internalID: 1146829647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_ArvoreFinalDoJogo_1
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 89
+        width: 96
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d0f0627c66bfdc4e9913c9a8bf19b64
+      internalID: -1560530763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_ArvoreFinalDoJogo_2
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 89
+        width: 96
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29518ba04742b1b4ead7c8461db77964
+      internalID: -1437390375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_ArvoreFinalDoJogo_3
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 89
+        width: 96
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed63020b07644e74498f24bc021bf078
+      internalID: -1623191294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_ArvoreFinalDoJogo_4
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 89
+        width: 96
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4acc81c1b822c04096577c58704849f
+      internalID: -1766049232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_ArvoreFinalDoJogo_5
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 89
+        width: 96
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a35fa0f4f0ad1714c98d3eced2fac5c0
+      internalID: 2065538732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_ArvoreFinalDoJogo_6
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 89
+        width: 96
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25943163d0da04d42ac19dd9a74b447d
+      internalID: -1117192705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_ArvoreFinalDoJogo_7
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 89
+        width: 96
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6982f85f06a10664d9ea89768121994d
+      internalID: -2140787289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_ArvoreFinalDoJogo_8
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 89
+        width: 96
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d03903abf2bce8f4887fd47fd9d36a22
+      internalID: 1006199955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_ArvoreFinalDoJogo_9
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 89
+        width: 96
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da261358a164d9745a387a779b8c20b7
+      internalID: 1706805843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_ArvoreFinalDoJogo_10
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 89
+        width: 96
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4075e0d228fac7e42b6ff81549208abf
+      internalID: 385086856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_ArvoreFinalDoJogo_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c671cf0c057af0d41a745da6ef67fa46
+      internalID: 1930218375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_ArvoreFinalDoJogo_12
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 0
+        width: 96
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c533c650cd195e469f30c98961bbc6c
+      internalID: -1614112174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_ArvoreFinalDoJogo_13
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 0
+        width: 96
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b3a40f2d9f482940bda7bce93fe2d38
+      internalID: -1221587224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_ArvoreFinalDoJogo_14
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 0
+        width: 96
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1012ac86916362f4eaa6aa428e6163c3
+      internalID: 1601559242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_ArvoreFinalDoJogo_15
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 0
+        width: 96
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87d28e4d398f8a44caf49cdfa23e47f3
+      internalID: 311449709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_ArvoreFinalDoJogo_16
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 0
+        width: 96
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c143ef326880ac48b6ddb56a40779a9
+      internalID: 1836998777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_ArvoreFinalDoJogo_17
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 0
+        width: 96
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab550492a62c53946add6396e1c67be0
+      internalID: 603491864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_ArvoreFinalDoJogo_18
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 0
+        width: 96
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8427a076b3c60604495bbd1f72f20b3b
+      internalID: -70121056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_ArvoreFinalDoJogo_19
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 0
+        width: 96
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b5409a4af02d2f4180d5a152488853d
+      internalID: -1691764507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_ArvoreFinalDoJogo_20
+      rect:
+        serializedVersion: 2
+        x: 884
+        y: 0
+        width: 96
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aca080ac9d915344855974b4a3c7822
+      internalID: 302426950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_ArvoreFinalDoJogo_21
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 0
+        width: 96
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a71a84972fae4ed4a9fd73017fd909bc
+      internalID: 1109464165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      SpriteSheet_ArvoreFinalDoJogo_10: 385086856
+      SpriteSheet_ArvoreFinalDoJogo_1: -1560530763
+      SpriteSheet_ArvoreFinalDoJogo_7: -2140787289
+      SpriteSheet_ArvoreFinalDoJogo_8: 1006199955
+      SpriteSheet_ArvoreFinalDoJogo_13: -1221587224
+      SpriteSheet_ArvoreFinalDoJogo_20: 302426950
+      SpriteSheet_ArvoreFinalDoJogo_2: -1437390375
+      SpriteSheet_ArvoreFinalDoJogo_9: 1706805843
+      SpriteSheet_ArvoreFinalDoJogo_19: -1691764507
+      SpriteSheet_ArvoreFinalDoJogo_12: -1614112174
+      SpriteSheet_ArvoreFinalDoJogo_5: 2065538732
+      SpriteSheet_ArvoreFinalDoJogo_11: 1930218375
+      SpriteSheet_ArvoreFinalDoJogo_6: -1117192705
+      SpriteSheet_ArvoreFinalDoJogo_3: -1623191294
+      SpriteSheet_ArvoreFinalDoJogo_15: 311449709
+      SpriteSheet_ArvoreFinalDoJogo_16: 1836998777
+      SpriteSheet_ArvoreFinalDoJogo_21: 1109464165
+      SpriteSheet_ArvoreFinalDoJogo_0: 1146829647
+      SpriteSheet_ArvoreFinalDoJogo_4: -1766049232
+      SpriteSheet_ArvoreFinalDoJogo_18: -70121056
+      SpriteSheet_ArvoreFinalDoJogo_14: 1601559242
+      SpriteSheet_ArvoreFinalDoJogo_17: 603491864
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
