@@ -15,7 +15,7 @@ public class TurretShoot : MonoBehaviour
     [SerializeField] float cooldownTime;
     [SerializeField] Transform balaTransform;
     [SerializeField] Animator animator;
-    [SerializeField]public  bool inCooldown;
+    [SerializeField]public bool inCooldown;
     [SerializeField] float shootingTime;
     bool ativador;
     [SerializeField] bool Visivel;
@@ -34,13 +34,13 @@ public class TurretShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      if(Visivel)
+      if(Visivel && changeDirection.ativada)
       {
             fireRate -= Time.deltaTime;
             timer += Time.deltaTime;
             shootingTime += Time.deltaTime;
       }
-      if(timer >= Mathf.Max(fireRate, 0.25f) && gameObject.activeSelf && !inCooldown)
+      if(timer >= Mathf.Max(fireRate, 0.25f) && gameObject.activeSelf && !inCooldown && changeDirection.ativada)
       {
             if (Visivel)
             {
@@ -51,7 +51,7 @@ public class TurretShoot : MonoBehaviour
             timer = 0;
       }
       animator.SetFloat("Normal", fireRate);
-      if(shootingTime >= 7f && !inCooldown && ativador && Visivel)
+      if(shootingTime >= 7f && !inCooldown && ativador && Visivel && changeDirection.ativada)
       {
             animator.SetBool("Regen", false);
             shootingTime = 0f;

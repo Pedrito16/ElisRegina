@@ -9,14 +9,22 @@ public class TurretFlip : MonoBehaviour
     public int direction;
     public int life = 10;
     [SerializeField] TurretShoot turretShoot;
+    [SerializeField]public bool ativada;
+    [SerializeField] Animator animator;
     void Start()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         turretShoot = GetComponent<TurretShoot>();
         CalcularOffset();
+        animator = GetComponent<Animator>();
+        ativada = true;
     }
     void Update()
     {
+        if (!ativada)
+        {
+            animator.SetBool("Ativada", ativada);
+        }
         if(gameObject.activeSelf)
         {
             CalcularOffset();
