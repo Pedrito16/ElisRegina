@@ -181,7 +181,13 @@ public class Player : MonoBehaviour
             if (!isInvensible)
             {
                 explosão.Play();
-                life -= collision.gameObject.GetComponent<Tiro>().dano;
+                if(collision.gameObject.GetComponent<Tiro>() != null)
+                {
+                    life -= collision.gameObject.GetComponent<Tiro>().dano;
+                }else if(collision.gameObject.GetComponent<TurretBullet>() != null)
+                {
+                    life -= collision.gameObject.GetComponent<TurretBullet>().damage;
+                }
                 Destroy(collision.gameObject);
                 Pisca();
                 StartCoroutine(invensibility());
