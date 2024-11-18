@@ -21,7 +21,10 @@ public class BotaoVerde : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        wireTransform.position = wirePos;
+        if(wireTransform != null)
+        {
+            wireTransform.position = wirePos;
+        }
         transform.position = position;
     }
     private void OnTriggerEnter2D(Collider2D collision)
