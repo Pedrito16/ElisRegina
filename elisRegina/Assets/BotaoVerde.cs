@@ -31,7 +31,7 @@ public class BotaoVerde : MonoBehaviour
     {
         if (collision.CompareTag("Player") || collision.CompareTag("Peso"))
         {
-            animator.SetBool("Pressed", true);
+            animator.SetBool("Apertado", true);
             turretFlip.ativada = false;
         }
     }

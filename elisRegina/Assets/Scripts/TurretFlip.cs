@@ -11,13 +11,32 @@ public class TurretFlip : MonoBehaviour
     [SerializeField] TurretShoot turretShoot;
     [SerializeField]public bool ativada;
     [SerializeField] Animator animator;
+    Coroutine blinkRoutine;
+    [SerializeField] Material originalMaterial;
+    [SerializeField] Material hitMaterial;
     void Start()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         turretShoot = GetComponent<TurretShoot>();
         CalcularOffset();
         animator = GetComponent<Animator>();
+        originalMaterial = GetComponent<SpriteRenderer>().material;
         ativada = true;
+    }
+    void piscar()
+    {
+        if (blinkRoutine != null)
+        {
+            StopCoroutine(blinkRoutine);
+        }
+        blinkRoutine = StartCoroutine(Blink());
+    }
+    IEnumerator Blink()
+    {
+        GetComponent<SpriteRenderer>().material = hitMaterial;
+        yield return new WaitForSeconds(0.1f);
+        GetComponent<SpriteRenderer>().material = originalMaterial;
+        blinkRoutine = null;
     }
     void Update()
     {
@@ -44,6 +63,8 @@ public class TurretFlip : MonoBehaviour
         if (other.CompareTag("Peso"))
         {
             life -= other.GetComponent<Peso>().damage;
+            Destroy(other.gameObject);
+            piscar();   
         }
         if (other.CompareTag("Player"))
         {
