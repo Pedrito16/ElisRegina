@@ -75,12 +75,14 @@ public class BuffText : MonoBehaviour
         {
             
             player.notActiveBuffs = false;
+            player.oneTimeActiveBuff = false;
             BuffTimer.buffDuration -= 1;
             garfoFaca.gameObject.SetActive(false);
             timer = 0f;
         }else if(timer >= segundo && BuffTimer.laranjinhaAtivo == true)
         {
             player.notActiveBuffs = false;
+            player.oneTimeActiveBuff = false;
             BuffTimer.buffDuration -= 1;
             garfoFaca.gameObject.SetActive(false);
             timer = 0f;
@@ -95,6 +97,7 @@ public class BuffText : MonoBehaviour
             BuffTimer.xtudoAtivado = false;
             BuffTimer.laranjinhaAtivo = false;
             player.notActiveBuffs = true;
+            player.oneTimeActiveBuff = true;
             BuffTimer.buffDuration = 120;
         }
     }

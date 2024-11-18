@@ -46,6 +46,7 @@ public class Player : MonoBehaviour
     float invensibilityTime = 0.75f;
     [SerializeField] Material defaultMaterial;
     [SerializeField] Material redMaterial;
+    [HideInInspector]public bool oneTimeActiveBuff;
     void Start()
     {
         //playerTransform.localScale = new Vector2(direction, 1);
@@ -143,10 +144,11 @@ public class Player : MonoBehaviour
             explosão.Play();
             gameOver();
         }
-        if(notActiveBuffs == true) 
+        if(notActiveBuffs == true && oneTimeActiveBuff) 
         {
             moveSpeed = inicialMovespeed;
             jumpStrenght = inicialJumpStrength;
+            oneTimeActiveBuff = false;
         }
         if(Dourado.playerDourado == true)
         {
