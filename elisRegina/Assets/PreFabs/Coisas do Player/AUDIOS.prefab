@@ -49,7 +49,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SFXsource: {fileID: 8641853876616235062}
   coinPickup: {fileID: 8300000, guid: b20fe23f5061b134f881514ba71f115e, type: 3}
-  buyItem: {fileID: 8300000, guid: 324d34f76bd7a6246befc96bb7ff0bb7, type: 3}
 --- !u!114 &311496188438816202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,8 +61,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98eba407dd6c81e47933398656a907ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carolinaCarolBela: {fileID: 0}
-  audiosource: {fileID: 0}
+  carolinaCarolBela: {fileID: 8300000, guid: d1f3a41a3c0cda94886536035e4e7e2d, type: 3}
+  audiosource: {fileID: 8641853876277744230}
   player: {fileID: 0}
 --- !u!1001 &6565783482283411983
 PrefabInstance:
@@ -204,5 +203,10 @@ PrefabInstance:
 --- !u!4 &7420353437212169649 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4459757051070186990, guid: 5f1e1193bc11f8048af2b698fbcfd591, type: 3}
+  m_PrefabInstance: {fileID: 6565783482481791071}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &8641853876277744230 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3238177305015239225, guid: 5f1e1193bc11f8048af2b698fbcfd591, type: 3}
   m_PrefabInstance: {fileID: 6565783482481791071}
   m_PrefabAsset: {fileID: 0}

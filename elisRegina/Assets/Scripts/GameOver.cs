@@ -10,11 +10,13 @@ public class GameOver : MonoBehaviour
     bool isActive;
     public Animator thunder;
     float timer;
+    float timer2;
     float timerLimit = 1;
-    [SerializeField ]float timer2, timerLimit2 = 15f;
+    [SerializeField] float timerLimit2 = 15f;
     [SerializeField] AudioSource mainSoundtrack, rainSound;
     [SerializeField] AudioClip rainSFX;
     bool ativador = true;
+    Vector3 playerPos;
     private void Awake()
     {
         player = FindObjectOfType<Player>();
@@ -27,6 +29,7 @@ public class GameOver : MonoBehaviour
         particula.SetActive(false);
         textoRessurgir.SetActive(false);
         isActive = false;
+        playerPos = player.gameObject.transform.position;
     }
     void Update()
     {
@@ -37,6 +40,7 @@ public class GameOver : MonoBehaviour
             particula.SetActive(true);
             thunder.gameObject.SetActive(true);
             canvaPrincipal.SetActive(false);
+            particula.transform.position = new Vector3(playerPos.x, playerPos.y + 1f, playerPos.z);
             mainSoundtrack.Pause();
             if (rainSound.gameObject.activeSelf && ativador)
             {

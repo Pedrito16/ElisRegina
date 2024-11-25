@@ -149,7 +149,7 @@ public class NPCsimounão : MonoBehaviour
     public void YesGuarantee()
     {
         bolhaChat.SetActive(true);
-        if(player.dinheiro >= 10)
+        if(player.dinheiro >= 5)
         {
             dialogoTexto.text = falaSim;
         }

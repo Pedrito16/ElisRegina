@@ -5,7 +5,7 @@ using UnityEngine;
 public class TurretFlip : MonoBehaviour
 {
     [SerializeField] Transform playerTransform;
-    [SerializeField] float offset; //a distancia entre a torreta e o player
+    float offset; //a distancia entre a torreta e o player
     public int direction;
     public int life = 10;
     [SerializeField] TurretShoot turretShoot;
@@ -76,7 +76,10 @@ public class TurretFlip : MonoBehaviour
     }
     void CalcularOffset()
     {
-        offset = playerTransform.position.x - gameObject.transform.position.x;
+        if(playerTransform != null)
+        {
+            offset = playerTransform.position.x - gameObject.transform.position.x;
+        }
         direction = (int)offset;
         direction = Mathf.Clamp(direction, -1, 1);
         if(direction == 0)

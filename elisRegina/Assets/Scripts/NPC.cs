@@ -36,6 +36,7 @@ public class NPC : MonoBehaviour
         dialogoTexto.text = "";
         textoNomePersonagem.text = "";
         falasMaximas = dialogo.Length;
+        bolhaChatAnimator = bolhaChat.GetComponent<Animator>();
     }
 
    

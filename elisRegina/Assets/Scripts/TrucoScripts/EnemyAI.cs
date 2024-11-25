@@ -69,7 +69,7 @@ public class EnemyAI : MonoBehaviour
         turnTextAnimator.gameObject.SetActive(false);
         ativador = true;
     }
-    void Update()
+    void FixedUpdate()
     { 
         if(bundleScript.currentTurn == gameState.enemyTurn && mudarTurno)
         {

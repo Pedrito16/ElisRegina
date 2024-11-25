@@ -8,8 +8,13 @@ public class PauseMenu : MonoBehaviour
     string activeSceneName;
     [SerializeField] Animator pauseAnimator;
     public bool Ativador = false;
+    [SerializeField] GameObject ReturnBTN;
     void Start()
     {
+        if(ReturnBTN != null)
+        {
+            ReturnBTN.SetActive(false);
+        }
         pauseMenu.SetActive(false);
         blur.SetActive(false);
         activeSceneName = SceneManager.GetActiveScene().name;
@@ -26,6 +31,10 @@ public class PauseMenu : MonoBehaviour
         {
             pauseMenu.SetActive(true);
             blur.SetActive(true);
+            if (ReturnBTN != null)
+            {
+                ReturnBTN.SetActive(true);
+            }
             Time.timeScale = 0;
             Ativador = true;
         } else if (Input.GetKeyDown(KeyCode.Escape) && Ativador == true)
@@ -63,6 +72,11 @@ public class PauseMenu : MonoBehaviour
     public void Quit()
     {
         SceneManager.LoadScene(0);
+        Time.timeScale = 1;
+    }
+    public void Return()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         Time.timeScale = 1;
     }
 }

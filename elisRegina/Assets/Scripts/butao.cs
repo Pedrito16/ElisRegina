@@ -13,6 +13,7 @@ public class butao : MonoBehaviour
         if(ativador == true)
         {
             Destroy(portao.GetComponent<BoxCollider2D>());
+            JaPassou.passou = true;
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -24,4 +25,8 @@ public class butao : MonoBehaviour
             ativador = true;
         }
     }
+}
+public static class JaPassou
+{
+    public static bool passou;
 }
