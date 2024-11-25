@@ -47,6 +47,7 @@ public class TurretShoot : MonoBehaviour
                 randomSpawn = Random.Range(-0.25f, 0.25f);
                 GameObject temp = Instantiate(tiro, new Vector2(balaTransform.position.x, balaTransform.position.y + randomSpawn), balaTransform.rotation);
                 temp.GetComponent<Rigidbody2D>().velocity = new Vector2(tiroSpeed * changeDirection.direction, 0);
+                Destroy(temp, 3.5f);
             }
             timer = 0;
       }

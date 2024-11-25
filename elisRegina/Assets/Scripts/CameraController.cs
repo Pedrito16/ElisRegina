@@ -10,6 +10,7 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         lockCam = gameObject;
+        player = GameObject.FindWithTag("Player");
         playerCam.Follow = player.transform;
         playerCam.LookAt = player.transform;
     }

@@ -14,7 +14,6 @@ public class RoundsController : MonoBehaviour
     [SerializeField] AudioSource soundtrackBar;
     [SerializeField] GameObject introdução;
     [SerializeField] Animator counterGIF;
-    bool activateStart = true;
     private void Awake()
     {
         if (RodadasSystem.rodadaAtual <= 0)

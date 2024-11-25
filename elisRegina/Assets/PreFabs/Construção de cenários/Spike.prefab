@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 779788627001227899}
   - component: {fileID: 779788627001227898}
-  - component: {fileID: 779788627001227896}
+  - component: {fileID: 5997649804887754775}
   m_Layer: 0
   m_Name: Spike
   m_TagString: Espinho
@@ -85,8 +85,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &779788627001227896
-BoxCollider2D:
+--- !u!60 &5997649804887754775
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -98,7 +98,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.068939686, y: -2.1011279}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -108,6 +108,15 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.2312999, y: 3.7977443}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.10416293, y: -0.35933387}
+      - {x: -0.8080423, y: -2.0684097}
+      - {x: -0.833332, y: -2.1776686}
+      - {x: -1.0139557, y: -2.9605124}
+      - {x: -1.145829, y: -4.0246644}
+      - {x: 1.1354114, y: -4}
+      - {x: 1.158659, y: -3.4178371}
+      - {x: 1.0208372, y: -2.898297}
+      - {x: 0.4479124, y: -1.0306807}
+      - {x: 0.15624034, y: -0.40866667}

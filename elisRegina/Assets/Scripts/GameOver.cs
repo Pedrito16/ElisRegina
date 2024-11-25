@@ -16,7 +16,7 @@ public class GameOver : MonoBehaviour
     [SerializeField] AudioSource mainSoundtrack, rainSound;
     [SerializeField] AudioClip rainSFX;
     bool ativador = true;
-    Vector3 playerPos;
+    [SerializeField] Vector3 playerPos;
     private void Awake()
     {
         player = FindObjectOfType<Player>();
@@ -29,18 +29,21 @@ public class GameOver : MonoBehaviour
         particula.SetActive(false);
         textoRessurgir.SetActive(false);
         isActive = false;
-        playerPos = player.gameObject.transform.position;
     }
     void Update()
     {
-        if(player.life <= 0)
+        if(player != null)
+        {
+            playerPos = player.gameObject.transform.position;
+        }
+        if (player.life <= 0)
         {
             telaMorte.SetActive(true);
             isActive = true;
             particula.SetActive(true);
             thunder.gameObject.SetActive(true);
             canvaPrincipal.SetActive(false);
-            particula.transform.position = new Vector3(playerPos.x, playerPos.y + 1f, playerPos.z);
+            particula.transform.position = new Vector3(playerPos.x, playerPos.y + 6f, playerPos.z);
             mainSoundtrack.Pause();
             if (rainSound.gameObject.activeSelf && ativador)
             {

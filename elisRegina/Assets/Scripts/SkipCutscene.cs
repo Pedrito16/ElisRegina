@@ -8,7 +8,7 @@ public class SkipCutscene : MonoBehaviour
     [SerializeField] GameObject skipBTN;
     [SerializeField] string cenaParaSerCarregada;
     [SerializeField] Animator animatorBTN;
-    float timer;
+    [SerializeField]float timer;
     [SerializeField] bool ativador;
     void Start()
     {

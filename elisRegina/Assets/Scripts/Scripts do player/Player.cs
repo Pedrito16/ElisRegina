@@ -276,6 +276,15 @@ public class Player : MonoBehaviour
                     StartCoroutine(invensibility());
                 }
                 break;
+            case "Torreta":
+                    if (!isInvensible && collision.gameObject.GetComponent<TurretShoot>().inCooldown)
+                    {
+                        explosão.Play();
+                        life -= 1;
+                        Pisca();
+                        StartCoroutine(invensibility());
+                    }
+                    break;
         }
     }
 }

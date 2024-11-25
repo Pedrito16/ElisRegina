@@ -6,7 +6,6 @@ public class Life : MonoBehaviour
 {
     [SerializeField] Player player;
     [SerializeField]public Animator[] pillsAnimators;
-    [SerializeField] bool lostLife;
     bool canLoseLife;
     public bool recoverLife;
     private void Awake()
@@ -32,7 +31,6 @@ public class Life : MonoBehaviour
         pillsAnimators[player.life].SetTrigger("Perder");
         yield return new WaitForSeconds(0.5f);
         pillsAnimators[player.life].gameObject.SetActive(false);
-        lostLife = true;
         canLoseLife = true;
     }
     void RecoverLife()

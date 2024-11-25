@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 1454327051366929539}
   m_Layer: 0
   m_Name: Torreta
-  m_TagString: Untagged
+  m_TagString: Torreta
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -158,14 +158,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 0}
-  offset: 0
   direction: 0
-  life: 10
-  turretShoot: {fileID: 0}
+  life: 7
   ativada: 0
   animator: {fileID: 0}
   originalMaterial: {fileID: 0}
   hitMaterial: {fileID: 2100000, guid: 1102231cab1f01a4c8c6c0d939f85954, type: 2}
+  cincoConto: {fileID: 1223512492860425161, guid: 75cc1de1e28f0b840981fa347bcdb009, type: 3}
+  botaoVerde: {fileID: 0}
 --- !u!60 &1454327051366929538
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -202,8 +202,17 @@ PolygonCollider2D:
       - {x: -3.9480011, y: -0.51470697}
       - {x: -1.8566166, y: -0.5504195}
       - {x: -2.4375, y: -3}
-      - {x: 3.9375, y: -3}
-      - {x: 4.1875, y: -1.5}
+      - {x: 3.3934257, y: -3.0354831}
+      - {x: 3.532656, y: -2.6124468}
+      - {x: 3.583436, y: -2.5591838}
+      - {x: 3.5947874, y: -2.1444046}
+      - {x: 3.4634492, y: -2.0949626}
+      - {x: 3.441744, y: -1.5395691}
+      - {x: 3.3248444, y: -1.5227861}
+      - {x: 3.3342335, y: -1.2489412}
+      - {x: 3.663057, y: -1.275121}
+      - {x: 3.8282626, y: -1.2340168}
+      - {x: 3.8282626, y: -1.2340168}
       - {x: 4.2104287, y: 0.39154255}
       - {x: 3.8492599, y: 0.59116954}
       - {x: 2.9459944, y: 0.51585996}

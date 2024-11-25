@@ -8,20 +8,21 @@ public class TurretFlip : MonoBehaviour
     float offset; //a distancia entre a torreta e o player
     public int direction;
     public int life = 10;
-    [SerializeField] TurretShoot turretShoot;
     [SerializeField]public bool ativada;
     [SerializeField] Animator animator;
     Coroutine blinkRoutine;
     [SerializeField] Material originalMaterial;
     [SerializeField] Material hitMaterial;
+    [SerializeField] GameObject cincoConto;
+    [SerializeField] BotaoVerde botaoVerde;
     void Start()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        turretShoot = GetComponent<TurretShoot>();
         CalcularOffset();
         animator = GetComponent<Animator>();
         originalMaterial = GetComponent<SpriteRenderer>().material;
         ativada = true;
+        botaoVerde = GetComponentInChildren<BotaoVerde>();
     }
     void piscar()
     {
@@ -42,6 +43,11 @@ public class TurretFlip : MonoBehaviour
     {
         animator.SetBool("Ativada", ativada);
         CalcularOffset();
+        if(life <= 0)
+        {
+             Morrer();
+             Destroy(gameObject);
+        }
         if(offset >= 0 && ativada)
         {
             Vector3 scale = gameObject.transform.localScale;
@@ -54,24 +60,31 @@ public class TurretFlip : MonoBehaviour
             gameObject.transform.localScale = scale;
         }
     }
+    void Morrer()
+    {
+        Instantiate(cincoConto, transform.position, transform.rotation);
+        Destroy(botaoVerde.wireTransform.gameObject);
+    }
     private void OnBecameVisible()
     {
         CalcularOffset();
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Peso"))
+        if (other.CompareTag("Peso") && ativada)
         {
             life -= other.GetComponent<Peso>().damage;
             Destroy(other.gameObject);
             piscar();   
         }
-        if (other.CompareTag("Player"))
+    }
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Peso") && ativada)
         {
-            if (turretShoot.inCooldown)
-            {
-                other.GetComponent<Player>().life -= 1;
-            }
+            life -= other.gameObject.GetComponent<Peso>().damage;
+            Destroy(other.gameObject);
+            piscar();
         }
     }
     void CalcularOffset()

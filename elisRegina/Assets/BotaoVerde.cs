@@ -9,7 +9,7 @@ public class BotaoVerde : MonoBehaviour
     [SerializeField] Vector3 position;
     [SerializeField] Vector3 wirePos;
     [SerializeField] Vector3 wireRotation;
-    [SerializeField] Transform wireTransform;
+    [SerializeField] public Transform wireTransform;
     void Start()
     {
         animator = GetComponent<Animator>();
