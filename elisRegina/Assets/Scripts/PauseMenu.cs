@@ -36,6 +36,7 @@ public class PauseMenu : MonoBehaviour
                 ReturnBTN.SetActive(true);
             }
             Time.timeScale = 0;
+            PauseClass.Paused = true;
             Ativador = true;
         } else if (Input.GetKeyDown(KeyCode.Escape) && Ativador == true)
         {
@@ -56,6 +57,7 @@ public class PauseMenu : MonoBehaviour
         blur.SetActive(false);
         Ativador = false;
         Time.timeScale = 1;
+        PauseClass.Paused = false;
     }
     public void Resume()
     {
@@ -79,4 +81,8 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         Time.timeScale = 1;
     }
+}
+public static class PauseClass
+{
+    public static bool Paused;
 }
