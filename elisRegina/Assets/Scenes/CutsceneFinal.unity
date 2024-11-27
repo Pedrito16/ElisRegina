@@ -616,7 +616,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 459007
+    rgba: 4278649087
   m_fontColor: {r: 1, g: 0, b: 0.029372692, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -774,7 +774,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 10227606
+    rgba: 4288417686
   m_fontColor: {r: 0.58851624, g: 0.06074226, b: 0.6132076, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1124,7 +1124,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 16062720
+    rgba: 4294252800
   m_fontColor: {r: 0, g: 0.09765241, b: 0.9622642, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -2086,7 +2086,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 48847
+    rgba: 4278238927
   m_fontColor: {r: 0.8113208, g: 0.7431849, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -2354,7 +2354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skipBTN: {fileID: 1486284047}
-  cenaParaSerCarregada: MenuScene
+  cenaParaSerCarregada: TimerScene
   animatorBTN: {fileID: 1486284049}
   timer: 0
   ativador: 0
@@ -2531,7 +2531,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 14099663
+    rgba: 4292289743
   m_fontColor: {r: 0.8117648, g: 0.14117648, b: 0.8431373, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3

@@ -85,12 +85,12 @@ public class NPCsimounão : MonoBehaviour
         }
         if(apertouSim && Input.GetKey(KeyCode.E))
         {
-            if(player.dinheiro >= 10)
+            if(player.dinheiro >= 5)
             {
                 bolhaChatAnimator.SetTrigger("Close");
                 StartCoroutine(Close());
                 apertouSim = false;
-                player.dinheiro -= 10;
+                player.dinheiro -= 5;
                 SceneManager.LoadScene("CutsceneAntesFavela");
             }
             else

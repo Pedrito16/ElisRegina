@@ -4868,6 +4868,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2719791036508583628}
     - target: {fileID: 8016559820208967108, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
+      propertyPath: moveSpeed
+      value: 5.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016559820208967108, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: coinPickup
       value: 
       objectReference: {fileID: 8300000, guid: b20fe23f5061b134f881514ba71f115e, type: 3}
@@ -5009,19 +5013,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8846302290493060559, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.999727
+      value: 0.9997269
       objectReference: {fileID: 0}
     - target: {fileID: 8846302290493060559, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.011543377
+      value: 0.011543375
       objectReference: {fileID: 0}
     - target: {fileID: 8846302290493060559, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.02031335
+      value: 0.020318175
       objectReference: {fileID: 0}
     - target: {fileID: 8846302290493060559, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0002345487
+      value: -0.00023460436
       objectReference: {fileID: 0}
     - target: {fileID: 8846302291139123620, guid: 11349ae715cf0004293d5b7282237e0a, type: 3}
       propertyPath: m_Layer
@@ -5093,7 +5097,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   pillsAnimators: []
-  lostLife: 0
   recoverLife: 0
 --- !u!4 &7014518451233141403 stripped
 Transform:

@@ -34,13 +34,6 @@ public class Laranjinha : MonoBehaviour
         descriçãoText.text = "";
         buffText.text = "";
     }
-
-
-    void Update()
-    {
-        
-        
-    }
     public void OnClick()
     {
         isClicking = true;

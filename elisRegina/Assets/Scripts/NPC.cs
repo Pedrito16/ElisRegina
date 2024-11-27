@@ -75,6 +75,7 @@ public class NPC : MonoBehaviour
         {
             eKeybind.SetActive(false);
             isCollidingPlayer = false;
+            StartCoroutine(Close());
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

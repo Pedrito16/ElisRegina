@@ -11,20 +11,20 @@ public class CameraController : MonoBehaviour
     {
         lockCam = gameObject;
         player = FindObjectOfType<Player>().gameObject;
+        playerCam = FindObjectOfType<CinemachineVirtualCamera>();
         playerCam.Follow = player.transform;
         playerCam.LookAt = player.transform;
+        initialZoomValue = playerCam.m_Lens.OrthographicSize;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            playerCam = FindObjectOfType<CinemachineVirtualCamera>();
-            print("colidindo camera");
             playerCam.Follow = lockCam.transform;
             playerCam.LookAt = lockCam.transform;
             if(SceneManager.GetActiveScene().name == "Favela")
             {
-                playerCam.m_Lens.OrthographicSize = 11.5f;
+                playerCam.m_Lens.OrthographicSize = 4.5f;
             }
         }
     }

@@ -10,26 +10,30 @@ public class TempoJogado : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(Timer.timePlayed >= 1f)
         {
             Timer.timeSecondsPlayed++;
             Timer.timePlayed = 0f;
         }
-        if(!PauseClass.Paused)
+        UpdateTime();
+        if (!PauseClass.Paused)
         {
             Timer.timePlayed += Time.deltaTime;
             if(Timer.timeSecondsPlayed >= 60)
             {
-                Timer.timeMinutesPlayed = Timer.timeSecondsPlayed / 60;
+                Timer.timeMinutesPlayed += Timer.timeSecondsPlayed / 60;
                 Timer.timeSecondsPlayed = 0;
             }
-            contador.text = Timer.timeMinutesPlayed.ToString();
         }else if(PauseClass.Paused) 
         { 
          print(Timer.timePlayed.ToString());
         }
+    }
+    void UpdateTime()
+    {
+        contador.text = "Tempo De Jogo: " + Timer.timeMinutesPlayed.ToString("D2") + ":" + Timer.timeSecondsPlayed.ToString("D2");
     }
 }
 public static class Timer
